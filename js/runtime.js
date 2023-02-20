@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>var now = new Date();
+var now = new Date();
 function createtime() {
   now.setTime(now.getTime() + 1e3);
   var e = new Date("02/19/2023 00:00:00"),
