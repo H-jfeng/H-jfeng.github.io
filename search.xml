@@ -8,7 +8,7 @@
       <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2><p>`&#96;&#96;shell</p><h1 id="VSCode终端"><a href="#VSCode终端" class="headerlink" title="VSCode终端"></a>VSCode终端</h1><p>hexo clean; hexo s<br>hexo clean; hexo g; hexo d<br>git add .; git commit -m “npm publish”; npm version patch;<br>git push</p><h1 id="Cmder终端"><a href="#Cmder终端" class="headerlink" title="Cmder终端"></a>Cmder终端</h1><p>hexo clean &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>git add . &amp;&amp; git commit -m “npm publish” &amp;&amp; npm version patch<br>git push<br>`&#96;&#96;</p><div class="note danger simple"><p>danger 提示块标签</p></div>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2><p>```shell</p><h1 id="VSCode终端"><a href="#VSCode终端" class="headerlink" title="VSCode终端"></a>VSCode终端</h1><p>hexo clean; hexo s<br>hexo clean; hexo g; hexo d<br>git add .; git commit -m “npm publish”; npm version patch;<br>git push</p><h1 id="Cmder终端"><a href="#Cmder终端" class="headerlink" title="Cmder终端"></a>Cmder终端</h1><p>hexo clean &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>git add . &amp;&amp; git commit -m “npm publish” &amp;&amp; npm version patch<br>git push<br>```</p><div class="note danger simple"><p>danger 提示块标签</p></div>]]></content>
       
       
       
@@ -34,7 +34,7 @@
       <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第三篇文章"><a href="#这是我的第三篇文章" class="headerlink" title="这是我的第三篇文章"></a>这是我的第三篇文章</h2><p>1.while((a[i]&#x3D;getchar()!&#x3D;’\n’)一定要写a[i]不可a[]</p><p>2.字母大小写转换<br>是<br>for(j&#x3D;0;str[j]!&#x3D;’\0’;j++){<br>        if(str[j]&gt;&#x3D;’A’&amp;&amp;str[j]&lt;&#x3D;’Z’){<br>            str[j]&#x3D;str[j]-‘A’+’a’;<br>        }else if(str[j]&gt;&#x3D;’a’&amp;&amp;str[j]&lt;&#x3D;’z’){<br>                str[j]&#x3D;str[j]-‘a’+’A’;<br>        }<br>    }<br>不是<br>for(j&#x3D;0;str[j]!&#x3D;’\0’;j++){<br>        if(str[j]&gt;&#x3D;’A’&amp;&amp;str[j]&lt;&#x3D;’Z’){<br>            str[j]&#x3D;str[j]-‘A’+’a’;<br>        }<br>        if(str[i]&gt;&#x3D;’a’&amp;&amp;str[i]&lt;&#x3D;’z’){<br>            str[j]&#x3D;str[j]-‘a’+’A’;<br>        }</p><p>3.void型函数声明与int型函数的声明不一样<br>void fan(int n)<br>int fan(n)</p><p>4.数组作为函数参数时<br>void fan(int a[])只能使用a[]<br>void fan(int a)只能使用地址a</p><p>5.输入字符串一般用gets()加n&#x3D;strlen(a),而不用a[i]&#x3D;getchar()</p><p>6.一定注意提示内容,不然很容易出现错误</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第三篇文章"><a href="#这是我的第三篇文章" class="headerlink" title="这是我的第三篇文章"></a>这是我的第三篇文章</h2><p>1.while((a[i]=getchar()!=’\n’)一定要写a[i]不可a[]</p><p>2.字母大小写转换<br>是<br>for(j=0;str[j]!=’\0’;j++){<br>        if(str[j]&gt;=’A’&amp;&amp;str[j]&lt;=’Z’){<br>            str[j]=str[j]-‘A’+’a’;<br>        }else if(str[j]&gt;=’a’&amp;&amp;str[j]&lt;=’z’){<br>                str[j]=str[j]-‘a’+’A’;<br>        }<br>    }<br>不是<br>for(j=0;str[j]!=’\0’;j++){<br>        if(str[j]&gt;=’A’&amp;&amp;str[j]&lt;=’Z’){<br>            str[j]=str[j]-‘A’+’a’;<br>        }<br>        if(str[i]&gt;=’a’&amp;&amp;str[i]&lt;=’z’){<br>            str[j]=str[j]-‘a’+’A’;<br>        }</p><p>3.void型函数声明与int型函数的声明不一样<br>void fan(int n)<br>int fan(n)</p><p>4.数组作为函数参数时<br>void fan(int a[])只能使用a[]<br>void fan(int a)只能使用地址a</p><p>5.输入字符串一般用gets()加n=strlen(a),而不用a[i]=getchar()</p><p>6.一定注意提示内容,不然很容易出现错误</p>]]></content>
       
       
       <categories>
@@ -81,11 +81,11 @@
     
     
     <entry>
-      <title>第八篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>第六篇文章</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第八篇文章"><a href="#这是我的第八篇文章" class="headerlink" title="这是我的第八篇文章"></a>这是我的第八篇文章</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第六篇文章"><a href="#这是我的第六篇文章" class="headerlink" title="这是我的第六篇文章"></a>这是我的第六篇文章</h2>]]></content>
       
       
       
@@ -94,11 +94,11 @@
     
     
     <entry>
-      <title>第六篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>第八篇文章</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第六篇文章"><a href="#这是我的第六篇文章" class="headerlink" title="这是我的第六篇文章"></a>这是我的第六篇文章</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第八篇文章"><a href="#这是我的第八篇文章" class="headerlink" title="这是我的第八篇文章"></a>这是我的第八篇文章</h2>]]></content>
       
       
       
