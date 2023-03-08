@@ -17,12 +17,18 @@
     
     
     <entry>
-      <title>第一篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>第二篇文章</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2><p>`&#96;&#96;shell</p><h1 id="VSCode终端"><a href="#VSCode终端" class="headerlink" title="VSCode终端"></a>VSCode终端</h1><p>hexo clean; hexo s<br>hexo clean; hexo g; hexo d<br>git add .; git commit -m “npm publish”; npm version patch;<br>git push</p><h1 id="Cmder终端"><a href="#Cmder终端" class="headerlink" title="Cmder终端"></a>Cmder终端</h1><p>hexo clean &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>git add . &amp;&amp; git commit -m “npm publish” &amp;&amp; npm version patch<br>git push<br>`&#96;&#96;</p><div class="note danger simple"><p>danger 提示块标签</p></div>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第二篇文章"><a href="#这是我的第二篇文章" class="headerlink" title="这是我的第二篇文章"></a>这是我的第二篇文章</h2><p>1.在C++中对数组的定义必须在栈区,即使用new，但为了有更多的功能可以使用string,对于指针的定义可以是常量指针，尤其是作为函数的参数时<br>int a&#x3D;10,int *p&#x3D;&amp;a;<br>void a(const *p,int c);</p><p>2.在C++中一般的地址可以像数组一样使用<br>char *a&#x3D;new char[7];<br>a[1]&#x3D;’a’;</p><p>3.C++中的while循环用处很大可以<br>int a;<br>while(cin&gt;&gt;a)也可以使用地址作为判断条件<br>int s[12];<br>while(m&lt;&#x3D;n&amp;&amp;a[])相当于a[]!&#x3D;’\0’表示当s数组有元素时继续循环</p><ol start="4"><li></li></ol>]]></content>
       
+      
+      <categories>
+          
+          <category> C++语言 </category>
+          
+      </categories>
       
       
     </entry>
@@ -49,18 +55,12 @@
     
     
     <entry>
-      <title>第二篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>第一篇文章</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第二篇文章"><a href="#这是我的第二篇文章" class="headerlink" title="这是我的第二篇文章"></a>这是我的第二篇文章</h2><p>1.在C++中对数组的定义必须在栈区,即使用new，但为了有更多的功能可以使用string,对于指针的定义可以是常量指针，尤其是作为函数的参数时<br>int a&#x3D;10,int *p&#x3D;&amp;a;<br>void a(const *p,int c);</p><p>2.在C++中一般的地址可以像数组一样使用<br>char *a&#x3D;new char[7];<br>a[1]&#x3D;’a’;</p><p>3.C++中的while循环用处很大可以<br>int a;<br>while(cin&gt;&gt;a)也可以使用地址作为判断条件<br>int s[12];<br>while(m&lt;&#x3D;n&amp;&amp;a[])相当于a[]!&#x3D;’\0’表示当s数组有元素时继续循环</p><ol start="4"><li></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2><p>`&#96;&#96;shell</p><h1 id="VSCode终端"><a href="#VSCode终端" class="headerlink" title="VSCode终端"></a>VSCode终端</h1><p>hexo clean; hexo s<br>hexo clean; hexo g; hexo d<br>git add .; git commit -m “npm publish”; npm version patch;<br>git push</p><h1 id="Cmder终端"><a href="#Cmder终端" class="headerlink" title="Cmder终端"></a>Cmder终端</h1><p>hexo clean &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>git add . &amp;&amp; git commit -m “npm publish” &amp;&amp; npm version patch<br>git push<br>`&#96;&#96;</p><div class="note danger simple"><p>danger 提示块标签</p></div>]]></content>
       
-      
-      <categories>
-          
-          <category> C++语言 </category>
-          
-      </categories>
       
       
     </entry>
@@ -81,11 +81,11 @@
     
     
     <entry>
-      <title>第八篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>Leetcode总结</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第八篇文章"><a href="#这是我的第八篇文章" class="headerlink" title="这是我的第八篇文章"></a>这是我的第八篇文章</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="Leetcode总结"><a href="#Leetcode总结" class="headerlink" title="Leetcode总结"></a>Leetcode总结</h2><p>1.if-else if应当这样写<br>if (*s &#x3D;&#x3D; ‘V’)         sum +&#x3D; 5;<br>else if (*s &#x3D;&#x3D; ‘L’)    sum +&#x3D; 50</p><p>2.执行代码是检查语法错误，提交是检 查算法错误</p><p>3.C语言语法基本没有问题，C++可能有语法错误</p><p>4.自己有代码错误可以用Chatgpt,不懂用Chatgpt</p><p>5.注意多使用while()在没有a[], a&gt;b?a:b的使用，输入一个值n,有一个长度为a数组，<br>输出长度为n的新数组,n可能大于a,可能小于a,选择b&#x3D;a&lt;n:a,b</p><p>6.注意严谨的思维,在读完题以后,回想一下要完成的内容是什么,然后对比题目看遗漏了什么没有</p><p>7.删除有序数组中的重复项<br>设置两个指针分别为快指针和慢指针s[a],s[b],比起一个i的s[i]更好控制<br>让后面的值先出现,使用！&#x3D;</p><p>8.示例是对if语句的形式的提示</p><p>9.二分查找法是在数组中找到与指定目标值相同的下标,但必须是有序数组</p><p>10.一般对字符串的处理函数是可以用的在leetcode</p><p>11.在leetcode用到的算法<br>二分查找法<br>两个指针分别为快指针和慢指针<br>两个for循环实现后面的数组元素前移并覆盖一个数组元素<br>C中的算法<br>whlie()</p><ol start="12"><li></li></ol>]]></content>
       
       
       
@@ -94,11 +94,11 @@
     
     
     <entry>
-      <title>Leetcode总结</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>第八篇文章</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="Leetcode总结"><a href="#Leetcode总结" class="headerlink" title="Leetcode总结"></a>Leetcode总结</h2><p>1.if-else if应当这样写<br>if (*s &#x3D;&#x3D; ‘V’)         sum +&#x3D; 5;<br>else if (*s &#x3D;&#x3D; ‘L’)    sum +&#x3D; 50</p><p>2.执行代码是检查语法错误，提交是检 查算法错误</p><p>3.C语言语法基本没有问题，C++可能有语法错误</p><p>4.自己有代码错误可以用Chatgpt,不懂用Chatgpt</p><p>5.注意多使用while()在没有a[], a&gt;b?a:b的使用，输入一个值n,有一个长度为a数组，<br>输出长度为n的新数组,n可能大于a,可能小于a,选择b&#x3D;a&lt;n:a,b</p><p>6.注意严谨的思维,在读完题以后,回想一下要完成的内容是什么,然后对比题目看遗漏了什么没有</p><p>7.删除有序数组中的重复项<br>设置两个指针分别为快指针和慢指针s[a],s[b],比起一个i的s[i]更好控制<br>让后面的值先出现,使用！&#x3D;</p><p>8.示例是对if语句的形式的提示</p><p>9.二分查找法是在数组中找到与指定目标值相同的下标,但必须是有序数组</p><p>10.一般对字符串的处理函数是可以用的在leetcode</p><p>11.在leetcode用到的算法<br>二分查找法<br>两个指针分别为快指针和慢指针<br>两个for循环实现后面的数组元素前移并覆盖一个数组元素<br>C中的算法<br>whlie()</p><ol start="12"><li></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是我的第八篇文章"><a href="#这是我的第八篇文章" class="headerlink" title="这是我的第八篇文章"></a>这是我的第八篇文章</h2>]]></content>
       
       
       
