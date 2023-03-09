@@ -4,29 +4,16 @@
   
     
     <entry>
-      <title>第七篇文章</title>
+      <title>计算机网络编程</title>
       <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%83%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%83%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第七篇文章"><a href="#这是我的第七篇文章" class="headerlink" title="这是我的第七篇文章"></a>这是我的第七篇文章</h2>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第二篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="这是我的第二篇文章"><a href="#这是我的第二篇文章" class="headerlink" title="这是我的第二篇文章"></a>这是我的第二篇文章</h2><p>1.在C++中对数组的定义必须在栈区,即使用new，但为了有更多的功能可以使用string,对于指针的定义可以是常量指针，尤其是作为函数的参数时<br>int a&#x3D;10,int *p&#x3D;&amp;a;<br>void a(const *p,int c);</p><p>2.在C++中一般的地址可以像数组一样使用<br>char *a&#x3D;new char[7];<br>a[1]&#x3D;’a’;</p><p>3.C++中的while循环用处很大可以<br>int a;<br>while(cin&gt;&gt;a)也可以使用地址作为判断条件<br>int s[12];<br>while(m&lt;&#x3D;n&amp;&amp;a[])相当于a[]!&#x3D;’\0’表示当s数组有元素时继续循环</p><ol start="4"><li></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="计算机网络编程"><a href="#计算机网络编程" class="headerlink" title="计算机网络编程"></a>计算机网络编程</h2>]]></content>
       
       
       <categories>
           
-          <category> C++语言 </category>
+          <category> 计算机网络编程 </category>
           
       </categories>
       
@@ -36,11 +23,11 @@
     
     
     <entry>
-      <title>第三篇文章</title>
+      <title>C语言</title>
       <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第三篇文章"><a href="#这是我的第三篇文章" class="headerlink" title="这是我的第三篇文章"></a>这是我的第三篇文章</h2><p>1.while((a[i]&#x3D;getchar()!&#x3D;’\n’)一定要写a[i]不可a[]</p><p>2.字母大小写转换<br>是<br>for(j&#x3D;0;str[j]!&#x3D;’\0’;j++){<br>        if(str[j]&gt;&#x3D;’A’&amp;&amp;str[j]&lt;&#x3D;’Z’){<br>            str[j]&#x3D;str[j]-‘A’+’a’;<br>        }else if(str[j]&gt;&#x3D;’a’&amp;&amp;str[j]&lt;&#x3D;’z’){<br>                str[j]&#x3D;str[j]-‘a’+’A’;<br>        }<br>    }<br>不是<br>for(j&#x3D;0;str[j]!&#x3D;’\0’;j++){<br>        if(str[j]&gt;&#x3D;’A’&amp;&amp;str[j]&lt;&#x3D;’Z’){<br>            str[j]&#x3D;str[j]-‘A’+’a’;<br>        }<br>        if(str[i]&gt;&#x3D;’a’&amp;&amp;str[i]&lt;&#x3D;’z’){<br>            str[j]&#x3D;str[j]-‘a’+’A’;<br>        }</p><p>3.void型函数声明与int型函数的声明不一样<br>void fan(int n)<br>int fan(n)</p><p>4.数组作为函数参数时<br>void fan(int a[])只能使用a[]<br>void fan(int *a)只能使用地址a</p><p>5.输入字符串一般用gets()加n&#x3D;strlen(a),而不用a[i]&#x3D;getchar()</p><p>6.一定注意提示内容,不然很容易出现错误</p><p>7.int型函数声明要放在在主函数里并且要有数据类型的单位，void可以省略</p><p>8.字符’1’的ASCLL码不是1,所以在运用数字字符时要使用偏移量a[i]-‘0’</p><p>9.十六进制转化为十进制<br>数字字符 number&#x3D;number<em>10+a[i]-‘0’<br>大小写字母 number&#x3D;number</em>10+a[i]-‘a’+10</p><p>10.数组的长度限定可能会影响得分，要往大得方向调</p><p>11.记得用for(i&#x3D;0;i&lt;strlen(a);i++)</p><p>12.函数的形参可以与实参不一样<br>int a(int b,int c)<br>int d,int e;</p><p>13.数字数组的n为长度即可,而字符数组的长度要为n+1,因为存在’\0’,数组字符没有,所以new char[n+1]</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h2><p>1.while((a[i]&#x3D;getchar()!&#x3D;’\n’)一定要写a[i]不可a[]</p><p>2.字母大小写转换<br>是<br>for(j&#x3D;0;str[j]!&#x3D;’\0’;j++){<br>        if(str[j]&gt;&#x3D;’A’&amp;&amp;str[j]&lt;&#x3D;’Z’){<br>            str[j]&#x3D;str[j]-‘A’+’a’;<br>        }else if(str[j]&gt;&#x3D;’a’&amp;&amp;str[j]&lt;&#x3D;’z’){<br>                str[j]&#x3D;str[j]-‘a’+’A’;<br>        }<br>    }<br>不是<br>for(j&#x3D;0;str[j]!&#x3D;’\0’;j++){<br>        if(str[j]&gt;&#x3D;’A’&amp;&amp;str[j]&lt;&#x3D;’Z’){<br>            str[j]&#x3D;str[j]-‘A’+’a’;<br>        }<br>        if(str[i]&gt;&#x3D;’a’&amp;&amp;str[i]&lt;&#x3D;’z’){<br>            str[j]&#x3D;str[j]-‘a’+’A’;<br>        }</p><p>3.void型函数声明与int型函数的声明不一样<br>void fan(int n)<br>int fan(n)</p><p>4.数组作为函数参数时<br>void fan(int a[])只能使用a[]<br>void fan(int *a)只能使用地址a</p><p>5.输入字符串一般用gets()加n&#x3D;strlen(a),而不用a[i]&#x3D;getchar()</p><p>6.一定注意提示内容,不然很容易出现错误</p><p>7.int型函数声明要放在在主函数里并且要有数据类型的单位，void可以省略</p><p>8.字符’1’的ASCLL码不是1,所以在运用数字字符时要使用偏移量a[i]-‘0’</p><p>9.十六进制转化为十进制<br>数字字符 number&#x3D;number<em>10+a[i]-‘0’<br>大小写字母 number&#x3D;number</em>10+a[i]-‘a’+10</p><p>10.数组的长度限定可能会影响得分，要往大得方向调</p><p>11.记得用for(i&#x3D;0;i&lt;strlen(a);i++)</p><p>12.函数的形参可以与实参不一样<br>int a(int b,int c)<br>int d,int e;</p><p>13.数字数组的n为长度即可,而字符数组的长度要为n+1,因为存在’\0’,数组字符没有,所以new char[n+1]</p><p>14.使用字符串动态内存分配后一定要给上’&#x2F;0’,char a[5]长度为6,因为还有一个’&#x2F;0’;</p><p>15.对数字字符进行处理时要转化数字,a[i]-‘0’</p>]]></content>
       
       
       <categories>
@@ -55,12 +42,56 @@
     
     
     <entry>
-      <title>第一篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <title>C++</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2><p>`&#96;&#96;shell</p><h1 id="VSCode终端"><a href="#VSCode终端" class="headerlink" title="VSCode终端"></a>VSCode终端</h1><p>hexo clean; hexo s<br>hexo clean; hexo g; hexo d<br>git add .; git commit -m “npm publish”; npm version patch;<br>git push</p><h1 id="Cmder终端"><a href="#Cmder终端" class="headerlink" title="Cmder终端"></a>Cmder终端</h1><p>hexo clean &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>git add . &amp;&amp; git commit -m “npm publish” &amp;&amp; npm version patch<br>git push<br>`&#96;&#96;</p><div class="note danger simple"><p>danger 提示块标签</p></div>]]></content>
+        <content type="html"><![CDATA[<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><p>1.在C++中对数组的定义必须在栈区,即使用new，但为了有更多的功能可以使用string,对于指针的定义可以是常量指针，尤其是作为函数的参数时<br>int a&#x3D;10,int *p&#x3D;&amp;a;<br>void a(const *p,int c);</p><p>2.在C++中一般的地址可以像数组一样使用<br>char *a&#x3D;new char[7];<br>a[1]&#x3D;’a’;</p><p>3.C++中的while循环用处很大可以<br>int a;<br>while(cin&gt;&gt;a)也可以使用地址作为判断条件<br>int s[12];<br>while(m&lt;&#x3D;n&amp;&amp;a[])相当于a[]!&#x3D;’\0’表示当s数组有元素时继续循环</p><ol start="4"><li></li></ol>]]></content>
       
+      
+      <categories>
+          
+          <category> C++语言 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux操作系统</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Linux操作系统"><a href="#Linux操作系统" class="headerlink" title="Linux操作系统"></a>Linux操作系统</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux操作系统 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode总结</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Leetcode总结"><a href="#Leetcode总结" class="headerlink" title="Leetcode总结"></a>Leetcode总结</h2><p>1.if-else if应当这样写<br>if (*s &#x3D;&#x3D; ‘V’)         sum +&#x3D; 5;<br>else if (*s &#x3D;&#x3D; ‘L’)    sum +&#x3D; 50</p><p>2.执行代码是检查语法错误，提交是检 查算法错误</p><p>3.C语言语法基本没有问题，C++可能有语法错误</p><p>4.自己有代码错误可以用Chatgpt,不懂用Chatgpt</p><p>5.注意多使用while()在没有a[], a&gt;b?a:b的使用，输入一个值n,有一个长度为a数组，<br>输出长度为n的新数组,n可能大于a,可能小于a,选择b&#x3D;a&lt;n:a,b<br>即遇到if时可以使用?条件语句</p><p>6.注意严谨的思维,在读完题以后,回想一下要完成的内容是什么,然后对比题目看遗漏了什么没有</p><p>7.删除有序数组中的重复项<br>设置两个指针分别为快指针和慢指针s[a],s[b],比起一个i的s[i]更好控制<br>让后面的值先出现,使用！&#x3D;</p><p>8.示例是对if语句的形式的提示</p><p>9.二分查找法是在数组中找到与指定目标值相同的下标,但必须是有序数组</p><p>10.一般对字符串的处理函数是可以用的在leetcode</p><p>11.在leetcode用到的算法<br>二分查找法<br>两个指针分别为快指针和慢指针<br>两个for循环实现后面的数组元素前移并覆盖一个数组元素<br>C中的算法<br>whlie()</p><p>12.在一个函数中返回一个字符数组的地址,并且需要在该函数中建立一个数组，需使用动态分配</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode总结 </category>
+          
+      </categories>
       
       
     </entry>
@@ -75,48 +106,9 @@
         <content type="html"><![CDATA[<h2 id="STM32单片机编程"><a href="#STM32单片机编程" class="headerlink" title="STM32单片机编程"></a>STM32单片机编程</h2><p>STM32常用外设函数</p><p>1.void GPIO_DeInit 所指定的GPIO外设就会被复位</p><p>2.void GPIO_AFIODeInit 所指定的AFIO外设复位</p><p>3.GPIO_Init 用结构体参数来初始化GPIO口</p><p>4.GPIO_StructInit 把结构体变量赋一个默认值</p><p>5.GPIO读取函数<br>uint8_t GPIO_ReadInputDataBit 用来读取输入数据寄存器某一个端口的输入值<br>uint16_t GPIO_ReadInputData 用来读取整个输入数据寄存器的，返回值的每一位代表一个端口值<br>uint8_t GPIO_ReadOutputDataBit 用来读取输出数据寄存器的某一位<br>uint16_t GPIO_ReadOutputData 用来读取整个输出寄存器的</p><p>6.GPIO输出函数<br>GPIO_SetBits 设置为高电平<br>GPIO_ResetBits 设置为低电平<br>GPIO_WriteBit Bit_RESET为低电平 Bit_SET为高电平<br>GPIO_Write 十六进制设置</p><p>7.Uint8_t 是unsigned char的意思</p><p>8.STM32的程序编写尽量考虑将相同的类型放在同一函数里</p><p>9.RCC 开启内部时钟，即整个外设的工作时钟都会同时打开了</p><p>10.定时器time常用函数  TIM是定时器<br>TIM_TimeBaseInit 时基单元初始化<br>TIM_TimeBaseStructInit 给结构体设置默认值<br>TIM_Cmd 用来使能计数器<br>TIM_ITConfig 用来使能中断输出信号<br>TIM_InternalClockConfig 选择内部时钟<br>TIM_ITRxExternalClockConfig 选择ITRx其他定时器的时钟<br>TIM_TIxExternalClockConfig 选择TIx捕获通道的时钟<br>TIM_ETRClockMode1Config 选择ETR通过外部时钟模式1输入的时钟<br>单独的函数可以方便更改结构体的关键参数<br>TIM_PrescalerConfig 单独写预分频值的<br>TIM_CounterModeConfig 用来改写计数器的计数模式<br>TIM_ARRPreloadConfig 自动重装器预装功能配置<br>TIM_SetCounter 给计数器写入一个值，如果你想手动给一个计数值，就可以用这个函数<br>TIM_SetAutoreload 给自动重装器写入一个值，如果你想手动给一个自动重装值，就可以用这个函数<br>TIM_GetCounter 获取当前计数器的值，如果你想看当前计数器计到哪里了，就可以用这个函数<br>TIM_TimeBaseInitTypeDef 结构体的参数配置<br>TIM_RepetitionCounter &#x3D; 0;重复计数器,高级定时器才有的<br>TIM_ClockDivision 不重要<br>重要两个参数 TIM_Period配置ARR   TIM_Prescaler配置PSC<br>定时频率&#x3D;72M&#x2F;(PSC+1)&#x2F;(ARR+1) 定时1s,也就是定时频率为1Hz,PSC&#x3D;7200-1,ARR&#x3D;10000-1,PSC,ARR取值在0~65535之间</p><p>11.用来初始化输出比较单元<br>TIM_OC1Init 不同的通道对应的GPIO口不一样的,即函数对应不同的GPIO口<br>TIM_OC2Init  使用TIM2的OC1也就是CH1通道,输出PWM,那它只能在PA0的引脚输出,需要查看引脚定义表<br>TIM_OC3Init  其他外设也是一样的,如使用I2C2的SCL引脚,那就是PB10,无法更改，可以用重映射解决<br>TIM_OC4Init</p><p>12.这四个用来单独更改CCR寄存器值的函数，我们在运行的时候,可以用它更改占空比<br>TIM_SetCompare1  是设置CCR寄存器的值<br>TIM_SetCompare2<br>TIM_SetCompare3<br>TIM_SetCompare4</p><p>13.给输出比较单元的结构体赋初始值<br>TIM_OCInitStructure</p><p>14.结构体中的变量TIM_OCInitStructure.TIM_Pulse决定了输出PWM的占空比<br>ARR,PSC决定了PWM的周期<br>计算公式：<br>PWM频率：Freq&#x3D;CK_PSC&#x2F;(PSC+1)&#x2F;(ARR+1)&#x3D;1000 1KMz  720<br>PWM占空比: Duty&#x3D;CCR&#x2F;(ARR+1)&#x3D;50%  50 因为占空比为50%,所以TIM_Pulse为50,调节亮度用的<br>PWM分频率: Reso&#x3D;1&#x2F;(ARR+1)&#x3D;1%  100</p><p>15.外设.c文件主要是放实现功能的函数，main.c主要是利用功能函数</p><p>16.USB转串口模块<br>通信引脚为TXD,RXD<br>PA9的USART1_TX表示发送,接的就是串口模块的PXD,接收<br>PA10的USART1_RX表示接收,串口模块的TXD就是发送</p><p>常用函数<br>USART_SendData,发送数据,就是写DR寄存器<br>USART_ReceiveData,接收数据,就是读DR寄存器</p><p>17.寄存器是意思是地址</p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Leetcode总结</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Leetcode总结"><a href="#Leetcode总结" class="headerlink" title="Leetcode总结"></a>Leetcode总结</h2><p>1.if-else if应当这样写<br>if (*s &#x3D;&#x3D; ‘V’)         sum +&#x3D; 5;<br>else if (*s &#x3D;&#x3D; ‘L’)    sum +&#x3D; 50</p><p>2.执行代码是检查语法错误，提交是检 查算法错误</p><p>3.C语言语法基本没有问题，C++可能有语法错误</p><p>4.自己有代码错误可以用Chatgpt,不懂用Chatgpt</p><p>5.注意多使用while()在没有a[], a&gt;b?a:b的使用，输入一个值n,有一个长度为a数组，<br>输出长度为n的新数组,n可能大于a,可能小于a,选择b&#x3D;a&lt;n:a,b</p><p>6.注意严谨的思维,在读完题以后,回想一下要完成的内容是什么,然后对比题目看遗漏了什么没有</p><p>7.删除有序数组中的重复项<br>设置两个指针分别为快指针和慢指针s[a],s[b],比起一个i的s[i]更好控制<br>让后面的值先出现,使用！&#x3D;</p><p>8.示例是对if语句的形式的提示</p><p>9.二分查找法是在数组中找到与指定目标值相同的下标,但必须是有序数组</p><p>10.一般对字符串的处理函数是可以用的在leetcode</p><p>11.在leetcode用到的算法<br>二分查找法<br>两个指针分别为快指针和慢指针<br>两个for循环实现后面的数组元素前移并覆盖一个数组元素<br>C中的算法<br>whlie()</p><ol start="12"><li></li></ol>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第八篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AB%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="这是我的第八篇文章"><a href="#这是我的第八篇文章" class="headerlink" title="这是我的第八篇文章"></a>这是我的第八篇文章</h2>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第四篇文章</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="这是我的第四篇文章"><a href="#这是我的第四篇文章" class="headerlink" title="这是我的第四篇文章"></a>这是我的第四篇文章</h2>]]></content>
-      
-      
       <categories>
           
-          <category> Linux操作系统 </category>
+          <category> STM32单片机编程 </category>
           
       </categories>
       
