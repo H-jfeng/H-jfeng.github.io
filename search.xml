@@ -61,6 +61,25 @@
     
     
     <entry>
+      <title>Leetcode总结</title>
+      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Leetcode总结"><a href="#Leetcode总结" class="headerlink" title="Leetcode总结"></a>Leetcode总结</h2><p>1.if-else if应当这样写<br>if (*s &#x3D;&#x3D; ‘V’)         sum +&#x3D; 5;<br>else if (*s &#x3D;&#x3D; ‘L’)    sum +&#x3D; 50</p><p>2.执行代码是检查语法错误，提交是检 查算法错误</p><p>3.C语言语法基本没有问题，C++可能有语法错误</p><p>4.自己有代码错误可以用Chatgpt,不懂用Chatgpt</p><p>5.注意多使用while()在没有a[], a&gt;b?a:b的使用，输入一个值n,有一个长度为a数组，<br>输出长度为n的新数组,n可能大于a,可能小于a,选择b&#x3D;a&lt;n:a,b<br>即遇到if时可以使用?条件语句<br>for (int i &#x3D; 0; i &lt; numsSize; i++) {<br>  int limit &#x3D; i+k &gt;&#x3D; numsSize? numsSize: i+k+1;<br>放在for循环中有满足某个条件时一直等于munsSize</p><p>6.注意严谨的思维,在读完题以后,回想一下要完成的内容是什么,然后对比题目看遗漏了什么没有</p><p>7.删除有序数组中的重复项<br>设置两个指针分别为快指针和慢指针s[a],s[b],比起一个i的s[i]更好控制<br>让后面的值先出现,使用！&#x3D;</p><p>8.示例是对if语句的形式的提示</p><p>9.二分查找法是在数组中找到与指定目标值相同的下标,但必须是有序数组</p><p>10.一般对字符串的处理函数是可以用的在leetcode</p><p>11.在leetcode用到的算法<br>二分查找法<br>两个指针分别为快指针和慢指针或者更多的指针<br>两个for循环实现后面的数组元素前移并覆盖一个数组元素<br>C中的算法<br>whlie()<br>二进制进位法</p><p>12.在一个函数中返回一个字符数组的地址,并且需要在该函数中建立一个数组，需使用动态分配</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode总结 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STM32单片机编程</title>
       <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%94%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2023/02/19/2023-2-19-%E7%AC%AC%E4%BA%94%E7%AF%87%E6%96%87%E7%AB%A0/</url>
@@ -71,25 +90,6 @@
       <categories>
           
           <category> STM32单片机编程 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Leetcode总结</title>
-      <link href="/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2023/02/19/2023-2-19-%E7%AC%AC%E5%85%AD%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Leetcode总结"><a href="#Leetcode总结" class="headerlink" title="Leetcode总结"></a>Leetcode总结</h2><p>1.if-else if应当这样写<br>if (*s &#x3D;&#x3D; ‘V’)         sum +&#x3D; 5;<br>else if (*s &#x3D;&#x3D; ‘L’)    sum +&#x3D; 50</p><p>2.执行代码是检查语法错误，提交是检 查算法错误</p><p>3.C语言语法基本没有问题，C++可能有语法错误</p><p>4.自己有代码错误可以用Chatgpt,不懂用Chatgpt</p><p>5.注意多使用while()在没有a[], a&gt;b?a:b的使用，输入一个值n,有一个长度为a数组，<br>输出长度为n的新数组,n可能大于a,可能小于a,选择b&#x3D;a&lt;n:a,b<br>即遇到if时可以使用?条件语句</p><p>6.注意严谨的思维,在读完题以后,回想一下要完成的内容是什么,然后对比题目看遗漏了什么没有</p><p>7.删除有序数组中的重复项<br>设置两个指针分别为快指针和慢指针s[a],s[b],比起一个i的s[i]更好控制<br>让后面的值先出现,使用！&#x3D;</p><p>8.示例是对if语句的形式的提示</p><p>9.二分查找法是在数组中找到与指定目标值相同的下标,但必须是有序数组</p><p>10.一般对字符串的处理函数是可以用的在leetcode</p><p>11.在leetcode用到的算法<br>二分查找法<br>两个指针分别为快指针和慢指针<br>两个for循环实现后面的数组元素前移并覆盖一个数组元素<br>C中的算法<br>whlie()</p><p>12.在一个函数中返回一个字符数组的地址,并且需要在该函数中建立一个数组，需使用动态分配</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Leetcode总结 </category>
           
       </categories>
       
