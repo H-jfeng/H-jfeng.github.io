@@ -57,7 +57,7 @@ function createWinbox() {
     y: "center",
     minwidth: "300px",
     height: "60%",
-    background: "#49b1f5",
+    background: "#9796f0",
     onmaximize: () => {
       div.innerHTML = `<style>body::-webkit-scrollbar {display: none;}div#changeBgBox {width: 100% !important;}</style>`;
     },
@@ -73,32 +73,7 @@ function createWinbox() {
     <div id="article-container" style="padding:10px;">
     
     <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#5fcdff;display:block;width:100%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
-    <h2 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h2>
-    <p id="swfs">
-    <a class="swf" id="swf_ZhuZiAWan" href="javascript:;" rel="noopener external nofollow" style="font-family:'ZhuZiAWan'!important;color:black" onclick="setFont('ZhuZiAWan')">筑紫A丸标准体2.0</a>
-    <a class="swf" id="swf_HYTMR" href="javascript:;" rel="noopener external nofollow" style="font-family:'HYTMR'!important;color:black" onclick="setFont('HYTMR')">汉仪唐美人</a>
-    <a class="swf" id="swf_LXGW" href="javascript:;" rel="noopener external nofollow" style="font-family:'LXGW'!important;color:black" onclick="setFont('LXGW')">霞鹜文楷</a>
-    <a class="swf" id="swf_TTQHB" href="javascript:;" rel="noopener external nofollow" style="font-family:'TTQHB'!important;color:black" onclick="setFont('TTQHB')">甜甜圈海报</a>
-    <a class="swf" id="swf_YSHST" href="javascript:;" rel="noopener external nofollow" style="font-family:'YSHST'!important;color:black" onclick="setFont('YSHST')">优设好身体</a>
-    <a class="swf" id="swf_MiSans" href="javascript:;" rel="noopener external nofollow" style="font-family:'MiSans'!important;color:black" onclick="setFont('MiSans')">MiSans</a>
-    <a class="swf" id="swf_default" href="javascript:;" rel="noopener external nofollow" style="font-family:-apple-system, IBM Plex Mono ,monosapce,'微软雅黑', sans-serif;!important;color:black" onclick="setFont('default')">系统默认</a>
-    </p>
-
-    <h2 id="主题色设置"><a href="#主题色设置" class="headerlink" title="主题色设置）"></a>主题色设置</h2>
-    <div class="content" style="display:flex"><input type="radio" id="red" name="colors" value="red"
-        onclick="setColor('red')"><input type="radio" id="orange" name="colors" value="orange"
-        onclick="setColor('orange')"><input type="radio" id="yellow" name="colors" value="yellow"
-        onclick="setColor('yellow')"><input type="radio" id="green" name="colors" value="green"
-        onclick="setColor('green')"><input type="radio" id="blue" name="colors" value="blue"
-        onclick="setColor('blue')"><input type="radio" id="heoblue" name="colors" value=" "
-        onclick="setColor('heoblue')"><input type="radio" id="darkblue" name="colors" value=" "
-        onclick="setColor('darkblue')"><input type="radio" id="purple" name="colors" value=" "
-        onclick="setColor('purple')"><input type="radio" id="pink" name="colors" value=" "
-        onclick="setColor('pink')" checked="checked"><input type="radio" id="black" name="colors" value=" "
-        onclick="setColor('black')"><input type="radio" id="blackgray" name="colors" value=" "
-        onclick="setColor('blackgray')">
-    </div>
-
+    
     <h2 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h2>
     <div class="bgbox">
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/06/09/ou9420JE.jpg)" class="imgbox" onclick="changeBg('url(https\://img1.imgtp.com/2023/06/09/ou9420JE.jpg)')"></a>
