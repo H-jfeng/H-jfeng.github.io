@@ -104,14 +104,14 @@ function createWinbox() {
     
     <h2 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h2>
     <div class="bgbox">
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ecb1b1" onclick="changeBg('#ecb1b1')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #d3ebac" onclick="changeBg('#d3ebac')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ace9ce" onclick="changeBg('#ace9ce')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #c1ebea" onclick="changeBg('#c1ebea')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #dee7f1" onclick="changeBg('#dee7f1')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #e9e3f2" onclick="changeBg('#e9e3f2')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #f7eff5" onclick="changeBg('#f7eff5')"></a>  
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #7D9D9C" onclick="changeBg('#7D9D9C')"></a> 
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #FA895F" onclick="changeBg('#FA895F')"></a> 
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #D43766" onclick="changeBg('#D43766')"></a> 
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #BD49EB" onclick="changeBg('#BD49EB')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #F5D3EC" onclick="changeBg('#F5D3EC')"></a> 
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #F59B9A" onclick="changeBg('#F59B9A')"></a> 
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #BA0900" onclick="changeBg('#BA0900')"></a> 
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #DDB7FF" onclick="changeBg('#DDB7FF')"></a>  
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ECC8F5" onclick="changeBg('#ECC8F5')"></a> 
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ddd6f3" onclick="changeBg('#ddd6f3')"></a>
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #9796f0" onclick="changeBg('#9796f0')"></a>
     </div>
