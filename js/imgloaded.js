@@ -67,10 +67,10 @@ const executeLoad = (config, target) => {
 };
 
 const config = {
-  smallSrc: "https://img1.imgtp.com/2023/08/12/Wrg98cYH.png", // 小图链接 尽可能配置小于100k的图片
-  largeSrc: "https://img1.imgtp.com/2023/08/12/Wrg98cYH.png", // 大图链接 最终显示的图片
-  mobileSmallSrc: "/img/sjxt.jpg", // 手机端小图链接 尽可能配置小于100k的图片
-  mobileLargeSrc: "/img/sjdt.jpg", // 手机端大图链接 最终显示的图片
+  smallSrc: "", // 小图链接 尽可能配置小于100k的图片
+  largeSrc: "", // 大图链接 最终显示的图片
+  mobileSmallSrc: "", // 手机端小图链接 尽可能配置小于100k的图片
+  mobileLargeSrc: "", // 手机端大图链接 最终显示的图片
   enableRoutes: ["/"],
 };
 
