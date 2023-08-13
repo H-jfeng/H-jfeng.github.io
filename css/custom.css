@@ -327,6 +327,7 @@ div#category {
   background: transparent !important;
 }
 
+
 #recent-posts > .recent-post-item:not(a)::before {
   content: "";
   position: absolute;
