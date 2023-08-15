@@ -531,3 +531,24 @@ animation-delay: 1.8s;
   border-radius: 4px;
 }
 
+#aside-content > .card-widget.card-info {
+  background: linear-gradient(-45deg, var(--anzhiyu-main), #FFAFBD, #C9FFBF);
+  background-size: 400%;
+  box-shadow: var(--anzhiyu-shadow-black);
+  animation: gradient 15s ease infinite;
+  position: relative;
+  color: var(--anzhiyu-white);
+}
+.site-data > a .headline,
+.site-data > a .length-num {
+  color: var(--anzhiyu-white);
+}
+
+#welcome-info {
+    overflow: hidden;
+    border-radius: 14px;
+    --kouseki-welcome-color: #2a37e8;
+    --kouseki-ip-color: #0e12ebb9;
+    --kouseki-gl-size: 16px!important;
+    background: #FFAFBD;
+  }
