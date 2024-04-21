@@ -58,7 +58,7 @@ const executeLoad = (config, target) => {
   const loader = new ProgressiveLoad(
     isMobile ? config.mobileSmallSrc : config.smallSrc,
     isMobile ? config.mobileLargeSrc : config.largeSrc
-  );
+  );                                                                                                                                                                                                                                                                                                                                                                                                  
   // 和背景图颜色保持一致，防止高斯模糊后差异较大
   if (target.children[0]) {
     target.insertBefore(loader.container, target.children[0]);
