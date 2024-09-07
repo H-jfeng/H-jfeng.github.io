@@ -169,35 +169,12 @@ svg.icon.faa-tada {
   background: rgba(255, 255, 255, 0.9);
 }
 
-/* 首页侧栏卡片 */
-#aside-content .card-widget {
-  background: rgba(255, 255, 255, 0.9);
-}
 
 /* 文章页面正文背景 */
 div#post {
   background: rgba(255, 255, 255, 0.9);
 }
 
-/* 分页页面 */
-div#page {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* 归档页面 */
-div#archive {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* 标签页面 */
-div#tag {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* 分类页面 */
-div#category {
-  background: rgba(255, 255, 255, 0.9);
-}
 
 /*夜间模式伪类遮罩层透明*/
 [data-theme="dark"] #recent-posts > .recent-post-item {
@@ -531,6 +508,7 @@ animation-delay: 1.8s;
   border-radius: 4px;
 }
 
+/*
 #aside-content > .card-widget.card-info {
   background: linear-gradient(-45deg, var(--anzhiyu-main), #FFAFBD, #C9FFBF);
   background-size: 400%;
@@ -552,3 +530,4 @@ animation-delay: 1.8s;
     --kouseki-gl-size: 16px!important;
     background: #FFAFBD;
   }
+*/
