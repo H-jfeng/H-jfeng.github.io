@@ -1,3 +1,79 @@
+/* 白天模式遮罩透明 */
+#footer::before {
+  background: transparent !important;
+}
+#page-header::before {
+  background: transparent !important;
+}
+
+/* 夜间模式遮罩透明 */
+[data-theme="dark"] #footer::before {
+  background: transparent !important;
+}
+[data-theme="dark"] #page-header::before {
+  background: transparent !important;
+}
+
+:root {
+  --trans-light: rgba(255, 255, 255, 0.88);
+  --trans-dark: rgba(25, 25, 25, 0.88);
+  --border-style: 1px solid rgb(169, 169, 169);
+  --backdrop-filter: blur(5px) saturate(150%);
+}
+
+/* 一图流*/
+#web_container {
+  background: transparent !important;
+}
+
+/*
+#web_bg {
+    background: url(https://pic.imgdb.cn/item/66dd05dad9c307b7e94309e1.jpg)
+}    */
+
+#web_bg {
+    background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1))
+}
+
+body[data-type="essay"] #web_bg {
+  background: linear-gradient(90deg,
+    rgba(247, 149, 51, 0.1),
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1));
+}
+
+body[data-type="about"] #web_bg {
+  background: linear-gradient(90deg,
+    rgba(247, 149, 51, 0.1),
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1));
+}
+
+/* 头图透明 
+#page-header {
+  background: transparent !important;
+}*/
+
+/* 导航栏 */
+#page-header.nav-fixed #nav {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: var(--backdrop-filter);
+}
+
+[data-theme="dark"] #page-header.nav-fixed #nav {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
 /* 由于全屏会出bug，所以直接给他隐藏 */
 
 .winbox {
@@ -106,75 +182,13 @@ h1.post-title {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 时间轴生肖icon */
-svg.icon {
-  /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */
-  width: 1em;
-  height: 1em;
-  /* width和height定义图标的默认宽度和高度*/
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
 
-.icon-zhongbiao::before {
-  color: #f7c768;
-}
-
-/* bilibli番剧插件 */
-#article-container .bangumi-tab.bangumi-active {
-  background: var(--anzhiyu-theme);
-  color: var(--anzhiyu-ahoverbg);
-  border-radius: 10px;
-}
-a.bangumi-tab:hover {
-  text-decoration: none !important;
-}
-.bangumi-button:hover {
-  background: var(--anzhiyu-theme) !important;
-  border-radius: 10px !important;
-  color: var(--anzhiyu-ahoverbg) !important;
-}
-a.bangumi-button.bangumi-nextpage:hover {
-  text-decoration: none !important;
-}
-.bangumi-button {
-  padding: 5px 10px !important;
-}
-
-a.bangumi-tab {
-  padding: 5px 10px !important;
-}
-svg.icon.faa-tada {
-  font-size: 1.1em;
-}
-.bangumi-info-item {
-  border-right: 1px solid #f2b94b;
-}
-.bangumi-info-item span {
-  color: #f2b94b;
-}
-.bangumi-info-item em {
-  color: #f2b94b;
-}
 
 /* 解决artitalk的图标问题 */
 #uploadSource > svg {
   width: 1.19em;
   height: 1.5em;
 }
-
-/* 首页文章卡片 */
-#recent-posts > .recent-post-item {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-
-/* 文章页面正文背景 */
-div#post {
-  background: rgba(255, 255, 255, 0.9);
-}
-
 
 /*夜间模式伪类遮罩层透明*/
 [data-theme="dark"] #recent-posts > .recent-post-item {
@@ -256,25 +270,6 @@ div#post {
   z-index: 999999 !important;
 }
 
-/* 评论框  */
-.vwrap {
-  box-shadow: 2px 2px 5px #bbb;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  padding: 30px;
-  margin: 30px 0px 30px 0px;
-}
-
-/* 设置评论框 */
-
-.vcard {
-  box-shadow: 2px 2px 5px #bbb;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  padding: 30px;
-  margin: 30px 0px 0px 0px;
-}
-
 /* md网站下划线 */
 #article-container a:hover {
   text-decoration: none !important;
@@ -287,11 +282,6 @@ div#post {
 /* 代码框主题 */
 #article-container figure.highlight {
   border-radius: 10px;
-}
-
-/* 页脚透明 */
-#footer {
-  background: transparent !important;
 }
 
 #recent-posts > .recent-post-item:not(a)::before {
@@ -393,57 +383,6 @@ animation-delay: 1.2s;
 animation-delay: 1.8s;
 }
 
-/* 首页头图加载 */
-.pl-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  will-change: transform; /* 添加性能优化 */
-  animation: blur-to-clear 2s cubic-bezier(.62,.21,.25,1) 0s 1 normal backwards running, scale 1.5s cubic-bezier(.62,.21,.25,1) 0s 1 both;
-}
-.pl-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-@keyframes blur-to-clear {
-  0% {
-    filter: blur(50px);
-    opacity: 1;
-  }
-  100% {
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-
-@keyframes scale {
-  0% {
-    transform: scale(1.5) translateZ(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1) translateZ(0);
-    opacity: 1;
-  }
-}
-
-.pl-visible {
-  opacity: 1;
-}
-
-.pl-blur {
-  /* 小图锯齿多，增加高斯模糊 */
-  filter: blur(50px);
-}
-
 #welcome-info {
     overflow: hidden;
     border-radius: 14px;
@@ -469,22 +408,6 @@ animation-delay: 1.8s;
 }
 #footer #footer-wrap{
     background: transparent!important;
-}
-
-#web_bg {
-    background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1))
-}
-
-/* 文章页背景 */
-.layout_post>#post {
-    /* 以下代表透明度为0.5 可以自行修改*/
-    background: rgba(255,255,255,.5);
-}
-​
-/* 所有页面背景 */
-#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
-    /* 以下代表透明度为0.5 */
-    background: rgba(255,255,255,.5);
 }
 
 /* 帧率检测 */
@@ -531,3 +454,17 @@ animation-delay: 1.8s;
     background: #FFAFBD;
   }
 */
+
+/* 个人信息卡片背景图 */
+[data-theme="light"] #aside-content > .card-widget.card-info {
+  background-image: url(https://pic.imgdb.cn/item/66dc4745d9c307b7e925afbf.jpg);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
+}
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background-image: url(https://pic.imgdb.cn/item/66dc4745d9c307b7e925afbf.jpg);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: 100%;
+}
