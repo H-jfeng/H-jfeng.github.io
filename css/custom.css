@@ -14,15 +14,13 @@
   background: transparent !important;
 }
 
-:root {
-  --trans-light: rgba(255, 255, 255, 0.88);
-  --trans-dark: rgba(25, 25, 25, 0.88);
-  --border-style: 1px solid rgb(169, 169, 169);
-  --backdrop-filter: blur(5px) saturate(150%);
-}
-
 /* 一图流*/
 #web_container {
+  background: transparent !important;
+}
+
+/* 页脚透明 */
+#footer {
   background: transparent !important;
 }
 
@@ -390,25 +388,6 @@ animation-delay: 1.8s;
     --kouseki-ip-color: #49B1F5;
     --kouseki-gl-size: 16px!important;
   }
-
-#footer {
-    -webkit-backdrop-filter: saturate(100%) blur(5px);
-    backdrop-filter: saturate(100%) blur(5px);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    color: #000
-}
-
-#footer,#footer:before {
-    background: hsla(0,0%,100%,.15)
-}
-
-#footer #footer-wrap,#footer #footer-wrap a {
-    color: #333;
-}
-#footer #footer-wrap{
-    background: transparent!important;
-}
 
 /* 帧率检测 */
 #fps {

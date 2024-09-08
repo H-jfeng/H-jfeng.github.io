@@ -14419,7 +14419,7 @@ body[data-type="about"] #web_bg {
   flex-direction: column;
   justify-content: center;
   color: var(--anzhiyu-white);
-  background: linear-gradient(120deg, #5b27ff 0, #00d4ff 100%);
+  background: linear-gradient(120deg, #df5fce 0, #de403a 100%);
   background-size: 200%;
   animation: gradient 15s ease infinite;
   width: 59%;
@@ -14808,7 +14808,7 @@ body[data-type="about"] #web_bg {
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(120deg, #ff27e8 0, #ff8000 100%);
+  background: linear-gradient(120deg, #ea64b6 0, #f5f2f0 100%);
   color: var(--anzhiyu-white);
   background-size: 200%;
   animation: gradient 15s ease infinite;
@@ -17987,8 +17987,8 @@ body[data-type="essay"] #web_bg {
   margin-left: 0.5rem;
   font-size: 0.7rem;
   align-items: center;
-  background-color: rgba(245, 108, 108, 0.13);
-  color: rgb(245, 108, 108);
+  background-color: rgba(224, 103, 212, 0.13);
+  color: rgb(253, 253, 253);
   padding: 0px 8px;
   border-radius: 20px;
 }
