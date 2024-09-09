@@ -30,32 +30,20 @@
 }    */
 
 #web_bg {
-    background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1))
+    background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1));
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
-body[data-type="essay"] #web_bg {
-  background: linear-gradient(90deg,
-    rgba(247, 149, 51, 0.1),
-    rgba(243, 112, 85, 0.1) 15%,
-    rgba(239, 78, 123, 0.1) 30%,
-    rgba(161, 102, 171, 0.1) 44%,
-    rgba(80, 115, 184, 0.1) 58%,
-    rgba(16, 152, 173, 0.1) 72%,
-    rgba(7, 179, 155, 0.1) 86%,
-    rgba(109, 186, 130, 0.1));
-}
+/*
+#web_bg {
+    background: linear-gradient(90deg, rgba(247,149,51,.1), rgba(243,112,85,.1) 15%, rgba(239,78,123,.1) 30%, rgba(161,102,171,.1) 44%, rgba(80,115,184,.1) 58%, rgba(16,152,173,.1) 72%, rgba(7,179,155,.1) 86%, rgba(109,186,130,.1)),
+                url('your-image-url.jpg');
+    background-size: cover; /* 背景图片适应 */
+    /*background-repeat: no-repeat;  /*禁止图片重复 
+}*/
 
-body[data-type="about"] #web_bg {
-  background: linear-gradient(90deg,
-    rgba(247, 149, 51, 0.1),
-    rgba(243, 112, 85, 0.1) 15%,
-    rgba(239, 78, 123, 0.1) 30%,
-    rgba(161, 102, 171, 0.1) 44%,
-    rgba(80, 115, 184, 0.1) 58%,
-    rgba(16, 152, 173, 0.1) 72%,
-    rgba(7, 179, 155, 0.1) 86%,
-    rgba(109, 186, 130, 0.1));
-}
 
 /* 头图透明 
 #page-header {
@@ -103,13 +91,16 @@ body[data-type="about"] #web_bg {
 .box {
     width: 166px;
     margin: 10px;
-    background-size: cover
+    background-size: cover;
 }
 
+/* 强制禁止 .imgbox 和 .pimgbox 悬停放大效果 */
 .pimgbox,
 .imgbox {
     border-radius: 10px;
     overflow: hidden;
+    transform: none !important; /* 强制禁止任何变换 */
+    transition: none !important; /* 强制禁止动画效果 */
 }
 
 .pimgbox {
@@ -143,6 +134,7 @@ body[data-type="about"] #web_bg {
         display: none;
     }
 }
+
 
 /* @font-face {
   font-family: Candyhome;
@@ -446,4 +438,16 @@ animation-delay: 1.8s;
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: 100%;
+}
+
+.imgbox {
+    height: 95px !important;
+    width: 166px !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.imgbox:hover {
+    transform: none !important;
+    transition: none !important;
 }

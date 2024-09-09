@@ -72,21 +72,13 @@ function createWinbox() {
   winbox.body.innerHTML = `
     <div id="article-container" style="padding:10px;">
     
-    <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#9796f0;display:block;width:100%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
+    <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#9796f0;display:block;width:100%;padding: 8px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 恢复默认背景</button></p>
     
     <h2 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h2>
     <div class="bgbox">
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/06/11/iCE0Qewy.jpg)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/06/11/iCE0Qewy.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/06/11/3OyleChr.png)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/06/11/3OyleChr.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/06/11/NQkhQKvl.jpg)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/06/11/NQkhQKvl.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/08/12/Wrg98cYH.png)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/08/12/Wrg98cYH.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/08/12/x1Hnbuyo.jpg)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/08/12/x1Hnbuyo.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/06/11/nU5jWw7L.png)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/06/11/nU5jWw7L.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/06/11/OB7CuJdL.png)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/06/11/OB7CuJdL.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/06/11/l9Tqu9iu.png)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/06/11/l9Tqu9iu.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/07/14/0vbeAP52.jpg)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/07/14/0vbeAP52.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://img1.imgtp.com/2023/08/12/zikZjy81.jpg)" class="imgbox" onclick="changeBg('url(https://img1.imgtp.com/2023/08/12/zikZjy81.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic.imgdb.cn/item/66dd301bd9c307b7e980d563.jpg)" class="imgbox" onclick="changeBg('url(https://pic.imgdb.cn/item/66dd301bd9c307b7e980d563.jpg)')"></a>
     </div>
+
     
     <h2 id="渐变色"><a href="#渐变色" class="headerlink" title="渐变色"></a>渐变色</h2>
     <div class="bgbox">
@@ -94,12 +86,6 @@ function createWinbox() {
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #544a7d, #ffd452)" onclick="changeBg('linear-gradient(to right, #544a7d, #ffd452)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)" onclick="changeBg('linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to left, #654ea3, #eaafc8)" onclick="changeBg('linear-gradient(to left, #654ea3, #eaafc8)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)" onclick="changeBg('linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #8360c3, #2ebf91)" onclick="changeBg('linear-gradient(to top, #8360c3, #2ebf91)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #108dc7, #ef8e38)" onclick="changeBg('linear-gradient(to top, #108dc7, #ef8e38)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)" onclick="changeBg('linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #f2709c, #ff9472)" onclick="changeBg('linear-gradient(to top, #f2709c, #ff9472)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #ddd6f3, #faaca8)" onclick="changeBg('linear-gradient(to top, #ddd6f3, #faaca8)')"></a>
     </div>
     
     <h2 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h2>
@@ -108,12 +94,6 @@ function createWinbox() {
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #D43766" onclick="changeBg('#D43766')"></a> 
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #BD49EB" onclick="changeBg('#BD49EB')"></a>
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #F5D3EC" onclick="changeBg('#F5D3EC')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #F59B9A" onclick="changeBg('#F59B9A')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #BA0900" onclick="changeBg('#BA0900')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #DDB7FF" onclick="changeBg('#DDB7FF')"></a>  
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ECC8F5" onclick="changeBg('#ECC8F5')"></a> 
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ddd6f3" onclick="changeBg('#ddd6f3')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #9796f0" onclick="changeBg('#9796f0')"></a>
     </div>
 `;
 }

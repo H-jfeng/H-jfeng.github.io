@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
@@ -38,7 +38,7 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
@@ -63,7 +63,7 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
@@ -88,14 +88,14 @@
       
       <categories>
           
-          <category> 分享 </category>
+          <category> 分享随笔 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 面试 </tag>
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -113,7 +113,7 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
@@ -138,7 +138,7 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
@@ -163,7 +163,7 @@
       
       <categories>
           
-          <category> 分享 </category>
+          <category> 分享随笔 </category>
           
       </categories>
       
@@ -188,7 +188,7 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
@@ -213,7 +213,7 @@
       
       <categories>
           
-          <category> 分享 </category>
+          <category> 分享随笔 </category>
           
       </categories>
       
@@ -238,7 +238,7 @@
       
       <categories>
           
-          <category> 学习 </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
@@ -248,6 +248,44 @@
             <tag> 计算机 </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>待更进</title>
+      <link href="/2022/08/19/11/"/>
+      <url>/2022/08/19/11/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 作品案例 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>待更进</title>
+      <link href="/2022/08/19/12/"/>
+      <url>/2022/08/19/12/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试系列 </category>
+          
+      </categories>
+      
       
     </entry>
     
