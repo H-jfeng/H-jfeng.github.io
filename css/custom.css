@@ -24,6 +24,11 @@
   background: transparent !important;
 }
 
+/* 文章页页脚透明 */
+#footer-wrap {
+  background: transparent !important;
+}
+
 /*
 #web_bg {
     background: url(https://pic.imgdb.cn/item/66dd05dad9c307b7e94309e1.jpg)
@@ -31,6 +36,36 @@
 
 #web_bg {
     background: linear-gradient(90deg,rgba(247,149,51,.1),rgba(243,112,85,.1) 15%,rgba(239,78,123,.1) 30%,rgba(161,102,171,.1) 44%,rgba(80,115,184,.1) 58%,rgba(16,152,173,.1) 72%,rgba(7,179,155,.1) 86%,rgba(109,186,130,.1));
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+body[data-type="essay"] #web_bg {
+  background: linear-gradient(90deg,
+    rgba(247, 149, 51, 0.1),
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1));
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+body[data-type="about"] #web_bg {
+  background: linear-gradient(90deg,
+    rgba(247, 149, 51, 0.1),
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1));
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat; 

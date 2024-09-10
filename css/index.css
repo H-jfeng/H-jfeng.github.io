@@ -18069,6 +18069,7 @@ body[data-type="essay"] #web_bg {
   color: var(--anzhiyu-white);
   overflow: hidden;
   margin-top: 0px;
+   background-color: #FF5733;
 }
 body[data-type="essay"] #page .author-content-item .card-content .banner-button-group .banner-button:hover {
   color: var(--anzhiyu-white);
