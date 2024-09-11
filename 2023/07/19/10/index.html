@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>STM32 | 金银财宝</title><meta name="keywords" content="嵌入式编程"><meta name="author" content="金银财宝"><meta name="copyright" content="金银财宝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#9796f0"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="STM32"><meta name="application-name" content="STM32"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#9796f0"><meta name="description" content="STM32 单片机编程STM32 常用外设函数 1.void GPIO_DeInit 所指定的 GPIO 外设就会被复位 2.void GPIO_AFIODeInit 所指定的 AFIO 外设复位 3.GPIO_Init 用结构体参数来初始化 GPIO 口 4.GPIO_StructInit 把结构体变量赋一个默认值 5.GPIO 读取函数uint8_t GPIO_ReadInputDataBit">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>STM32 | 金银财宝</title><meta name="keywords" content="嵌入式编程"><meta name="author" content="金银财宝"><meta name="copyright" content="金银财宝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#9796f0"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="STM32"><meta name="application-name" content="STM32"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#9796f0"><meta name="description" content="前言的前言文章的原标题是【Stm32学习笔记】，但是在这个浮躁的时代，不当个标题狗是不会有人点进来的。而既然是发布出来了，那肯定是想要别人点个赞，点个收藏关注一下的，所以在发布的时候还是换了一个浮夸点的标题了。 前言本文章主要记录本人在学习stm32过程中的笔记，也插入了不少的例程代码，方便到时候CV。绝大多数内容为本人手写，小部分来自stm32官方的中文参考手册以及网上其他文章；代码部分大多来自">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STM32">
 <meta property="og:url" content="https://www.jinyincaibao.online/2023/07/19/10/index.html">
 <meta property="og:site_name" content="金银财宝">
-<meta property="og:description" content="STM32 单片机编程STM32 常用外设函数 1.void GPIO_DeInit 所指定的 GPIO 外设就会被复位 2.void GPIO_AFIODeInit 所指定的 AFIO 外设复位 3.GPIO_Init 用结构体参数来初始化 GPIO 口 4.GPIO_StructInit 把结构体变量赋一个默认值 5.GPIO 读取函数uint8_t GPIO_ReadInputDataBit">
+<meta property="og:description" content="前言的前言文章的原标题是【Stm32学习笔记】，但是在这个浮躁的时代，不当个标题狗是不会有人点进来的。而既然是发布出来了，那肯定是想要别人点个赞，点个收藏关注一下的，所以在发布的时候还是换了一个浮夸点的标题了。 前言本文章主要记录本人在学习stm32过程中的笔记，也插入了不少的例程代码，方便到时候CV。绝大多数内容为本人手写，小部分来自stm32官方的中文参考手册以及网上其他文章；代码部分大多来自">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.imgdb.cn/item/66dd38cfd9c307b7e990ccdf.png">
 <meta property="article:published_time" content="2023-07-19T04:00:00.000Z">
@@ -160,7 +160,7 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><span id="fps"></span><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button" tabindex="-1"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.jingyingcaibao.online/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/66dadacbd9c307b7e94c2e19.png" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" href="https://chatgpt.com/chat" title="ChatGpt" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/66daa709d9c307b7e9042d3a.png" alt="ChatGpt"/><span class="back-menu-item-text">ChatGpt</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title"></div><div class="back-menu-list"><a class="back-menu-item" target="_blank"><img class="back-menu-item-icon"/><span class="back-menu-item-text"></span></a></div></div></div></div><a id="site-name" href="/"><div class="title">金银财宝</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=8836623898&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/charts/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 统计图</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" style="display: flex"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="anzhiyu.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%BC%96%E7%A8%8B/"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>嵌入式编程</span></a></span></div></div><h1 class="post-title">STM32</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-19T04:00:00.000Z" title="发表于 2023-07-19 12:00:00">2023-07-19</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-19T04:00:00.000Z" title="更新于 2023-07-19 12:00:00">2023-07-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">1.6k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="STM32"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为湖南"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>湖南</span></div></div></div><div class="post-ai-description"><div class="ai-title"><i class="anzhiyufont anzhiyu-icon-bilibili"></i><div class="ai-title-text">AI-摘要</div><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i><div id="ai-tag">Tianli GPT</div></div><div class="ai-explanation">AI初始化中...</div><div class="ai-btn-box"><div class="ai-btn-item">介绍自己</div><div class="ai-btn-item">生成本文简介</div><div class="ai-btn-item">推荐相关文章</div><div class="ai-btn-item">前往主页</div><div class="ai-btn-item" id="go-tianli-blog">前往tianli博客</div></div><script data-pjax>(function(){
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><span id="fps"></span><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button" tabindex="-1"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yz.chsi.com.cn/" title="研招网" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/66dadacbd9c307b7e94c2e19.png" alt="研招网"/><span class="back-menu-item-text">研招网</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title"></div><div class="back-menu-list"><a class="back-menu-item" target="_blank"><img class="back-menu-item-icon"/><span class="back-menu-item-text"></span></a></div></div></div></div><a id="site-name" href="/"><div class="title">金银财宝</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/charts/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 统计图</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/music/?id=9320926809&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" style="display: flex"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="anzhiyu.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%BC%96%E7%A8%8B/"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>嵌入式编程</span></a></span></div></div><h1 class="post-title">STM32</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-19T04:00:00.000Z" title="发表于 2023-07-19 12:00:00">2023-07-19</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-19T04:00:00.000Z" title="更新于 2023-07-19 12:00:00">2023-07-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">13.3k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>47分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="STM32"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为湖南"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>湖南</span></div></div></div><div class="post-ai-description"><div class="ai-title"><i class="anzhiyufont anzhiyu-icon-bilibili"></i><div class="ai-title-text">AI-摘要</div><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i><div id="ai-tag">Tianli GPT</div></div><div class="ai-explanation">AI初始化中...</div><div class="ai-btn-box"><div class="ai-btn-item">介绍自己</div><div class="ai-btn-item">生成本文简介</div><div class="ai-btn-item">推荐相关文章</div><div class="ai-btn-item">前往主页</div><div class="ai-btn-item" id="go-tianli-blog">前往tianli博客</div></div><script data-pjax>(function(){
   // 当前随机到的ai摘要到index
   let lastAiRandomIndex = -1;
   let animationRunning = true; // 标志变量，控制动画函数的运行
@@ -269,7 +269,7 @@
         key: "i5m48wFrNQDM9fwUs2Lz",
         Referer: "https://www.jingyingcaibao.club/"
       };
-      const truncateDescription = ("STM32" + "STM32 单片机编程, IIC通信, IIC协议层, AT24C02x2FEEPROM, AT24C02x2FEEPROM概述, AT24C02写数据时序, AT24C02读数据时序, 外设控制代码编写, 小车逻辑代码编写, 实现的功能单片机编程常用外设函数所指定的外设就会被复位所指定的外设复位用结构体参数来初始化口把结构体变量赋一个默认值读取函数用来读取输入数据寄存器某一个端口的输入值用来读取整个输入数据寄存器的返回值的每一位代表一个端口值用来读取输出数据寄存器的某一位用来读取整个输出寄存器的输出函数设置为高电平设置为低电平为低电平为高电平十六进制设置是的意思的程序编写尽量考虑将相同的类型放在同一函数里开启内部时钟即定时器的基准时钟和整个外设的工作时钟都会同时打开了定时器常用函数是定时器时基单元初始化给结构体设置默认值用来使能计数器用来使能中断输出信号选择内部时钟选择其他定时器的时钟选择捕获通道的时钟选择通过外部时钟模式输入的时钟单独的函数可以方便更改结构体的关键参数单独写预分频值的用来改写计数器的计数模式自动重装器预装功能配置给计数器写入一个值如果你想手动给一个计数值就可以用这个函数给自动重装器写入一个值如果你想手动给一个自动重装值就可以用这个函数获取当前计数器的值如果你想看当前计数器计到哪里了就可以用这个函数结构体的参数配置重复计数器高级定时器才有的不重要重要两个参数配置配置定时频率定时也就是定时频率为取值在之间定时器可以用来定时中断是定时器的中断函数当定时器产生更新中断是这个函数就会自动被执行暂停想要让定时器每秒自动帮我们加一下这个变量用来初始化输出比较单元不同的通道对应的口不一样的即函数对应不同的口使用的也就是通道输出那它只能在的引脚输出需要查看引脚定义表其他外设也是一样的如使用的引脚那就是无法更改可以用重映射解决这四个用来单独更改寄存器值的函数我们在运行的时候可以用它更改占空比是设置寄存器的值给输出比较单元的结构体赋初始值结构体中的变量决定了输出的占空比决定了的周期计算公式频率占空比因为占空比为所以为调节亮度用的分频率外设文件主要是放实现功能的函数主要是利用功能函数转串口模块通信引脚为的表示发送接的就是串口模块的接收的表示接收串口模块的就是发送常用函数发送数据就是写寄存器接收数据就是读寄存器寄存器是意思是地址有一些口是不能用的不如是用来做调试的端口杜邦线橙色是插在正极供电孔灰色是插在负极供电孔红色的是控制脚插在引脚处的和是的通信引脚需要接在单片机的通信的引脚上用的是口模拟的如果是口模拟的通信这两个端口就可以任意接在口上自己含有一个现成的驱动模块存的是的字库数据可以用来显示字符图形显示一个字符自带的调试的用途不清楚程序是如何运行的想要看一大堆变量却不方便显示的看一下寄存器是不是配置正确了在这个函数中就以这个函数为思考对象返回类型是发送数据整数类型是接受数据通信协议层概述是通过硬件地址可编程地址进行通信的和分别为时钟线和数据线高四位是固定的即硬件地址是厂家生产设定的后三位是可编程地址写数据时序为等待应答读数据时序多了一个发送设备地址的节点读和写的时序开始都有发送设备的节点外设控制代码编写函数名描述检测药品装载过程等待药品装载装药取药输入无输出等待装药取药小车逻辑代码编写实现的功能控制使用正点原子家的函数中的位带操作检测药品使用正点原子家的函数中的位带操作").trim().substring(0, num)
+      const truncateDescription = ("STM32" + "前言的前言, 前言, 笔记, Stm32 三种开发方式的区别, 为什么Stm32初始化外设都需要先打开时钟, GPIO八种模式, Stm32寄存器映射, Stm32中的位段映射, Stm32中的时钟系统, Stm32外设, Stm32的端口复用与重映射, Stm32中断, Stm32的USART使用, Stm32的外部中断 (EXTI), Stm32的模数转换(ADC), Stm32中的直接存储器存取 (DMA), Stm32中的控制器局域网 (bxCAN)使用前言的前言文章的原标题是学习笔记但是在这个浮躁的时代不当个标题狗是不会有人点进来的而既然是发布出来了那肯定是想要别人点个赞点个收藏关注一下的所以在发布的时候还是换了一个浮夸点的标题了前言本文章主要记录本人在学习过程中的笔记也插入了不少的例程代码方便到时候绝大多数内容为本人手写小部分来自官方的中文参考手册以及网上其他文章代码部分大多来自江科大和正点原子的例程注释是我自己添加配图来自江科大正点原子中文参考手册笔记内容都是平时自己一点点添加不知不觉都已经这么长了其实每一个标题其实都可以发一篇但是这样搞太琐碎了所以还是就这样吧喜欢的话就点赞收藏关注一下本人技术有限如有错误欢迎在评论区或者私信指点笔记本笔记内容以型号为研究对象三种开发方式的区别寄存器模式最底层的开发运行速度最快实际上也是使用了固件库但是不是使用固件库的函数而是使用了固件库的定义包括宏定义结构体定义和的开发差不多但因为的寄存器太多实际开发手动配置大量寄存器极其耗费时间同时在没有注释的情况下可读性差所以较少使用标准库模式基于寄存器进行了函数的封装而由于函数封装以及内部大量的检查参数有效性的代码运行速度相对于寄存器模式较慢封装之后可以根据函数名字就能明白代码作用容易记忆使用方便所以较多人使用库模式全称是抽象印象层相比于标准库更加深入的封装有句柄回调函数等概念有点类似开发因此相对于标准库模式有更好的可移植性可在不同芯片的移植但代价就是更多的性能损失说明运行速度性能损失的问题都只是相对问题实际上大多数情况下都可以忽略为什么初始化外设都需要先打开时钟每个外设都有独立时钟如果不打开时钟外设就不能用原因就是为了低功耗节省用电不用的外设可以不打开时钟开启外设时钟的方法外设总线外设总线外设总线八种模式模式介绍浮空输入若引脚悬空则电平不确定上拉输入内部连接上拉电阻悬空时默认高电平下拉输入内部连接下拉电阻悬空时默认低电平模拟输入无效引脚直接接入内部开漏输出高电平为高阻态低电平接负极推挽输出高电平接低电平接复用开漏输出由片上外设控制高电平为高阻态低电平接复用推挽输出由片上外设控制高电平接低电平接高阻态是一个数字电路里常见的术语指的是电路的一种输出状态既不是高电平也不是低电平如果高阻态再输入下一级电路的话对下级电路无任何影响和没接一样如果用万用表测的话有可能是高电平也有可能是低电平随它后面接的东西定的电路分析时高阻态可做开路理解你可以把它看作输出输入电阻非常大它的极限状态可以认为悬空开路也就是说理论上高阻态不是悬空它是对地或对电源电阻极大的状态而实际应用上与引脚的悬空几乎是一样的开漏输出和推挽输出的区别主要是开漏输出只可以输出强低电平高电平得靠外部电阻拉高输出端相当于三极管的集电极适合于做电流型的驱动其吸收电流的能力相对强一般以内推挽输出可以输出强高低电平连接数字器件建议看推挽开漏高阻这都是谁想出来的词更加详细请看口种模式详解寄存器映射以最简单的讲将相关的固件库代码拿出来变很容易明白外设基地址总线基地址基地址结构很明显可以看出来固件库代码的条理非常清晰而且非常巧妙除了第一个外设基地址是固定值其他的基地址都是通过上一级基地址偏移计算出来的最后是一个指定地址强制转换结构这样我们如果想要操作寄存器则可以用将寄存器位置设置寄存器位实际作用是设置为推挽输出输出高电平另外可以注意到所有地址都是使用了定义常量值这是因为编译器在进行项目编译的时候对于常量间的计算是能直接优化成常量值如进行预编译处理之后为然后优化为中的位段映射存储器映像包括两个位段区这两个位段区将别名存储器区中的每个字映射到位段存储器区的一个位在别名存储区写入一个字具有对位段区的目标位执行读改写操作的相同效果在里外设寄存器和都被映射到一个位段区里这允许执行单一的位段的写和读操作下面的映射公式给出了别名区中的每个字是如何对应位带区的相应位的其中是别名存储器区中字的地址它映射到某个目标位是别名区的起始地址是包含目标位的字节在位段里的序号是目标位所在位置例子下面的例子说明如何映射别名区中地址为的字节中的位对地址的写操作与对中地址字节的位执行读改写操作有着相同的效果读地址返回中地址字节的位的值或本节内容摘抄至参考手册中文中的时钟系统有个时钟源中文名称解释高速内部时钟振荡器频率为精度不高高速外部时钟可接石英陶瓷谐振器或者接外部时钟源频率范围为低速内部时钟振荡器频率为提供低功耗时钟一般用于看门狗担当一个低功耗时钟源的角色它可以在停机和待机模式下保持运行为独立看门狗和自动唤醒单元提供时钟低速外部时钟接频率为的石英晶体一般用于实时时钟锁相环倍频输出本质上与其他四个时钟源不一样这个时钟源是将时钟输入源进行倍频再输出时钟输入源可选择为或倍频可选择为倍但是其输出频率最大不得超过倍频器的原理时钟安全系统中还有一个时钟安全系统在出现意外情况下还挺有用的不过既然说是意外就说明出现的概率并不大因此这个功能没有什么存在感时钟安全系统可以通过软件被激活一旦其被激活时钟监测器将在振荡器启动延迟后被使能并在时钟关闭后关闭如果时钟发生故障振荡器将被自动关闭时钟失效事件将被送到高级定时器和的刹车输入端并产生时钟安全中断允许软件完成营救操作此中断连接到的中断不可屏蔽中断如果振荡器被直接或间接地作为系统时钟间接的意思是它被作为输入时钟并且时钟被作为系统时钟时钟故障将导致系统时钟自动切换到振荡器同时外部振荡器被关闭在时钟失效时如果振荡器时钟被分频或未被分频是用作系统时钟的的输入时钟也将被关闭参考手册中文外设是的缩写高级高性能总线是的缩写高级外设总线从图中就可以看出都是系统总线进行桥接出来的另外最高只有最高可以达到的各种外设口定时器数模转换器模数转换器串口串行外设接口集成电路总线集成电路内置音频总线外部中断事件控制器通用和复用功能独立看门狗窗口看门狗备份寄存器实时时钟全速设备接口控制器局域网内核外设嵌套中断向量控制器的端口复用与重映射有很多的口同时有很多的外设这些口默认是用来做普通的输出输入引脚而配置为外设需要用到口就叫口的复用如管脚名称主功能复位后默认复用功能重定义功能无无以下代码则是配置为复用其实作为输入引脚并不区分复用不复用的因为输出只能有一个外设控制但是输入可以多个外设读取不冲突需要使能和复用外设的时钟使用默认复用功能时时钟不需要使能初始化引脚为复用推挽输出复用推挽输出初始化引脚为上拉输入每个内置外设都有若干个输入输出引脚一般这些引脚的输出端口都是固定不变的但在实际使用中为了让设计工程师可以更好地安排引脚的走向和功能在中引入了外设引脚重映射的概念即一个外设的引脚除了具有默认的端口外还可以通过设置重映射寄存器的方式把这个外设的引脚映射到其它的端口管脚名称主功能复位后默认复用功能重定义功能如外设的引脚除了外还可以使用使能重映射之后的时钟使能复用外设的时钟重映射需要使能时钟因为下一行代码是配置寄存器实际上是对进行操作重映射引脚初始化与引脚略部分重映射完全重映射部分重映射功能外设的部分引脚重新映射还有一部分引脚是原来的默认引脚完全重映射功能外设的所有引脚都重新映射何时需要使能时钟根据手册说明对寄存器事件控制寄存器复用重映射和调试配置寄存器和外部中断配置寄存器进行读写操作前应当首先打开的时钟说人话就是在用到外部中断和端口重映射的时候要使能时钟中断中有个可编程外设中断配置中断的代码如下抢占优先级优先级高的能打断优先级低响应优先级当抢占优先级相同时响应优先级高的先执行注意优先级的值越小优先级越高越先执行总结抢占优先级高的可以中断嵌套响应优先级高的可以优先排队抢占优先级和响应优先级均相同的按中断号排队可能有些朋友没办法理解响应优先级的优先排队的作用那我再解释一下优先排队的概念假设一个抢占优先级的中断进行过程中先触发了抢占优先级响应优先级的中断再触发了抢占优先级响应优先级的中断则中断结束后理论上应该按照先来后到先执行中断然后再执行中断的但实际上因为中断响应优先级更高因此中断拥有优先排队插队的权限因此最终是先执行中断再执行中断位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级设置优先级分配配置设置中断通道类型设置中断使能优先级的值越小优先级越高越先执行设置抢占优先级设置响应优先级初始化中断通道的使用使用之前需要先启用外设初始化引脚为复用推挽输出初始化引脚为上拉输入初始化为波特率无硬流控需要收发无校验位停止位开启标志位到的输出设置优先级分配配置配置的中断最后使能填充数据至的寄存器发送寄存器为空标志位对的写操作时将该位清零等待发送完成中断函数读取收到的字节这里可以省略手动清除标志位因为对的读操作可以将该位清零的外部中断配置外部中断的示例代码使能时钟因为使用到了的中断引脚选择功能所以要使能的时钟实际上是对进行操作将信号输出至的号线初始化使用中断下降沿触发设置优先级分配配置配置外部中断中断函数清除中断标志位库函数和区别可以很容易看出来代码上的区别在部分部分即的判断多了一个条件由手册可以知道是挂起寄存器没有发生触发请求发生了选择的触发请求是中断屏蔽寄存器屏蔽来自线上的中断请求开放来自线上的中断请求因此只是纯粹读取中断标志位的状态但是实际上这并不准确因为设置寄存器可以对该中断进行屏蔽而除了读取中断标志位还查看寄存器是否对该中断进行屏蔽另外和则是什么区别都没有内部代码完全一样的电源控制的工作电压为通过内置的电压调节器提供所需的电源当主电源掉电后通过脚为实时时钟和备份寄存器提供电源实际上脚还可以为振荡器和端口供电可以保证当主电源被切断时能继续工作但当使用供电时无法用作管脚名称主功能复位后默认复用功能功能用于侵入检测校准时钟闹钟或秒输出引脚引脚一般来说脚接一个纽扣电池供电如正点原子的开发板从图中可以看出来除了上面说到的之外寄存器也在后备供电区域内但实际上寄存器只有外部低速振荡器使能外部低速时钟振荡器旁路时钟源选择和时钟使能位处于备份域另外的外部低速就绪与备份域软件复位不处于备份域因为没有必要中的备份寄存器备份寄存器拥有以下特性当电源被切断他们仍然由维持供电字节数据后备寄存器中容量和小容量产品或字节数据后备寄存器大容量和互联型产品当系统在待机模式下被唤醒或系统复位或电源复位时他们也不会被复位寄存器是位的可寻址寄存器可以用半字位或字位的方式操作这些外设寄存器备份寄存器的复位软件复位备份区域复位可由设置备份域控制寄存器中的位产生在和两者都掉电的情况下或上电将引发备份区域复位后备区域的保护在复位之后对后备区域备份寄存器和的访问将被禁止后备区域被保护以防止可能存在的意外的写操作需要执行以下操作可以使能对后备区域的访问通过设置寄存器的和位来打开电源和后备接口的时钟说人话就是使能电源控制与备份寄存器的时钟电源控制寄存器的位来使能对后备寄存器和的访问寄存器基础操作示例使能和外设时钟读取寄存器启用时钟后就可以读取了对备份寄存器进行软件复位取消后备区域的写保护但如果的时钟是无法进行写保护向寄存器写写之前要取消写保护才可以中的实时时钟的本质与定时器类似就是一个计数器每秒加一让其可以实现更新时间的预分配系数最高为的次方的计数器是位的的时钟源可以选择以下三种低速外部时钟低速内部时钟通常用这个作为时钟源进行分配可以得到的时钟信号高速外部时钟的分频的个可屏蔽中断闹钟中断用来产生一个软件可编程的闹钟中断秒中断用来产生一个可编程的周期性中断信号最长可达秒溢出中断指示内部可编程计数器溢出并回转为的状态的时钟源的配置是设置备份域控制寄存器里的位因此除非备份域复位不然此选择不能被改变读寄存器核完全独立于接口软件通过接口访问的预分频值计数器值和闹钟值但是相关的可读寄存器只在与时钟进行重新同步的时钟的上升沿被更新标志也是如此的这意味着如果接口曾经被关闭而读操作又是在刚刚重新开启之后则在第一次的内部寄存器更新之前从上读出的寄存器数值可能被破坏了通常读到下述几种情况下能够发生这种情形发生系统复位或电源复位系统刚从待机模式唤醒系统刚从停机模式唤醒所有以上情况中接口被禁止时复位无时钟或断电核仍保持运行状态因此若在读取寄存器时的接口曾经处于禁止状态则软件首先必须等待寄存器中的位寄存器同步标志被硬件置写寄存器必须设置寄存器中的位使进入配置模式后才能写入预分频装载寄存器计数器寄存器闹钟寄存器另外对任何寄存器的写操作都必须在前一次写操作结束后进行可以通过查询寄存器中的状态位判断寄存器是否处于更新中仅当状态位是时才可以写入寄存器配置过程查询位直到的值变为置值为进入配置模式对一个或多个寄存器进行写操作清除标志位退出配置模式查询直至位变为以确认写操作已经完成仅当标志位被清除时写操作才能进行这个过程至少需要个周期初始化与中断使能和外设时钟取消后备区域和后备寄存器的写保护判断对备份寄存器进行软件复位使能外设低速晶振检查指定的标志位设置与否等待低速晶振就绪超时说明初始化时钟失败晶振有问题设置作为时钟源使能时钟要先设置时钟源等待寄存器同步等待最近一次对寄存器的写操作完成使能的秒中断等待最近一次对寄存器的写操作完成设置预分频的值等待最近一次对寄存器的写操作完成设置计数值时间戳实际上用不上因为库函数封装中已经包含不需要自己手动额外写允许配置退出配置模式向指定的后备寄存器中写入用户程序数据系统继续计时等待寄存器同步使能秒中断等待最近一次对寄存器的写操作完成初始化中断通道全局中断先占优先级位从优先级位先占优先级位从优先级位使能该通道中断秒钟中断等待寄存器同步读取寄存器前必须做获取当前计数值时间戳闹钟中断清闹钟中断清秒中断与溢出中断的低功耗模式有三种低功耗模式等待中断如果执行指令进入睡眠模式任意一个被嵌套向量中断控制器响应的外设中断都能将系统从睡眠模式唤醒等待事件如果执行指令进入睡眠模式则一旦发生唤醒事件时微处理器都将从睡眠模式退出除了进行低功耗模式外还可以在正常运行时使用下面方法降低功耗降低系统时钟关闭和总线上未被使用的外设时钟睡眠模式在睡眠模式下仅停止运作对于其他外设将保持原本进入睡眠模式的状态有两种选项可用于选择睡眠模式进入机制如果位被清除当或被执行时微控制器立即进入睡眠模式如果位被置位系统从最低优先级的中断处理程序中退出时微控制器就立即进入睡眠模式区别就是在于是否处理完当前的中断再进入睡眠因为一般来说中断具有很高的实时性不应该在中断中途进入睡眠停止模式在停止模式下除了内存和寄存器内容被保留下来外其他时钟将会被停止所有的引脚都保持它们在运行模式时的状态另外进入停止模式需要等待闪存编程与访问完成不然会等待完成再进入当一个中断或唤醒事件导致退出停止模式时振荡器将被选为系统时钟为了进入停止模式所有的外部中断的请求位挂起寄存器和的闹钟标志都必须被清除否则停止模式的进入流程将会被跳过程序继续运行说人话就是要把中断标志清除不然刚进入停止模式就会被唤醒相对于没进进入停止模式可以配置以下外设正常运行独立看门狗可通过写入看门狗的键寄存器或硬件选择来启动一旦启动了独立看门狗除了系统复位它不能再被停止实时时钟通过备份域控制寄存器的位来设置内部振荡器通过控制状态寄存器的位来设置外部振荡器通过备份域控制寄存器的位设置与如果在进入该模式前和没有被关闭那么这些外设仍然消耗电流通过设置寄存器的位和寄存器的位为可关闭这个外设电压调节器可以通过配置电源控制寄存器的位使其运行在正常或低功耗模式若配置电压调节器为低功耗模式当系统从停止模式退出时将会有一段额外的启动延时唤醒时间电压调节器从低功耗唤醒的时间如果在停止模式期间保持内部调节器开启则退出启动时间会缩短但相应的功耗会增加待机模式待机模式可实现系统的最低功耗待机模式下只有备份寄存器和待机电路维持供电从待机唤醒后差不多和复位一次差不多除了电源控制状态寄存器所有寄存器被复位和寄存器内容全部丢失进入待机模式可以配置正常运行的外设只有停机模式的前四项在待机模式下所有的引脚处于高阻态除了以下的引脚复位引脚始终有效当被设置为防侵入或校准输出时的引脚被使能的唤醒引脚简单总结一下睡眠模式仅停止运行保存进入睡眠之前状态停止模式仅保留内存和寄存器的数据保存进入睡眠之前状态待机模式仅保留备份寄存器保持高阻态低功耗模式下的自动唤醒利用可以实现定时唤醒低功耗模式实际上是使用了的闹钟中断若要实现低功耗模式下的自动唤醒的时钟源只能选择低功耗外部晶振或者低功耗内部振荡器为了用闹钟事件将系统从停止模式下唤醒必须进行如下操作配置外部中断线为上升沿触发若要从待机模式唤醒则不必配置配置使其可产生闹钟事件三种模式的进入代码示例进入睡眠模式与属于核心指令库函数中是汇编指令与位属于架构的寄存器在手册中没有讲到寄存器地址但是固件库也定义了相关的内容进入睡眠模式库函数没有封装因此只能自己动手丰衣足食理论上位应该是不需要手动清除的它默认为但是为了防止意外情况就多写一行代码清除深睡眠位根据需要选择是否允许在中断过程中进入睡眠清除位设置位进入等待中断的睡眠与下面一行二选一即可进入等待事件的睡眠进入停机模式使能外设时钟电压调节器开等待中断模式进入待机模式使能外设时钟使能引脚的唤醒管脚功能如果不需要使用引脚上升沿唤醒待机可以注释进入待命模式的模数转换规则组用于常规使用注入组用于突发情况使用功能规则组和注入组的关系有点类似主线程和中断的关系若触发开始转换注入组可以对正在转换的规则组进行插队输入通道因为有双模式两个配合工作因此和的通道对应的基本一样除了多出来的温度传感器与内部参考电压通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道温度传感器通道内部参考电压配置扫描模式当开始转换后会根据通道数量按顺序进行次转换全部转换完成后设置规则组转换结束标志位非扫描模式当开始转换后仅会对规则组位置一的通道进行次转换转换完成设置标志位单次转换在开始转换后仅仅对规则组整组进行一次转换连续转换在开始转换后会循环对规则组整组进行转换间断模式在开始转换后进行次转换后停下并记录当前位置当下次开始转换时按顺序下去需要使用设置的值并使用使能模式举例被转换的通道有第一次触发转换的序列为第二次触发转换的序列为第三次触发转换的序列为并产生事件注意这里因为到尾了所以只转换了两个通道第四次触发转换的序列总结一下如果将转换比喻为使用音乐软件听歌的话就是为歌单增加歌曲并设置歌曲的序列就是歌单中歌曲的数量扫描模式就是播放整个歌单的全部歌曲非扫描模式就是只播放歌单的第一首歌曲单次转换就是只播放一次歌单中全部歌曲扫描模式歌单的第一首歌曲非扫描模式连续转换就是循环播放歌单中全部歌曲扫描模式歌单的第一首歌曲非扫描模式扫描模式单次转换歌曲中全部歌曲按顺序全部播放一次非扫描模式单次转换只播放一次歌单的第一首歌曲扫描模式连续转换列表循环非扫描模式连续转换单曲循环间断模式就是一次听首歌曲并记下听到第几首了下次接着听下去当歌单全部歌曲听完后再回到第一首校准有一个内置的校准模式能大幅减少因内部电容器组的变化而造成的准精度误差因此建议每次上电后都执行一次校准在参考手册中文版本中章节有这样一句话启动校准前必须处于关电状态超过至少两个时钟周期事实上是公司的描写错误而在官网中找到的版本中已经被更正为原文翻译在开始校准之前必须处于通电状态位至少两个时钟周期使能时钟配置的时钟周期为高速时钟的分频配置为输入口模式为模拟输入该模式是专用配置规则组将通道放在第一个位置采样时间为个周期初始化工作在独立模式数据右对齐外部触发源选择不使用外部触发是否启用连续模式是否启用扫描模式进行的通道数量使能进行校准将校准复位等待校准复位完成开始校准等待校准完成软件触发开始转换等待转换完成返回转换得到的数值中的直接存储器存取全程直接存储器存取功能就是数据复制优点就是能代替负责数据复制让空出来处理其他任务另外根据查资料得到的搬运速度没有搬运的速度快的详细可以看这里数据复制方向支持存储器到存储器存储器到外设外设到存储器其中因为一般为只读所以存储器到存储器为到到数据宽度支持字节位半字位字位支持不同宽度的数据复制复制对齐为低位对齐例如半字复制到字节则会把低八位复制过去结果为半字复制字则会把半字复制到字的低位结果为地址自增模式正常模式复制完就停下循环模式复制完重新开始循环模式不可用于存储器到存储器的请求对应通道外设通道通道通道通道通道通道通道的请求对应通道外设通道通道通道通道通道通道通道通道通道中断与标志位中断事件事件标志位使能控制位通道传输过半传输完成传输错误全局标志一次性控制三个标志位内存到内存例子用于二次开始的时候重置复制次数使能的时钟记录一下开始复制的时候要设置外设基地址当用存储器到存储器时可写存储器地址外设数据宽度外设地址自增存储器基地址存储器数据宽度存储器地址自增数据传输方向外设为源地址外设为目标地址需要复制次数总复制长度数据宽度复制次数模式正常模式循环模式是否为存储器到存储器如果是则只能软件触发开始优先级配置的通道这里因为是存储器到存储器所以通道可以随便选因为还没有给使能因此没有开始转换赋值复制次数之前要失能赋值复制次数使能开始转换等待复制完成清除标志位外设到存储器例子多通道用于保存转换完成的结果使能时钟配置时钟频率为时钟的分频配置个口配置规则组初始化为连续扫描模式具体看上面存储器到存储器例子外设基地址为的寄存器循环模式使能时钟因为非存储器到存储器所以要硬件请求才能触发开始复制允许可以提交请求触发的数据复制使能校准软件触发开始转换因为为连续扫描模式为循环模式所以只需要触发开始转换后硬件就会不断得转换并把数据复制到数组中的集成电路总线在中使用有两种方案一是软件模拟二是硬件两种方案各有各的优缺点因此了解清楚才能选择适合的软件模拟优点可以用在任何口不会发生卡死最多出错硬件优点速度比软件模拟快容易出现卡死的问题关于硬件卡死问题具体可以看卡死原因分析浅谈硬件具体测试结论硬件到底是不是个坑总结一下的硬件问题当时钟频率太高时容易出问题出问题的概率和时钟频率成正比当存在中断会打断硬件工作时中断会导致容易出现问题硬件的发送流程图硬件的接收流程图使用硬件作为主机发送接收示例代码定义一个模块的从机地址使能与时钟初始化配置与为复用开漏输出开始初始化使用模式因为的硬件外设支持扩展协议因此要指定模式七位从机地址自己作为从机时的地址默认发送应答配置时钟线占空比为低高电平之比为仅在的高速模式下有效标准模式下为原因是低电平时需要变化电平因此需要更多时间时钟频率单位封装一个函数用于等待标准事件包含超时返回避免卡死指定地址写等待总线不繁忙生成一个起始信号等待发送七位从机地址进行寻找从机表示写会自动设置最低位为等待发送一个字节寄存器地址等待发送一个字节数据等待生成停止信号指定地址读等待总线不繁忙生成一个起始信号等待发送七位从机地址进行寻找从机表示写会自动设置最低位为发送一个字节寄存器地址等待再次生成起始信号等待发送七位从机地址进行寻找从机表示读会自动设置最低位为等待需要在接收之前设置为非应答因为硬件会在接收完后直接发送应答非应答没有等待时间生成停止信号但是会在当前字节传输或在当前起始条件发出后产生停止条件因此可以提前给等待读取接收到的数据恢复为默认发送应答中的串行外设接口使用使用的示例例子使能时钟初始化配置为复用推挽输出配置为上拉开始初始化设置单向或者双向的数据模式设置为双线双向全双工设置工作模式设置为主设置的数据大小发送接收位帧结构串行同步时钟的空闲状态为高电平串行同步时钟的第二个跳变沿数据被采样信号由硬件管脚还是软件使用位管理内部信号有位控制设置波特率预分频的值波特率预分频值为指定数据传输从位还是位开始数据传输从位开始值计算的多项式使能外设设置的波特率预分频值清零位设置速度发送一个数据并收回一个数据检查指定的标志位设置与否发送缓存空标志位通过外设发送一个数据检查指定的标志位设置与否接受缓存非空标志位返回通过最近接收的数据中的控制器局域网使用中的架构设置速率总线的速率常用的都是到一般使用尽管它的最大速率是但明显的是最大值往往要求环境更加高导致容易出现问题工作模式初始化模式正常模式睡眠模式测试模式静默模式回环模式回环静默模式调试模式当处于调试模式时核心处于暂停状态提供配置可以使继续正常工作或停止工作是异步通讯因此需要这个发送个发送邮箱可以配置发送优先级按写入先后按标识符数值自动重传发送失败则自动重新发送直至成功接收个三级深度接收邮箱共可以接收个报文注是英文的缩写是一种先进先出的数据缓存器锁定模式锁定状态下接收溢出则丢弃非锁定状态下接收溢出则覆盖过滤器个位宽可配置的标识符过滤器组一个位宽可配置为个位掩码模式个位标识符列表模式个位掩码模式个位标识符列表模式过滤模式标识符列表模式丢弃掉非指定标识符的报文掩码模式可以指定标识符某些位是非必要的后进行比对测试模式图解过滤器使能时钟初始化为上拉输入初始化为复用推挽输出单元设置非时间触发通信模式软件自动离线管理睡眠模式通过软件唤醒清除的位禁止报文自动传送报文不锁定新的覆盖旧的优先级由报文标识符决定模式设置普通模式回环模式设置波特率预分频系数重新同步跳跃宽度过滤器可以为掩码模式位位标识符位掩码要求一致不限制关联到使能过滤器滤波器初始化用于开启中断消息挂号中断允许主优先级为次优先级为中断函数模板发送报文返回为成功否则失败标准标识符设置扩展标示符表明为标准帧表明为数据帧要发送的数据长度复制数据到结构体填入发送邮箱为被填入的邮箱号等待发送结束超时接收数据查询成功返回数据长度没有返回查询邮箱有多少条数据读取数据").trim().substring(0, num)
 
       const queryParams = `key=${options.key}&content=${truncateDescription}`;
       const requestOptions = {
@@ -392,7 +392,7 @@
       mode = "tianli";
       document.getElementById("ai-tag").innerHTML = "Tianli GPT";
 
-      const truncateDescription = ("" + "STM32 单片机编程, IIC通信, IIC协议层, AT24C02x2FEEPROM, AT24C02x2FEEPROM概述, AT24C02写数据时序, AT24C02读数据时序, 外设控制代码编写, 小车逻辑代码编写, 实现的功能单片机编程常用外设函数所指定的外设就会被复位所指定的外设复位用结构体参数来初始化口把结构体变量赋一个默认值读取函数用来读取输入数据寄存器某一个端口的输入值用来读取整个输入数据寄存器的返回值的每一位代表一个端口值用来读取输出数据寄存器的某一位用来读取整个输出寄存器的输出函数设置为高电平设置为低电平为低电平为高电平十六进制设置是的意思的程序编写尽量考虑将相同的类型放在同一函数里开启内部时钟即定时器的基准时钟和整个外设的工作时钟都会同时打开了定时器常用函数是定时器时基单元初始化给结构体设置默认值用来使能计数器用来使能中断输出信号选择内部时钟选择其他定时器的时钟选择捕获通道的时钟选择通过外部时钟模式输入的时钟单独的函数可以方便更改结构体的关键参数单独写预分频值的用来改写计数器的计数模式自动重装器预装功能配置给计数器写入一个值如果你想手动给一个计数值就可以用这个函数给自动重装器写入一个值如果你想手动给一个自动重装值就可以用这个函数获取当前计数器的值如果你想看当前计数器计到哪里了就可以用这个函数结构体的参数配置重复计数器高级定时器才有的不重要重要两个参数配置配置定时频率定时也就是定时频率为取值在之间定时器可以用来定时中断是定时器的中断函数当定时器产生更新中断是这个函数就会自动被执行暂停想要让定时器每秒自动帮我们加一下这个变量用来初始化输出比较单元不同的通道对应的口不一样的即函数对应不同的口使用的也就是通道输出那它只能在的引脚输出需要查看引脚定义表其他外设也是一样的如使用的引脚那就是无法更改可以用重映射解决这四个用来单独更改寄存器值的函数我们在运行的时候可以用它更改占空比是设置寄存器的值给输出比较单元的结构体赋初始值结构体中的变量决定了输出的占空比决定了的周期计算公式频率占空比因为占空比为所以为调节亮度用的分频率外设文件主要是放实现功能的函数主要是利用功能函数转串口模块通信引脚为的表示发送接的就是串口模块的接收的表示接收串口模块的就是发送常用函数发送数据就是写寄存器接收数据就是读寄存器寄存器是意思是地址有一些口是不能用的不如是用来做调试的端口杜邦线橙色是插在正极供电孔灰色是插在负极供电孔红色的是控制脚插在引脚处的和是的通信引脚需要接在单片机的通信的引脚上用的是口模拟的如果是口模拟的通信这两个端口就可以任意接在口上自己含有一个现成的驱动模块存的是的字库数据可以用来显示字符图形显示一个字符自带的调试的用途不清楚程序是如何运行的想要看一大堆变量却不方便显示的看一下寄存器是不是配置正确了在这个函数中就以这个函数为思考对象返回类型是发送数据整数类型是接受数据通信协议层概述是通过硬件地址可编程地址进行通信的和分别为时钟线和数据线高四位是固定的即硬件地址是厂家生产设定的后三位是可编程地址写数据时序为等待应答读数据时序多了一个发送设备地址的节点读和写的时序开始都有发送设备的节点外设控制代码编写函数名描述检测药品装载过程等待药品装载装药取药输入无输出等待装药取药小车逻辑代码编写实现的功能控制使用正点原子家的函数中的位带操作检测药品使用正点原子家的函数中的位带操作").trim().substring(0, 1000);
+      const truncateDescription = ("" + "前言的前言, 前言, 笔记, Stm32 三种开发方式的区别, 为什么Stm32初始化外设都需要先打开时钟, GPIO八种模式, Stm32寄存器映射, Stm32中的位段映射, Stm32中的时钟系统, Stm32外设, Stm32的端口复用与重映射, Stm32中断, Stm32的USART使用, Stm32的外部中断 (EXTI), Stm32的模数转换(ADC), Stm32中的直接存储器存取 (DMA), Stm32中的控制器局域网 (bxCAN)使用前言的前言文章的原标题是学习笔记但是在这个浮躁的时代不当个标题狗是不会有人点进来的而既然是发布出来了那肯定是想要别人点个赞点个收藏关注一下的所以在发布的时候还是换了一个浮夸点的标题了前言本文章主要记录本人在学习过程中的笔记也插入了不少的例程代码方便到时候绝大多数内容为本人手写小部分来自官方的中文参考手册以及网上其他文章代码部分大多来自江科大和正点原子的例程注释是我自己添加配图来自江科大正点原子中文参考手册笔记内容都是平时自己一点点添加不知不觉都已经这么长了其实每一个标题其实都可以发一篇但是这样搞太琐碎了所以还是就这样吧喜欢的话就点赞收藏关注一下本人技术有限如有错误欢迎在评论区或者私信指点笔记本笔记内容以型号为研究对象三种开发方式的区别寄存器模式最底层的开发运行速度最快实际上也是使用了固件库但是不是使用固件库的函数而是使用了固件库的定义包括宏定义结构体定义和的开发差不多但因为的寄存器太多实际开发手动配置大量寄存器极其耗费时间同时在没有注释的情况下可读性差所以较少使用标准库模式基于寄存器进行了函数的封装而由于函数封装以及内部大量的检查参数有效性的代码运行速度相对于寄存器模式较慢封装之后可以根据函数名字就能明白代码作用容易记忆使用方便所以较多人使用库模式全称是抽象印象层相比于标准库更加深入的封装有句柄回调函数等概念有点类似开发因此相对于标准库模式有更好的可移植性可在不同芯片的移植但代价就是更多的性能损失说明运行速度性能损失的问题都只是相对问题实际上大多数情况下都可以忽略为什么初始化外设都需要先打开时钟每个外设都有独立时钟如果不打开时钟外设就不能用原因就是为了低功耗节省用电不用的外设可以不打开时钟开启外设时钟的方法外设总线外设总线外设总线八种模式模式介绍浮空输入若引脚悬空则电平不确定上拉输入内部连接上拉电阻悬空时默认高电平下拉输入内部连接下拉电阻悬空时默认低电平模拟输入无效引脚直接接入内部开漏输出高电平为高阻态低电平接负极推挽输出高电平接低电平接复用开漏输出由片上外设控制高电平为高阻态低电平接复用推挽输出由片上外设控制高电平接低电平接高阻态是一个数字电路里常见的术语指的是电路的一种输出状态既不是高电平也不是低电平如果高阻态再输入下一级电路的话对下级电路无任何影响和没接一样如果用万用表测的话有可能是高电平也有可能是低电平随它后面接的东西定的电路分析时高阻态可做开路理解你可以把它看作输出输入电阻非常大它的极限状态可以认为悬空开路也就是说理论上高阻态不是悬空它是对地或对电源电阻极大的状态而实际应用上与引脚的悬空几乎是一样的开漏输出和推挽输出的区别主要是开漏输出只可以输出强低电平高电平得靠外部电阻拉高输出端相当于三极管的集电极适合于做电流型的驱动其吸收电流的能力相对强一般以内推挽输出可以输出强高低电平连接数字器件建议看推挽开漏高阻这都是谁想出来的词更加详细请看口种模式详解寄存器映射以最简单的讲将相关的固件库代码拿出来变很容易明白外设基地址总线基地址基地址结构很明显可以看出来固件库代码的条理非常清晰而且非常巧妙除了第一个外设基地址是固定值其他的基地址都是通过上一级基地址偏移计算出来的最后是一个指定地址强制转换结构这样我们如果想要操作寄存器则可以用将寄存器位置设置寄存器位实际作用是设置为推挽输出输出高电平另外可以注意到所有地址都是使用了定义常量值这是因为编译器在进行项目编译的时候对于常量间的计算是能直接优化成常量值如进行预编译处理之后为然后优化为中的位段映射存储器映像包括两个位段区这两个位段区将别名存储器区中的每个字映射到位段存储器区的一个位在别名存储区写入一个字具有对位段区的目标位执行读改写操作的相同效果在里外设寄存器和都被映射到一个位段区里这允许执行单一的位段的写和读操作下面的映射公式给出了别名区中的每个字是如何对应位带区的相应位的其中是别名存储器区中字的地址它映射到某个目标位是别名区的起始地址是包含目标位的字节在位段里的序号是目标位所在位置例子下面的例子说明如何映射别名区中地址为的字节中的位对地址的写操作与对中地址字节的位执行读改写操作有着相同的效果读地址返回中地址字节的位的值或本节内容摘抄至参考手册中文中的时钟系统有个时钟源中文名称解释高速内部时钟振荡器频率为精度不高高速外部时钟可接石英陶瓷谐振器或者接外部时钟源频率范围为低速内部时钟振荡器频率为提供低功耗时钟一般用于看门狗担当一个低功耗时钟源的角色它可以在停机和待机模式下保持运行为独立看门狗和自动唤醒单元提供时钟低速外部时钟接频率为的石英晶体一般用于实时时钟锁相环倍频输出本质上与其他四个时钟源不一样这个时钟源是将时钟输入源进行倍频再输出时钟输入源可选择为或倍频可选择为倍但是其输出频率最大不得超过倍频器的原理时钟安全系统中还有一个时钟安全系统在出现意外情况下还挺有用的不过既然说是意外就说明出现的概率并不大因此这个功能没有什么存在感时钟安全系统可以通过软件被激活一旦其被激活时钟监测器将在振荡器启动延迟后被使能并在时钟关闭后关闭如果时钟发生故障振荡器将被自动关闭时钟失效事件将被送到高级定时器和的刹车输入端并产生时钟安全中断允许软件完成营救操作此中断连接到的中断不可屏蔽中断如果振荡器被直接或间接地作为系统时钟间接的意思是它被作为输入时钟并且时钟被作为系统时钟时钟故障将导致系统时钟自动切换到振荡器同时外部振荡器被关闭在时钟失效时如果振荡器时钟被分频或未被分频是用作系统时钟的的输入时钟也将被关闭参考手册中文外设是的缩写高级高性能总线是的缩写高级外设总线从图中就可以看出都是系统总线进行桥接出来的另外最高只有最高可以达到的各种外设口定时器数模转换器模数转换器串口串行外设接口集成电路总线集成电路内置音频总线外部中断事件控制器通用和复用功能独立看门狗窗口看门狗备份寄存器实时时钟全速设备接口控制器局域网内核外设嵌套中断向量控制器的端口复用与重映射有很多的口同时有很多的外设这些口默认是用来做普通的输出输入引脚而配置为外设需要用到口就叫口的复用如管脚名称主功能复位后默认复用功能重定义功能无无以下代码则是配置为复用其实作为输入引脚并不区分复用不复用的因为输出只能有一个外设控制但是输入可以多个外设读取不冲突需要使能和复用外设的时钟使用默认复用功能时时钟不需要使能初始化引脚为复用推挽输出复用推挽输出初始化引脚为上拉输入每个内置外设都有若干个输入输出引脚一般这些引脚的输出端口都是固定不变的但在实际使用中为了让设计工程师可以更好地安排引脚的走向和功能在中引入了外设引脚重映射的概念即一个外设的引脚除了具有默认的端口外还可以通过设置重映射寄存器的方式把这个外设的引脚映射到其它的端口管脚名称主功能复位后默认复用功能重定义功能如外设的引脚除了外还可以使用使能重映射之后的时钟使能复用外设的时钟重映射需要使能时钟因为下一行代码是配置寄存器实际上是对进行操作重映射引脚初始化与引脚略部分重映射完全重映射部分重映射功能外设的部分引脚重新映射还有一部分引脚是原来的默认引脚完全重映射功能外设的所有引脚都重新映射何时需要使能时钟根据手册说明对寄存器事件控制寄存器复用重映射和调试配置寄存器和外部中断配置寄存器进行读写操作前应当首先打开的时钟说人话就是在用到外部中断和端口重映射的时候要使能时钟中断中有个可编程外设中断配置中断的代码如下抢占优先级优先级高的能打断优先级低响应优先级当抢占优先级相同时响应优先级高的先执行注意优先级的值越小优先级越高越先执行总结抢占优先级高的可以中断嵌套响应优先级高的可以优先排队抢占优先级和响应优先级均相同的按中断号排队可能有些朋友没办法理解响应优先级的优先排队的作用那我再解释一下优先排队的概念假设一个抢占优先级的中断进行过程中先触发了抢占优先级响应优先级的中断再触发了抢占优先级响应优先级的中断则中断结束后理论上应该按照先来后到先执行中断然后再执行中断的但实际上因为中断响应优先级更高因此中断拥有优先排队插队的权限因此最终是先执行中断再执行中断位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级设置优先级分配配置设置中断通道类型设置中断使能优先级的值越小优先级越高越先执行设置抢占优先级设置响应优先级初始化中断通道的使用使用之前需要先启用外设初始化引脚为复用推挽输出初始化引脚为上拉输入初始化为波特率无硬流控需要收发无校验位停止位开启标志位到的输出设置优先级分配配置配置的中断最后使能填充数据至的寄存器发送寄存器为空标志位对的写操作时将该位清零等待发送完成中断函数读取收到的字节这里可以省略手动清除标志位因为对的读操作可以将该位清零的外部中断配置外部中断的示例代码使能时钟因为使用到了的中断引脚选择功能所以要使能的时钟实际上是对进行操作将信号输出至的号线初始化使用中断下降沿触发设置优先级分配配置配置外部中断中断函数清除中断标志位库函数和区别可以很容易看出来代码上的区别在部分部分即的判断多了一个条件由手册可以知道是挂起寄存器没有发生触发请求发生了选择的触发请求是中断屏蔽寄存器屏蔽来自线上的中断请求开放来自线上的中断请求因此只是纯粹读取中断标志位的状态但是实际上这并不准确因为设置寄存器可以对该中断进行屏蔽而除了读取中断标志位还查看寄存器是否对该中断进行屏蔽另外和则是什么区别都没有内部代码完全一样的电源控制的工作电压为通过内置的电压调节器提供所需的电源当主电源掉电后通过脚为实时时钟和备份寄存器提供电源实际上脚还可以为振荡器和端口供电可以保证当主电源被切断时能继续工作但当使用供电时无法用作管脚名称主功能复位后默认复用功能功能用于侵入检测校准时钟闹钟或秒输出引脚引脚一般来说脚接一个纽扣电池供电如正点原子的开发板从图中可以看出来除了上面说到的之外寄存器也在后备供电区域内但实际上寄存器只有外部低速振荡器使能外部低速时钟振荡器旁路时钟源选择和时钟使能位处于备份域另外的外部低速就绪与备份域软件复位不处于备份域因为没有必要中的备份寄存器备份寄存器拥有以下特性当电源被切断他们仍然由维持供电字节数据后备寄存器中容量和小容量产品或字节数据后备寄存器大容量和互联型产品当系统在待机模式下被唤醒或系统复位或电源复位时他们也不会被复位寄存器是位的可寻址寄存器可以用半字位或字位的方式操作这些外设寄存器备份寄存器的复位软件复位备份区域复位可由设置备份域控制寄存器中的位产生在和两者都掉电的情况下或上电将引发备份区域复位后备区域的保护在复位之后对后备区域备份寄存器和的访问将被禁止后备区域被保护以防止可能存在的意外的写操作需要执行以下操作可以使能对后备区域的访问通过设置寄存器的和位来打开电源和后备接口的时钟说人话就是使能电源控制与备份寄存器的时钟电源控制寄存器的位来使能对后备寄存器和的访问寄存器基础操作示例使能和外设时钟读取寄存器启用时钟后就可以读取了对备份寄存器进行软件复位取消后备区域的写保护但如果的时钟是无法进行写保护向寄存器写写之前要取消写保护才可以中的实时时钟的本质与定时器类似就是一个计数器每秒加一让其可以实现更新时间的预分配系数最高为的次方的计数器是位的的时钟源可以选择以下三种低速外部时钟低速内部时钟通常用这个作为时钟源进行分配可以得到的时钟信号高速外部时钟的分频的个可屏蔽中断闹钟中断用来产生一个软件可编程的闹钟中断秒中断用来产生一个可编程的周期性中断信号最长可达秒溢出中断指示内部可编程计数器溢出并回转为的状态的时钟源的配置是设置备份域控制寄存器里的位因此除非备份域复位不然此选择不能被改变读寄存器核完全独立于接口软件通过接口访问的预分频值计数器值和闹钟值但是相关的可读寄存器只在与时钟进行重新同步的时钟的上升沿被更新标志也是如此的这意味着如果接口曾经被关闭而读操作又是在刚刚重新开启之后则在第一次的内部寄存器更新之前从上读出的寄存器数值可能被破坏了通常读到下述几种情况下能够发生这种情形发生系统复位或电源复位系统刚从待机模式唤醒系统刚从停机模式唤醒所有以上情况中接口被禁止时复位无时钟或断电核仍保持运行状态因此若在读取寄存器时的接口曾经处于禁止状态则软件首先必须等待寄存器中的位寄存器同步标志被硬件置写寄存器必须设置寄存器中的位使进入配置模式后才能写入预分频装载寄存器计数器寄存器闹钟寄存器另外对任何寄存器的写操作都必须在前一次写操作结束后进行可以通过查询寄存器中的状态位判断寄存器是否处于更新中仅当状态位是时才可以写入寄存器配置过程查询位直到的值变为置值为进入配置模式对一个或多个寄存器进行写操作清除标志位退出配置模式查询直至位变为以确认写操作已经完成仅当标志位被清除时写操作才能进行这个过程至少需要个周期初始化与中断使能和外设时钟取消后备区域和后备寄存器的写保护判断对备份寄存器进行软件复位使能外设低速晶振检查指定的标志位设置与否等待低速晶振就绪超时说明初始化时钟失败晶振有问题设置作为时钟源使能时钟要先设置时钟源等待寄存器同步等待最近一次对寄存器的写操作完成使能的秒中断等待最近一次对寄存器的写操作完成设置预分频的值等待最近一次对寄存器的写操作完成设置计数值时间戳实际上用不上因为库函数封装中已经包含不需要自己手动额外写允许配置退出配置模式向指定的后备寄存器中写入用户程序数据系统继续计时等待寄存器同步使能秒中断等待最近一次对寄存器的写操作完成初始化中断通道全局中断先占优先级位从优先级位先占优先级位从优先级位使能该通道中断秒钟中断等待寄存器同步读取寄存器前必须做获取当前计数值时间戳闹钟中断清闹钟中断清秒中断与溢出中断的低功耗模式有三种低功耗模式等待中断如果执行指令进入睡眠模式任意一个被嵌套向量中断控制器响应的外设中断都能将系统从睡眠模式唤醒等待事件如果执行指令进入睡眠模式则一旦发生唤醒事件时微处理器都将从睡眠模式退出除了进行低功耗模式外还可以在正常运行时使用下面方法降低功耗降低系统时钟关闭和总线上未被使用的外设时钟睡眠模式在睡眠模式下仅停止运作对于其他外设将保持原本进入睡眠模式的状态有两种选项可用于选择睡眠模式进入机制如果位被清除当或被执行时微控制器立即进入睡眠模式如果位被置位系统从最低优先级的中断处理程序中退出时微控制器就立即进入睡眠模式区别就是在于是否处理完当前的中断再进入睡眠因为一般来说中断具有很高的实时性不应该在中断中途进入睡眠停止模式在停止模式下除了内存和寄存器内容被保留下来外其他时钟将会被停止所有的引脚都保持它们在运行模式时的状态另外进入停止模式需要等待闪存编程与访问完成不然会等待完成再进入当一个中断或唤醒事件导致退出停止模式时振荡器将被选为系统时钟为了进入停止模式所有的外部中断的请求位挂起寄存器和的闹钟标志都必须被清除否则停止模式的进入流程将会被跳过程序继续运行说人话就是要把中断标志清除不然刚进入停止模式就会被唤醒相对于没进进入停止模式可以配置以下外设正常运行独立看门狗可通过写入看门狗的键寄存器或硬件选择来启动一旦启动了独立看门狗除了系统复位它不能再被停止实时时钟通过备份域控制寄存器的位来设置内部振荡器通过控制状态寄存器的位来设置外部振荡器通过备份域控制寄存器的位设置与如果在进入该模式前和没有被关闭那么这些外设仍然消耗电流通过设置寄存器的位和寄存器的位为可关闭这个外设电压调节器可以通过配置电源控制寄存器的位使其运行在正常或低功耗模式若配置电压调节器为低功耗模式当系统从停止模式退出时将会有一段额外的启动延时唤醒时间电压调节器从低功耗唤醒的时间如果在停止模式期间保持内部调节器开启则退出启动时间会缩短但相应的功耗会增加待机模式待机模式可实现系统的最低功耗待机模式下只有备份寄存器和待机电路维持供电从待机唤醒后差不多和复位一次差不多除了电源控制状态寄存器所有寄存器被复位和寄存器内容全部丢失进入待机模式可以配置正常运行的外设只有停机模式的前四项在待机模式下所有的引脚处于高阻态除了以下的引脚复位引脚始终有效当被设置为防侵入或校准输出时的引脚被使能的唤醒引脚简单总结一下睡眠模式仅停止运行保存进入睡眠之前状态停止模式仅保留内存和寄存器的数据保存进入睡眠之前状态待机模式仅保留备份寄存器保持高阻态低功耗模式下的自动唤醒利用可以实现定时唤醒低功耗模式实际上是使用了的闹钟中断若要实现低功耗模式下的自动唤醒的时钟源只能选择低功耗外部晶振或者低功耗内部振荡器为了用闹钟事件将系统从停止模式下唤醒必须进行如下操作配置外部中断线为上升沿触发若要从待机模式唤醒则不必配置配置使其可产生闹钟事件三种模式的进入代码示例进入睡眠模式与属于核心指令库函数中是汇编指令与位属于架构的寄存器在手册中没有讲到寄存器地址但是固件库也定义了相关的内容进入睡眠模式库函数没有封装因此只能自己动手丰衣足食理论上位应该是不需要手动清除的它默认为但是为了防止意外情况就多写一行代码清除深睡眠位根据需要选择是否允许在中断过程中进入睡眠清除位设置位进入等待中断的睡眠与下面一行二选一即可进入等待事件的睡眠进入停机模式使能外设时钟电压调节器开等待中断模式进入待机模式使能外设时钟使能引脚的唤醒管脚功能如果不需要使用引脚上升沿唤醒待机可以注释进入待命模式的模数转换规则组用于常规使用注入组用于突发情况使用功能规则组和注入组的关系有点类似主线程和中断的关系若触发开始转换注入组可以对正在转换的规则组进行插队输入通道因为有双模式两个配合工作因此和的通道对应的基本一样除了多出来的温度传感器与内部参考电压通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道温度传感器通道内部参考电压配置扫描模式当开始转换后会根据通道数量按顺序进行次转换全部转换完成后设置规则组转换结束标志位非扫描模式当开始转换后仅会对规则组位置一的通道进行次转换转换完成设置标志位单次转换在开始转换后仅仅对规则组整组进行一次转换连续转换在开始转换后会循环对规则组整组进行转换间断模式在开始转换后进行次转换后停下并记录当前位置当下次开始转换时按顺序下去需要使用设置的值并使用使能模式举例被转换的通道有第一次触发转换的序列为第二次触发转换的序列为第三次触发转换的序列为并产生事件注意这里因为到尾了所以只转换了两个通道第四次触发转换的序列总结一下如果将转换比喻为使用音乐软件听歌的话就是为歌单增加歌曲并设置歌曲的序列就是歌单中歌曲的数量扫描模式就是播放整个歌单的全部歌曲非扫描模式就是只播放歌单的第一首歌曲单次转换就是只播放一次歌单中全部歌曲扫描模式歌单的第一首歌曲非扫描模式连续转换就是循环播放歌单中全部歌曲扫描模式歌单的第一首歌曲非扫描模式扫描模式单次转换歌曲中全部歌曲按顺序全部播放一次非扫描模式单次转换只播放一次歌单的第一首歌曲扫描模式连续转换列表循环非扫描模式连续转换单曲循环间断模式就是一次听首歌曲并记下听到第几首了下次接着听下去当歌单全部歌曲听完后再回到第一首校准有一个内置的校准模式能大幅减少因内部电容器组的变化而造成的准精度误差因此建议每次上电后都执行一次校准在参考手册中文版本中章节有这样一句话启动校准前必须处于关电状态超过至少两个时钟周期事实上是公司的描写错误而在官网中找到的版本中已经被更正为原文翻译在开始校准之前必须处于通电状态位至少两个时钟周期使能时钟配置的时钟周期为高速时钟的分频配置为输入口模式为模拟输入该模式是专用配置规则组将通道放在第一个位置采样时间为个周期初始化工作在独立模式数据右对齐外部触发源选择不使用外部触发是否启用连续模式是否启用扫描模式进行的通道数量使能进行校准将校准复位等待校准复位完成开始校准等待校准完成软件触发开始转换等待转换完成返回转换得到的数值中的直接存储器存取全程直接存储器存取功能就是数据复制优点就是能代替负责数据复制让空出来处理其他任务另外根据查资料得到的搬运速度没有搬运的速度快的详细可以看这里数据复制方向支持存储器到存储器存储器到外设外设到存储器其中因为一般为只读所以存储器到存储器为到到数据宽度支持字节位半字位字位支持不同宽度的数据复制复制对齐为低位对齐例如半字复制到字节则会把低八位复制过去结果为半字复制字则会把半字复制到字的低位结果为地址自增模式正常模式复制完就停下循环模式复制完重新开始循环模式不可用于存储器到存储器的请求对应通道外设通道通道通道通道通道通道通道的请求对应通道外设通道通道通道通道通道通道通道通道通道中断与标志位中断事件事件标志位使能控制位通道传输过半传输完成传输错误全局标志一次性控制三个标志位内存到内存例子用于二次开始的时候重置复制次数使能的时钟记录一下开始复制的时候要设置外设基地址当用存储器到存储器时可写存储器地址外设数据宽度外设地址自增存储器基地址存储器数据宽度存储器地址自增数据传输方向外设为源地址外设为目标地址需要复制次数总复制长度数据宽度复制次数模式正常模式循环模式是否为存储器到存储器如果是则只能软件触发开始优先级配置的通道这里因为是存储器到存储器所以通道可以随便选因为还没有给使能因此没有开始转换赋值复制次数之前要失能赋值复制次数使能开始转换等待复制完成清除标志位外设到存储器例子多通道用于保存转换完成的结果使能时钟配置时钟频率为时钟的分频配置个口配置规则组初始化为连续扫描模式具体看上面存储器到存储器例子外设基地址为的寄存器循环模式使能时钟因为非存储器到存储器所以要硬件请求才能触发开始复制允许可以提交请求触发的数据复制使能校准软件触发开始转换因为为连续扫描模式为循环模式所以只需要触发开始转换后硬件就会不断得转换并把数据复制到数组中的集成电路总线在中使用有两种方案一是软件模拟二是硬件两种方案各有各的优缺点因此了解清楚才能选择适合的软件模拟优点可以用在任何口不会发生卡死最多出错硬件优点速度比软件模拟快容易出现卡死的问题关于硬件卡死问题具体可以看卡死原因分析浅谈硬件具体测试结论硬件到底是不是个坑总结一下的硬件问题当时钟频率太高时容易出问题出问题的概率和时钟频率成正比当存在中断会打断硬件工作时中断会导致容易出现问题硬件的发送流程图硬件的接收流程图使用硬件作为主机发送接收示例代码定义一个模块的从机地址使能与时钟初始化配置与为复用开漏输出开始初始化使用模式因为的硬件外设支持扩展协议因此要指定模式七位从机地址自己作为从机时的地址默认发送应答配置时钟线占空比为低高电平之比为仅在的高速模式下有效标准模式下为原因是低电平时需要变化电平因此需要更多时间时钟频率单位封装一个函数用于等待标准事件包含超时返回避免卡死指定地址写等待总线不繁忙生成一个起始信号等待发送七位从机地址进行寻找从机表示写会自动设置最低位为等待发送一个字节寄存器地址等待发送一个字节数据等待生成停止信号指定地址读等待总线不繁忙生成一个起始信号等待发送七位从机地址进行寻找从机表示写会自动设置最低位为发送一个字节寄存器地址等待再次生成起始信号等待发送七位从机地址进行寻找从机表示读会自动设置最低位为等待需要在接收之前设置为非应答因为硬件会在接收完后直接发送应答非应答没有等待时间生成停止信号但是会在当前字节传输或在当前起始条件发出后产生停止条件因此可以提前给等待读取接收到的数据恢复为默认发送应答中的串行外设接口使用使用的示例例子使能时钟初始化配置为复用推挽输出配置为上拉开始初始化设置单向或者双向的数据模式设置为双线双向全双工设置工作模式设置为主设置的数据大小发送接收位帧结构串行同步时钟的空闲状态为高电平串行同步时钟的第二个跳变沿数据被采样信号由硬件管脚还是软件使用位管理内部信号有位控制设置波特率预分频的值波特率预分频值为指定数据传输从位还是位开始数据传输从位开始值计算的多项式使能外设设置的波特率预分频值清零位设置速度发送一个数据并收回一个数据检查指定的标志位设置与否发送缓存空标志位通过外设发送一个数据检查指定的标志位设置与否接受缓存非空标志位返回通过最近接收的数据中的控制器局域网使用中的架构设置速率总线的速率常用的都是到一般使用尽管它的最大速率是但明显的是最大值往往要求环境更加高导致容易出现问题工作模式初始化模式正常模式睡眠模式测试模式静默模式回环模式回环静默模式调试模式当处于调试模式时核心处于暂停状态提供配置可以使继续正常工作或停止工作是异步通讯因此需要这个发送个发送邮箱可以配置发送优先级按写入先后按标识符数值自动重传发送失败则自动重新发送直至成功接收个三级深度接收邮箱共可以接收个报文注是英文的缩写是一种先进先出的数据缓存器锁定模式锁定状态下接收溢出则丢弃非锁定状态下接收溢出则覆盖过滤器个位宽可配置的标识符过滤器组一个位宽可配置为个位掩码模式个位标识符列表模式个位掩码模式个位标识符列表模式过滤模式标识符列表模式丢弃掉非指定标识符的报文掩码模式可以指定标识符某些位是非必要的后进行比对测试模式图解过滤器使能时钟初始化为上拉输入初始化为复用推挽输出单元设置非时间触发通信模式软件自动离线管理睡眠模式通过软件唤醒清除的位禁止报文自动传送报文不锁定新的覆盖旧的优先级由报文标识符决定模式设置普通模式回环模式设置波特率预分频系数重新同步跳跃宽度过滤器可以为掩码模式位位标识符位掩码要求一致不限制关联到使能过滤器滤波器初始化用于开启中断消息挂号中断允许主优先级为次优先级为中断函数模板发送报文返回为成功否则失败标准标识符设置扩展标示符表明为标准帧表明为数据帧要发送的数据长度复制数据到结构体填入发送邮箱为被填入的邮箱号等待发送结束超时接收数据查询成功返回数据长度没有返回查询邮箱有多少条数据读取数据").trim().substring(0, 1000);
       let value = Math.floor(Math.random() * 3) + 1000;
       while (value === prevParam || truncateDescription.length - value === prevParam) {
         value = Math.floor(Math.random() * 3) + 1000;
@@ -429,7 +429,7 @@
   });
 
   aiTitleRefreshIcon.addEventListener("click", () => {
-    const truncateDescription = ("" + "STM32 单片机编程, IIC通信, IIC协议层, AT24C02x2FEEPROM, AT24C02x2FEEPROM概述, AT24C02写数据时序, AT24C02读数据时序, 外设控制代码编写, 小车逻辑代码编写, 实现的功能单片机编程常用外设函数所指定的外设就会被复位所指定的外设复位用结构体参数来初始化口把结构体变量赋一个默认值读取函数用来读取输入数据寄存器某一个端口的输入值用来读取整个输入数据寄存器的返回值的每一位代表一个端口值用来读取输出数据寄存器的某一位用来读取整个输出寄存器的输出函数设置为高电平设置为低电平为低电平为高电平十六进制设置是的意思的程序编写尽量考虑将相同的类型放在同一函数里开启内部时钟即定时器的基准时钟和整个外设的工作时钟都会同时打开了定时器常用函数是定时器时基单元初始化给结构体设置默认值用来使能计数器用来使能中断输出信号选择内部时钟选择其他定时器的时钟选择捕获通道的时钟选择通过外部时钟模式输入的时钟单独的函数可以方便更改结构体的关键参数单独写预分频值的用来改写计数器的计数模式自动重装器预装功能配置给计数器写入一个值如果你想手动给一个计数值就可以用这个函数给自动重装器写入一个值如果你想手动给一个自动重装值就可以用这个函数获取当前计数器的值如果你想看当前计数器计到哪里了就可以用这个函数结构体的参数配置重复计数器高级定时器才有的不重要重要两个参数配置配置定时频率定时也就是定时频率为取值在之间定时器可以用来定时中断是定时器的中断函数当定时器产生更新中断是这个函数就会自动被执行暂停想要让定时器每秒自动帮我们加一下这个变量用来初始化输出比较单元不同的通道对应的口不一样的即函数对应不同的口使用的也就是通道输出那它只能在的引脚输出需要查看引脚定义表其他外设也是一样的如使用的引脚那就是无法更改可以用重映射解决这四个用来单独更改寄存器值的函数我们在运行的时候可以用它更改占空比是设置寄存器的值给输出比较单元的结构体赋初始值结构体中的变量决定了输出的占空比决定了的周期计算公式频率占空比因为占空比为所以为调节亮度用的分频率外设文件主要是放实现功能的函数主要是利用功能函数转串口模块通信引脚为的表示发送接的就是串口模块的接收的表示接收串口模块的就是发送常用函数发送数据就是写寄存器接收数据就是读寄存器寄存器是意思是地址有一些口是不能用的不如是用来做调试的端口杜邦线橙色是插在正极供电孔灰色是插在负极供电孔红色的是控制脚插在引脚处的和是的通信引脚需要接在单片机的通信的引脚上用的是口模拟的如果是口模拟的通信这两个端口就可以任意接在口上自己含有一个现成的驱动模块存的是的字库数据可以用来显示字符图形显示一个字符自带的调试的用途不清楚程序是如何运行的想要看一大堆变量却不方便显示的看一下寄存器是不是配置正确了在这个函数中就以这个函数为思考对象返回类型是发送数据整数类型是接受数据通信协议层概述是通过硬件地址可编程地址进行通信的和分别为时钟线和数据线高四位是固定的即硬件地址是厂家生产设定的后三位是可编程地址写数据时序为等待应答读数据时序多了一个发送设备地址的节点读和写的时序开始都有发送设备的节点外设控制代码编写函数名描述检测药品装载过程等待药品装载装药取药输入无输出等待装药取药小车逻辑代码编写实现的功能控制使用正点原子家的函数中的位带操作检测药品使用正点原子家的函数中的位带操作").trim().substring(0, 1000);
+    const truncateDescription = ("" + "前言的前言, 前言, 笔记, Stm32 三种开发方式的区别, 为什么Stm32初始化外设都需要先打开时钟, GPIO八种模式, Stm32寄存器映射, Stm32中的位段映射, Stm32中的时钟系统, Stm32外设, Stm32的端口复用与重映射, Stm32中断, Stm32的USART使用, Stm32的外部中断 (EXTI), Stm32的模数转换(ADC), Stm32中的直接存储器存取 (DMA), Stm32中的控制器局域网 (bxCAN)使用前言的前言文章的原标题是学习笔记但是在这个浮躁的时代不当个标题狗是不会有人点进来的而既然是发布出来了那肯定是想要别人点个赞点个收藏关注一下的所以在发布的时候还是换了一个浮夸点的标题了前言本文章主要记录本人在学习过程中的笔记也插入了不少的例程代码方便到时候绝大多数内容为本人手写小部分来自官方的中文参考手册以及网上其他文章代码部分大多来自江科大和正点原子的例程注释是我自己添加配图来自江科大正点原子中文参考手册笔记内容都是平时自己一点点添加不知不觉都已经这么长了其实每一个标题其实都可以发一篇但是这样搞太琐碎了所以还是就这样吧喜欢的话就点赞收藏关注一下本人技术有限如有错误欢迎在评论区或者私信指点笔记本笔记内容以型号为研究对象三种开发方式的区别寄存器模式最底层的开发运行速度最快实际上也是使用了固件库但是不是使用固件库的函数而是使用了固件库的定义包括宏定义结构体定义和的开发差不多但因为的寄存器太多实际开发手动配置大量寄存器极其耗费时间同时在没有注释的情况下可读性差所以较少使用标准库模式基于寄存器进行了函数的封装而由于函数封装以及内部大量的检查参数有效性的代码运行速度相对于寄存器模式较慢封装之后可以根据函数名字就能明白代码作用容易记忆使用方便所以较多人使用库模式全称是抽象印象层相比于标准库更加深入的封装有句柄回调函数等概念有点类似开发因此相对于标准库模式有更好的可移植性可在不同芯片的移植但代价就是更多的性能损失说明运行速度性能损失的问题都只是相对问题实际上大多数情况下都可以忽略为什么初始化外设都需要先打开时钟每个外设都有独立时钟如果不打开时钟外设就不能用原因就是为了低功耗节省用电不用的外设可以不打开时钟开启外设时钟的方法外设总线外设总线外设总线八种模式模式介绍浮空输入若引脚悬空则电平不确定上拉输入内部连接上拉电阻悬空时默认高电平下拉输入内部连接下拉电阻悬空时默认低电平模拟输入无效引脚直接接入内部开漏输出高电平为高阻态低电平接负极推挽输出高电平接低电平接复用开漏输出由片上外设控制高电平为高阻态低电平接复用推挽输出由片上外设控制高电平接低电平接高阻态是一个数字电路里常见的术语指的是电路的一种输出状态既不是高电平也不是低电平如果高阻态再输入下一级电路的话对下级电路无任何影响和没接一样如果用万用表测的话有可能是高电平也有可能是低电平随它后面接的东西定的电路分析时高阻态可做开路理解你可以把它看作输出输入电阻非常大它的极限状态可以认为悬空开路也就是说理论上高阻态不是悬空它是对地或对电源电阻极大的状态而实际应用上与引脚的悬空几乎是一样的开漏输出和推挽输出的区别主要是开漏输出只可以输出强低电平高电平得靠外部电阻拉高输出端相当于三极管的集电极适合于做电流型的驱动其吸收电流的能力相对强一般以内推挽输出可以输出强高低电平连接数字器件建议看推挽开漏高阻这都是谁想出来的词更加详细请看口种模式详解寄存器映射以最简单的讲将相关的固件库代码拿出来变很容易明白外设基地址总线基地址基地址结构很明显可以看出来固件库代码的条理非常清晰而且非常巧妙除了第一个外设基地址是固定值其他的基地址都是通过上一级基地址偏移计算出来的最后是一个指定地址强制转换结构这样我们如果想要操作寄存器则可以用将寄存器位置设置寄存器位实际作用是设置为推挽输出输出高电平另外可以注意到所有地址都是使用了定义常量值这是因为编译器在进行项目编译的时候对于常量间的计算是能直接优化成常量值如进行预编译处理之后为然后优化为中的位段映射存储器映像包括两个位段区这两个位段区将别名存储器区中的每个字映射到位段存储器区的一个位在别名存储区写入一个字具有对位段区的目标位执行读改写操作的相同效果在里外设寄存器和都被映射到一个位段区里这允许执行单一的位段的写和读操作下面的映射公式给出了别名区中的每个字是如何对应位带区的相应位的其中是别名存储器区中字的地址它映射到某个目标位是别名区的起始地址是包含目标位的字节在位段里的序号是目标位所在位置例子下面的例子说明如何映射别名区中地址为的字节中的位对地址的写操作与对中地址字节的位执行读改写操作有着相同的效果读地址返回中地址字节的位的值或本节内容摘抄至参考手册中文中的时钟系统有个时钟源中文名称解释高速内部时钟振荡器频率为精度不高高速外部时钟可接石英陶瓷谐振器或者接外部时钟源频率范围为低速内部时钟振荡器频率为提供低功耗时钟一般用于看门狗担当一个低功耗时钟源的角色它可以在停机和待机模式下保持运行为独立看门狗和自动唤醒单元提供时钟低速外部时钟接频率为的石英晶体一般用于实时时钟锁相环倍频输出本质上与其他四个时钟源不一样这个时钟源是将时钟输入源进行倍频再输出时钟输入源可选择为或倍频可选择为倍但是其输出频率最大不得超过倍频器的原理时钟安全系统中还有一个时钟安全系统在出现意外情况下还挺有用的不过既然说是意外就说明出现的概率并不大因此这个功能没有什么存在感时钟安全系统可以通过软件被激活一旦其被激活时钟监测器将在振荡器启动延迟后被使能并在时钟关闭后关闭如果时钟发生故障振荡器将被自动关闭时钟失效事件将被送到高级定时器和的刹车输入端并产生时钟安全中断允许软件完成营救操作此中断连接到的中断不可屏蔽中断如果振荡器被直接或间接地作为系统时钟间接的意思是它被作为输入时钟并且时钟被作为系统时钟时钟故障将导致系统时钟自动切换到振荡器同时外部振荡器被关闭在时钟失效时如果振荡器时钟被分频或未被分频是用作系统时钟的的输入时钟也将被关闭参考手册中文外设是的缩写高级高性能总线是的缩写高级外设总线从图中就可以看出都是系统总线进行桥接出来的另外最高只有最高可以达到的各种外设口定时器数模转换器模数转换器串口串行外设接口集成电路总线集成电路内置音频总线外部中断事件控制器通用和复用功能独立看门狗窗口看门狗备份寄存器实时时钟全速设备接口控制器局域网内核外设嵌套中断向量控制器的端口复用与重映射有很多的口同时有很多的外设这些口默认是用来做普通的输出输入引脚而配置为外设需要用到口就叫口的复用如管脚名称主功能复位后默认复用功能重定义功能无无以下代码则是配置为复用其实作为输入引脚并不区分复用不复用的因为输出只能有一个外设控制但是输入可以多个外设读取不冲突需要使能和复用外设的时钟使用默认复用功能时时钟不需要使能初始化引脚为复用推挽输出复用推挽输出初始化引脚为上拉输入每个内置外设都有若干个输入输出引脚一般这些引脚的输出端口都是固定不变的但在实际使用中为了让设计工程师可以更好地安排引脚的走向和功能在中引入了外设引脚重映射的概念即一个外设的引脚除了具有默认的端口外还可以通过设置重映射寄存器的方式把这个外设的引脚映射到其它的端口管脚名称主功能复位后默认复用功能重定义功能如外设的引脚除了外还可以使用使能重映射之后的时钟使能复用外设的时钟重映射需要使能时钟因为下一行代码是配置寄存器实际上是对进行操作重映射引脚初始化与引脚略部分重映射完全重映射部分重映射功能外设的部分引脚重新映射还有一部分引脚是原来的默认引脚完全重映射功能外设的所有引脚都重新映射何时需要使能时钟根据手册说明对寄存器事件控制寄存器复用重映射和调试配置寄存器和外部中断配置寄存器进行读写操作前应当首先打开的时钟说人话就是在用到外部中断和端口重映射的时候要使能时钟中断中有个可编程外设中断配置中断的代码如下抢占优先级优先级高的能打断优先级低响应优先级当抢占优先级相同时响应优先级高的先执行注意优先级的值越小优先级越高越先执行总结抢占优先级高的可以中断嵌套响应优先级高的可以优先排队抢占优先级和响应优先级均相同的按中断号排队可能有些朋友没办法理解响应优先级的优先排队的作用那我再解释一下优先排队的概念假设一个抢占优先级的中断进行过程中先触发了抢占优先级响应优先级的中断再触发了抢占优先级响应优先级的中断则中断结束后理论上应该按照先来后到先执行中断然后再执行中断的但实际上因为中断响应优先级更高因此中断拥有优先排队插队的权限因此最终是先执行中断再执行中断位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级位抢先优先级位响应优先级设置优先级分配配置设置中断通道类型设置中断使能优先级的值越小优先级越高越先执行设置抢占优先级设置响应优先级初始化中断通道的使用使用之前需要先启用外设初始化引脚为复用推挽输出初始化引脚为上拉输入初始化为波特率无硬流控需要收发无校验位停止位开启标志位到的输出设置优先级分配配置配置的中断最后使能填充数据至的寄存器发送寄存器为空标志位对的写操作时将该位清零等待发送完成中断函数读取收到的字节这里可以省略手动清除标志位因为对的读操作可以将该位清零的外部中断配置外部中断的示例代码使能时钟因为使用到了的中断引脚选择功能所以要使能的时钟实际上是对进行操作将信号输出至的号线初始化使用中断下降沿触发设置优先级分配配置配置外部中断中断函数清除中断标志位库函数和区别可以很容易看出来代码上的区别在部分部分即的判断多了一个条件由手册可以知道是挂起寄存器没有发生触发请求发生了选择的触发请求是中断屏蔽寄存器屏蔽来自线上的中断请求开放来自线上的中断请求因此只是纯粹读取中断标志位的状态但是实际上这并不准确因为设置寄存器可以对该中断进行屏蔽而除了读取中断标志位还查看寄存器是否对该中断进行屏蔽另外和则是什么区别都没有内部代码完全一样的电源控制的工作电压为通过内置的电压调节器提供所需的电源当主电源掉电后通过脚为实时时钟和备份寄存器提供电源实际上脚还可以为振荡器和端口供电可以保证当主电源被切断时能继续工作但当使用供电时无法用作管脚名称主功能复位后默认复用功能功能用于侵入检测校准时钟闹钟或秒输出引脚引脚一般来说脚接一个纽扣电池供电如正点原子的开发板从图中可以看出来除了上面说到的之外寄存器也在后备供电区域内但实际上寄存器只有外部低速振荡器使能外部低速时钟振荡器旁路时钟源选择和时钟使能位处于备份域另外的外部低速就绪与备份域软件复位不处于备份域因为没有必要中的备份寄存器备份寄存器拥有以下特性当电源被切断他们仍然由维持供电字节数据后备寄存器中容量和小容量产品或字节数据后备寄存器大容量和互联型产品当系统在待机模式下被唤醒或系统复位或电源复位时他们也不会被复位寄存器是位的可寻址寄存器可以用半字位或字位的方式操作这些外设寄存器备份寄存器的复位软件复位备份区域复位可由设置备份域控制寄存器中的位产生在和两者都掉电的情况下或上电将引发备份区域复位后备区域的保护在复位之后对后备区域备份寄存器和的访问将被禁止后备区域被保护以防止可能存在的意外的写操作需要执行以下操作可以使能对后备区域的访问通过设置寄存器的和位来打开电源和后备接口的时钟说人话就是使能电源控制与备份寄存器的时钟电源控制寄存器的位来使能对后备寄存器和的访问寄存器基础操作示例使能和外设时钟读取寄存器启用时钟后就可以读取了对备份寄存器进行软件复位取消后备区域的写保护但如果的时钟是无法进行写保护向寄存器写写之前要取消写保护才可以中的实时时钟的本质与定时器类似就是一个计数器每秒加一让其可以实现更新时间的预分配系数最高为的次方的计数器是位的的时钟源可以选择以下三种低速外部时钟低速内部时钟通常用这个作为时钟源进行分配可以得到的时钟信号高速外部时钟的分频的个可屏蔽中断闹钟中断用来产生一个软件可编程的闹钟中断秒中断用来产生一个可编程的周期性中断信号最长可达秒溢出中断指示内部可编程计数器溢出并回转为的状态的时钟源的配置是设置备份域控制寄存器里的位因此除非备份域复位不然此选择不能被改变读寄存器核完全独立于接口软件通过接口访问的预分频值计数器值和闹钟值但是相关的可读寄存器只在与时钟进行重新同步的时钟的上升沿被更新标志也是如此的这意味着如果接口曾经被关闭而读操作又是在刚刚重新开启之后则在第一次的内部寄存器更新之前从上读出的寄存器数值可能被破坏了通常读到下述几种情况下能够发生这种情形发生系统复位或电源复位系统刚从待机模式唤醒系统刚从停机模式唤醒所有以上情况中接口被禁止时复位无时钟或断电核仍保持运行状态因此若在读取寄存器时的接口曾经处于禁止状态则软件首先必须等待寄存器中的位寄存器同步标志被硬件置写寄存器必须设置寄存器中的位使进入配置模式后才能写入预分频装载寄存器计数器寄存器闹钟寄存器另外对任何寄存器的写操作都必须在前一次写操作结束后进行可以通过查询寄存器中的状态位判断寄存器是否处于更新中仅当状态位是时才可以写入寄存器配置过程查询位直到的值变为置值为进入配置模式对一个或多个寄存器进行写操作清除标志位退出配置模式查询直至位变为以确认写操作已经完成仅当标志位被清除时写操作才能进行这个过程至少需要个周期初始化与中断使能和外设时钟取消后备区域和后备寄存器的写保护判断对备份寄存器进行软件复位使能外设低速晶振检查指定的标志位设置与否等待低速晶振就绪超时说明初始化时钟失败晶振有问题设置作为时钟源使能时钟要先设置时钟源等待寄存器同步等待最近一次对寄存器的写操作完成使能的秒中断等待最近一次对寄存器的写操作完成设置预分频的值等待最近一次对寄存器的写操作完成设置计数值时间戳实际上用不上因为库函数封装中已经包含不需要自己手动额外写允许配置退出配置模式向指定的后备寄存器中写入用户程序数据系统继续计时等待寄存器同步使能秒中断等待最近一次对寄存器的写操作完成初始化中断通道全局中断先占优先级位从优先级位先占优先级位从优先级位使能该通道中断秒钟中断等待寄存器同步读取寄存器前必须做获取当前计数值时间戳闹钟中断清闹钟中断清秒中断与溢出中断的低功耗模式有三种低功耗模式等待中断如果执行指令进入睡眠模式任意一个被嵌套向量中断控制器响应的外设中断都能将系统从睡眠模式唤醒等待事件如果执行指令进入睡眠模式则一旦发生唤醒事件时微处理器都将从睡眠模式退出除了进行低功耗模式外还可以在正常运行时使用下面方法降低功耗降低系统时钟关闭和总线上未被使用的外设时钟睡眠模式在睡眠模式下仅停止运作对于其他外设将保持原本进入睡眠模式的状态有两种选项可用于选择睡眠模式进入机制如果位被清除当或被执行时微控制器立即进入睡眠模式如果位被置位系统从最低优先级的中断处理程序中退出时微控制器就立即进入睡眠模式区别就是在于是否处理完当前的中断再进入睡眠因为一般来说中断具有很高的实时性不应该在中断中途进入睡眠停止模式在停止模式下除了内存和寄存器内容被保留下来外其他时钟将会被停止所有的引脚都保持它们在运行模式时的状态另外进入停止模式需要等待闪存编程与访问完成不然会等待完成再进入当一个中断或唤醒事件导致退出停止模式时振荡器将被选为系统时钟为了进入停止模式所有的外部中断的请求位挂起寄存器和的闹钟标志都必须被清除否则停止模式的进入流程将会被跳过程序继续运行说人话就是要把中断标志清除不然刚进入停止模式就会被唤醒相对于没进进入停止模式可以配置以下外设正常运行独立看门狗可通过写入看门狗的键寄存器或硬件选择来启动一旦启动了独立看门狗除了系统复位它不能再被停止实时时钟通过备份域控制寄存器的位来设置内部振荡器通过控制状态寄存器的位来设置外部振荡器通过备份域控制寄存器的位设置与如果在进入该模式前和没有被关闭那么这些外设仍然消耗电流通过设置寄存器的位和寄存器的位为可关闭这个外设电压调节器可以通过配置电源控制寄存器的位使其运行在正常或低功耗模式若配置电压调节器为低功耗模式当系统从停止模式退出时将会有一段额外的启动延时唤醒时间电压调节器从低功耗唤醒的时间如果在停止模式期间保持内部调节器开启则退出启动时间会缩短但相应的功耗会增加待机模式待机模式可实现系统的最低功耗待机模式下只有备份寄存器和待机电路维持供电从待机唤醒后差不多和复位一次差不多除了电源控制状态寄存器所有寄存器被复位和寄存器内容全部丢失进入待机模式可以配置正常运行的外设只有停机模式的前四项在待机模式下所有的引脚处于高阻态除了以下的引脚复位引脚始终有效当被设置为防侵入或校准输出时的引脚被使能的唤醒引脚简单总结一下睡眠模式仅停止运行保存进入睡眠之前状态停止模式仅保留内存和寄存器的数据保存进入睡眠之前状态待机模式仅保留备份寄存器保持高阻态低功耗模式下的自动唤醒利用可以实现定时唤醒低功耗模式实际上是使用了的闹钟中断若要实现低功耗模式下的自动唤醒的时钟源只能选择低功耗外部晶振或者低功耗内部振荡器为了用闹钟事件将系统从停止模式下唤醒必须进行如下操作配置外部中断线为上升沿触发若要从待机模式唤醒则不必配置配置使其可产生闹钟事件三种模式的进入代码示例进入睡眠模式与属于核心指令库函数中是汇编指令与位属于架构的寄存器在手册中没有讲到寄存器地址但是固件库也定义了相关的内容进入睡眠模式库函数没有封装因此只能自己动手丰衣足食理论上位应该是不需要手动清除的它默认为但是为了防止意外情况就多写一行代码清除深睡眠位根据需要选择是否允许在中断过程中进入睡眠清除位设置位进入等待中断的睡眠与下面一行二选一即可进入等待事件的睡眠进入停机模式使能外设时钟电压调节器开等待中断模式进入待机模式使能外设时钟使能引脚的唤醒管脚功能如果不需要使用引脚上升沿唤醒待机可以注释进入待命模式的模数转换规则组用于常规使用注入组用于突发情况使用功能规则组和注入组的关系有点类似主线程和中断的关系若触发开始转换注入组可以对正在转换的规则组进行插队输入通道因为有双模式两个配合工作因此和的通道对应的基本一样除了多出来的温度传感器与内部参考电压通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道通道温度传感器通道内部参考电压配置扫描模式当开始转换后会根据通道数量按顺序进行次转换全部转换完成后设置规则组转换结束标志位非扫描模式当开始转换后仅会对规则组位置一的通道进行次转换转换完成设置标志位单次转换在开始转换后仅仅对规则组整组进行一次转换连续转换在开始转换后会循环对规则组整组进行转换间断模式在开始转换后进行次转换后停下并记录当前位置当下次开始转换时按顺序下去需要使用设置的值并使用使能模式举例被转换的通道有第一次触发转换的序列为第二次触发转换的序列为第三次触发转换的序列为并产生事件注意这里因为到尾了所以只转换了两个通道第四次触发转换的序列总结一下如果将转换比喻为使用音乐软件听歌的话就是为歌单增加歌曲并设置歌曲的序列就是歌单中歌曲的数量扫描模式就是播放整个歌单的全部歌曲非扫描模式就是只播放歌单的第一首歌曲单次转换就是只播放一次歌单中全部歌曲扫描模式歌单的第一首歌曲非扫描模式连续转换就是循环播放歌单中全部歌曲扫描模式歌单的第一首歌曲非扫描模式扫描模式单次转换歌曲中全部歌曲按顺序全部播放一次非扫描模式单次转换只播放一次歌单的第一首歌曲扫描模式连续转换列表循环非扫描模式连续转换单曲循环间断模式就是一次听首歌曲并记下听到第几首了下次接着听下去当歌单全部歌曲听完后再回到第一首校准有一个内置的校准模式能大幅减少因内部电容器组的变化而造成的准精度误差因此建议每次上电后都执行一次校准在参考手册中文版本中章节有这样一句话启动校准前必须处于关电状态超过至少两个时钟周期事实上是公司的描写错误而在官网中找到的版本中已经被更正为原文翻译在开始校准之前必须处于通电状态位至少两个时钟周期使能时钟配置的时钟周期为高速时钟的分频配置为输入口模式为模拟输入该模式是专用配置规则组将通道放在第一个位置采样时间为个周期初始化工作在独立模式数据右对齐外部触发源选择不使用外部触发是否启用连续模式是否启用扫描模式进行的通道数量使能进行校准将校准复位等待校准复位完成开始校准等待校准完成软件触发开始转换等待转换完成返回转换得到的数值中的直接存储器存取全程直接存储器存取功能就是数据复制优点就是能代替负责数据复制让空出来处理其他任务另外根据查资料得到的搬运速度没有搬运的速度快的详细可以看这里数据复制方向支持存储器到存储器存储器到外设外设到存储器其中因为一般为只读所以存储器到存储器为到到数据宽度支持字节位半字位字位支持不同宽度的数据复制复制对齐为低位对齐例如半字复制到字节则会把低八位复制过去结果为半字复制字则会把半字复制到字的低位结果为地址自增模式正常模式复制完就停下循环模式复制完重新开始循环模式不可用于存储器到存储器的请求对应通道外设通道通道通道通道通道通道通道的请求对应通道外设通道通道通道通道通道通道通道通道通道中断与标志位中断事件事件标志位使能控制位通道传输过半传输完成传输错误全局标志一次性控制三个标志位内存到内存例子用于二次开始的时候重置复制次数使能的时钟记录一下开始复制的时候要设置外设基地址当用存储器到存储器时可写存储器地址外设数据宽度外设地址自增存储器基地址存储器数据宽度存储器地址自增数据传输方向外设为源地址外设为目标地址需要复制次数总复制长度数据宽度复制次数模式正常模式循环模式是否为存储器到存储器如果是则只能软件触发开始优先级配置的通道这里因为是存储器到存储器所以通道可以随便选因为还没有给使能因此没有开始转换赋值复制次数之前要失能赋值复制次数使能开始转换等待复制完成清除标志位外设到存储器例子多通道用于保存转换完成的结果使能时钟配置时钟频率为时钟的分频配置个口配置规则组初始化为连续扫描模式具体看上面存储器到存储器例子外设基地址为的寄存器循环模式使能时钟因为非存储器到存储器所以要硬件请求才能触发开始复制允许可以提交请求触发的数据复制使能校准软件触发开始转换因为为连续扫描模式为循环模式所以只需要触发开始转换后硬件就会不断得转换并把数据复制到数组中的集成电路总线在中使用有两种方案一是软件模拟二是硬件两种方案各有各的优缺点因此了解清楚才能选择适合的软件模拟优点可以用在任何口不会发生卡死最多出错硬件优点速度比软件模拟快容易出现卡死的问题关于硬件卡死问题具体可以看卡死原因分析浅谈硬件具体测试结论硬件到底是不是个坑总结一下的硬件问题当时钟频率太高时容易出问题出问题的概率和时钟频率成正比当存在中断会打断硬件工作时中断会导致容易出现问题硬件的发送流程图硬件的接收流程图使用硬件作为主机发送接收示例代码定义一个模块的从机地址使能与时钟初始化配置与为复用开漏输出开始初始化使用模式因为的硬件外设支持扩展协议因此要指定模式七位从机地址自己作为从机时的地址默认发送应答配置时钟线占空比为低高电平之比为仅在的高速模式下有效标准模式下为原因是低电平时需要变化电平因此需要更多时间时钟频率单位封装一个函数用于等待标准事件包含超时返回避免卡死指定地址写等待总线不繁忙生成一个起始信号等待发送七位从机地址进行寻找从机表示写会自动设置最低位为等待发送一个字节寄存器地址等待发送一个字节数据等待生成停止信号指定地址读等待总线不繁忙生成一个起始信号等待发送七位从机地址进行寻找从机表示写会自动设置最低位为发送一个字节寄存器地址等待再次生成起始信号等待发送七位从机地址进行寻找从机表示读会自动设置最低位为等待需要在接收之前设置为非应答因为硬件会在接收完后直接发送应答非应答没有等待时间生成停止信号但是会在当前字节传输或在当前起始条件发出后产生停止条件因此可以提前给等待读取接收到的数据恢复为默认发送应答中的串行外设接口使用使用的示例例子使能时钟初始化配置为复用推挽输出配置为上拉开始初始化设置单向或者双向的数据模式设置为双线双向全双工设置工作模式设置为主设置的数据大小发送接收位帧结构串行同步时钟的空闲状态为高电平串行同步时钟的第二个跳变沿数据被采样信号由硬件管脚还是软件使用位管理内部信号有位控制设置波特率预分频的值波特率预分频值为指定数据传输从位还是位开始数据传输从位开始值计算的多项式使能外设设置的波特率预分频值清零位设置速度发送一个数据并收回一个数据检查指定的标志位设置与否发送缓存空标志位通过外设发送一个数据检查指定的标志位设置与否接受缓存非空标志位返回通过最近接收的数据中的控制器局域网使用中的架构设置速率总线的速率常用的都是到一般使用尽管它的最大速率是但明显的是最大值往往要求环境更加高导致容易出现问题工作模式初始化模式正常模式睡眠模式测试模式静默模式回环模式回环静默模式调试模式当处于调试模式时核心处于暂停状态提供配置可以使继续正常工作或停止工作是异步通讯因此需要这个发送个发送邮箱可以配置发送优先级按写入先后按标识符数值自动重传发送失败则自动重新发送直至成功接收个三级深度接收邮箱共可以接收个报文注是英文的缩写是一种先进先出的数据缓存器锁定模式锁定状态下接收溢出则丢弃非锁定状态下接收溢出则覆盖过滤器个位宽可配置的标识符过滤器组一个位宽可配置为个位掩码模式个位标识符列表模式个位掩码模式个位标识符列表模式过滤模式标识符列表模式丢弃掉非指定标识符的报文掩码模式可以指定标识符某些位是非必要的后进行比对测试模式图解过滤器使能时钟初始化为上拉输入初始化为复用推挽输出单元设置非时间触发通信模式软件自动离线管理睡眠模式通过软件唤醒清除的位禁止报文自动传送报文不锁定新的覆盖旧的优先级由报文标识符决定模式设置普通模式回环模式设置波特率预分频系数重新同步跳跃宽度过滤器可以为掩码模式位位标识符位掩码要求一致不限制关联到使能过滤器滤波器初始化用于开启中断消息挂号中断允许主优先级为次优先级为中断函数模板发送报文返回为成功否则失败标准标识符设置扩展标示符表明为标准帧表明为数据帧要发送的数据长度复制数据到结构体填入发送邮箱为被填入的邮箱号等待发送结束超时接收数据查询成功返回数据长度没有返回查询邮箱有多少条数据读取数据").trim().substring(0, 1000);
     let value = Math.floor(Math.random() * 3) + 1000;
     while (value === prevParam || truncateDescription.length - value === prevParam) {
       value = Math.floor(Math.random() * 3) + 1000;
@@ -476,72 +476,679 @@
 
   aiAbstract();
   showAiBtn()
-})()</script></div><article class="post-content" id="article-container"><h2 id="STM32-单片机编程"><a href="#STM32-单片机编程" class="headerlink" title="STM32 单片机编程"></a>STM32 单片机编程</h2><p>STM32 常用外设函数</p>
-<p>1.void GPIO_DeInit 所指定的 GPIO 外设就会被复位</p>
-<p>2.void GPIO_AFIODeInit 所指定的 AFIO 外设复位</p>
-<p>3.GPIO_Init 用结构体参数来初始化 GPIO 口</p>
-<p>4.GPIO_StructInit 把结构体变量赋一个默认值</p>
-<p>5.GPIO 读取函数<br>uint8_t GPIO_ReadInputDataBit 用来读取输入数据寄存器某一个端口的输入值<br>uint16_t GPIO_ReadInputData 用来读取整个输入数据寄存器的，返回值的每一位代表一个端口值<br>uint8_t GPIO_ReadOutputDataBit 用来读取输出数据寄存器的某一位<br>uint16_t GPIO_ReadOutputData 用来读取整个输出寄存器的</p>
-<p>6.GPIO 输出函数<br>GPIO_SetBits 设置为高电平<br>GPIO_ResetBits 设置为低电平<br>GPIO_WriteBit Bit_RESET 为低电平 Bit_SET 为高电平<br>GPIO_Write 十六进制设置</p>
-<p>7.Uint8_t 是 unsigned char 的意思</p>
-<p>8.STM32 的程序编写尽量考虑将相同的类型放在同一函数里</p>
-<p>9.RCC 开启内部时钟，即定时器的基准时钟和整个外设的工作时钟都会同时打开了</p>
-<p>10.定时器 time 常用函数 TIM 是定时器<br>TIM_TimeBaseInit 时基单元初始化<br>TIM_TimeBaseStructInit 给结构体设置默认值<br>TIM_Cmd 用来使能计数器<br>TIM_ITConfig 用来使能中断输出信号<br>TIM_InternalClockConfig 选择内部时钟<br>TIM_ITRxExternalClockConfig 选择 ITRx 其他定时器的时钟<br>TIM_TIxExternalClockConfig 选择 TIx 捕获通道的时钟<br>TIM_ETRClockMode1Config 选择 ETR 通过外部时钟模式 1 输入的时钟<br>单独的函数可以方便更改结构体的关键参数<br>TIM_PrescalerConfig 单独写预分频值的<br>TIM_CounterModeConfig 用来改写计数器的计数模式<br>TIM_ARRPreloadConfig 自动重装器预装功能配置<br>TIM_SetCounter 给计数器写入一个值，如果你想手动给一个计数值，就可以用这个函数<br>TIM_SetAutoreload 给自动重装器写入一个值，如果你想手动给一个自动重装值，就可以用这个函数<br>TIM_GetCounter 获取当前计数器的值，如果你想看当前计数器计到哪里了，就可以用这个函数<br>TIM_TimeBaseInitTypeDef 结构体的参数配置<br>TIM_RepetitionCounter &#x3D; 0;重复计数器,高级定时器才有的<br>TIM_ClockDivision 不重要<br>重要两个参数 TIM_Period 配置 ARR TIM_Prescaler 配置 PSC<br>定时频率&#x3D;72M&#x2F;(PSC+1)&#x2F;(ARR+1) 定时 1s,也就是定时频率为 1Hz,PSC&#x3D;7200-1,ARR&#x3D;10000-1,PSC,ARR 取值在 0~65535 之间<br>定时器可以用来定时中断<br>TIM2_IRQHandler 是定时器2的中断函数,当定时器产生更新中断是,这个函数就会自动被执行暂停<br>想要让定时器每秒自动帮我们加一下Num这个变量</p>
-<p>11.用来初始化输出比较单元<br>TIM_OC1Init 不同的通道对应的 GPIO 口不一样的,即函数对应不同的 GPIO 口<br>TIM_OC2Init 使用 TIM2 的 OC1 也就是 CH1 通道,输出 PWM,那它只能在 PA0 的引脚输出,需要查看引脚定义表<br>TIM_OC3Init 其他外设也是一样的,如使用 I2C2 的 SCL 引脚,那就是 PB10,无法更改，可以用重映射解决<br>TIM_OC4Init</p>
-<p>12.这四个用来单独更改 CCR 寄存器值的函数，我们在运行的时候,可以用它更改占空比<br>TIM_SetCompare1 是设置 CCR 寄存器的值<br>TIM_SetCompare2<br>TIM_SetCompare3<br>TIM_SetCompare4</p>
-<p>13.给输出比较单元的结构体赋初始值<br>TIM_OCInitStructure</p>
-<p>14.结构体中的变量 TIM_OCInitStructure.TIM_Pulse 决定了输出 PWM 的占空比<br>ARR,PSC 决定了 PWM 的周期<br>计算公式：<br>PWM 频率：Freq&#x3D;CK_PSC&#x2F;(PSC+1)&#x2F;(ARR+1)&#x3D;1000 1KMz 720<br>PWM 占空比: Duty&#x3D;CCR&#x2F;(ARR+1)&#x3D;50% 50 因为占空比为 50%,所以 TIM_Pulse 为 50,调节亮度用的<br>PWM 分频率: Reso&#x3D;1&#x2F;(ARR+1)&#x3D;1% 100</p>
-<p>15.外设.c 文件主要是放实现功能的函数，main.c 主要是利用功能函数</p>
-<p>16.USB 转串口模块<br>通信引脚为 TXD,RXD<br>PA9 的 USART1_TX 表示发送,接的就是串口模块的 PXD,接收<br>PA10 的 USART1_RX 表示接收,串口模块的 TXD 就是发送</p>
-<p>常用函数<br>USART_SendData,发送数据,就是写 DR 寄存器<br>USART_ReceiveData,接收数据,就是读 DR 寄存器</p>
-<p>17.寄存器是意思是地址</p>
-<p>18.有一些口是不能用的,不如是用来做调试的端口</p>
-<p>19.杜邦线橙色是 VCC,插在正极供电孔,灰色是 GND,插在负极供电孔,红色的是控制脚,插在引脚处</p>
-<p>20.OLED 的 SCL 和 SDA 是 I2C 的通信引脚,需要接在单片机 I2C 的通信的引脚上,用的是 GPIO 口模拟的 I2C<br>如果是 GPIO 口模拟的 I2C 通信,这两个端口就可以任意接在 GPIO 口上<br>自己含有一个现成的 OLED 驱动模块<br>OLED——Font.h 存的是 OLED 的字库数据,可以用来显示字符图形<br>OLED_ShowChar 显示一个字符</p>
-<ol start="21">
-<li><p>keil自带的调试的用途</p>
-</li>
-<li><p>不清楚程序是如何运行的</p>
-</li>
-<li><p>想要看一大堆变量却不方便显示的</p>
-</li>
-<li><p>看一下寄存器是不是配置正确了</p>
-</li>
-<li><p>在这个函数中就以这个函数为思考对象，viod返回类型是发送数据，整数类型是接受数据</p>
-</li>
-</ol>
-<h2 id="IIC通信"><a href="#IIC通信" class="headerlink" title="IIC通信"></a>IIC通信</h2><h3 id="IIC协议层"><a href="#IIC协议层" class="headerlink" title="IIC协议层"></a>IIC协议层</h3><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/imgs/4.jpg" alt="示例图片" style="zoom:50%;" />
+})()</script></div><article class="post-content" id="article-container"><h1 id="前言的前言"><a href="#前言的前言" class="headerlink" title="前言的前言"></a>前言的前言</h1><p>文章的原标题是【Stm32学习笔记】，但是在这个浮躁的时代，不当个标题狗是不会有人点进来的。而既然是发布出来了，那肯定是想要别人点个赞，点个收藏关注一下的，所以在发布的时候还是换了一个浮夸点的标题了。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文章主要记录本人在学习stm32过程中的笔记，也插入了不少的例程代码，方便到时候CV。绝大多数内容为本人手写，小部分来自stm32官方的中文参考手册以及网上其他文章；代码部分大多来自江科大和正点原子的例程，注释是我自己添加；配图来自江科大&#x2F;正点原子&#x2F;中文参考手册。</p>
+<p>笔记内容都是平时自己一点点添加，不知不觉都已经这么长了。其实每一个标题其实都可以发一篇，但是这样搞太琐碎了，所以还是就这样吧。</p>
+<p>喜欢的话，就点赞收藏关注一下~</p>
+<p>本人技术有限，如有错误，欢迎在评论区或者私信指点。</p>
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p>本笔记内容以 Stm32F103xx 型号为研究对象。</p>
+<h2 id="Stm32-三种开发方式的区别"><a href="#Stm32-三种开发方式的区别" class="headerlink" title="Stm32 三种开发方式的区别"></a>Stm32 三种开发方式的区别</h2><p>寄存器模式：最底层的开发，运行速度最快。实际上也是使用了固件库，但是不是使用固件库的函数，而是使用了固件库的定义，包括宏定义，结构体定义。和51的开发差不多，但因为32的寄存器太多，实际开发手动配置大量寄存器极其耗费时间，同时在没有注释的情况下可读性差，所以较少使用。<br>标准库模式：基于寄存器进行了函数的封装，而由于函数封装以及内部大量的检查参数有效性的代码，运行速度相对于寄存器模式较慢。封装之后可以根据函数名字就能明白代码作用，容易记忆，使用方便，所以较多人使用。<br>HAL库模式：全称是Hardware Abstraction Layer（抽象印象层），相比于标准库更加深入的封装，有句柄、回调函数等概念（ps:有点类似Windows开发），因此相对于标准库模式有更好的可移植性（可在不同芯片的移植），但代价就是更多的性能损失。<br>说明：运行速度，性能损失的问题，都只是相对问题，实际上大多数情况下都可以忽略。</p>
+<h2 id="为什么Stm32初始化外设都需要先打开时钟"><a href="#为什么Stm32初始化外设都需要先打开时钟" class="headerlink" title="为什么Stm32初始化外设都需要先打开时钟"></a>为什么Stm32初始化外设都需要先打开时钟</h2><p>每个外设都有独立时钟，如果不打开时钟外设就不能用，原因就是为了低功耗节省用电，不用的外设可以不打开时钟<br>开启外设时钟的方法：</p>
+<p>&#x2F;*<br>    AHB外设总线：<br>    DMA1,DMA2,SRAM,FLITF,CRC,FSMC,SDIO<br>*&#x2F;<br>RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC,ENABLE);<br>RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC,DISABLE);</p>
+<p>&#x2F;*<br>    APB1外设总线：<br>    TIM2,TIM3,TIM4,TIM5,TIM6,TIM7,TIM12,TIM13,TIM14,WWDG<br>    SPI2,SPI3,USART2,USART3,UART4,UART5,I2C1,I2C2,USB,CAN1,CAN2,BKP,PWR,DAC,CEC,<br>*&#x2F;<br>RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2,ENABLE);<br>RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2,DISABLE);</p>
+<p>&#x2F;*<br>    APB2外设总线：<br>    AFIO,GPIOA,GPIOB,GPIOC,GPIOD,GPIOE,GPIOF,GPIOG,ADC1,ADC2<br>    TIM1,SPI1,TIM8,USART1,ADC3,TIM15,TIM16,TIM17,TIM9,TIM10,TIM11<br>*&#x2F;<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, DISABLE);</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22</p>
+<h2 id="GPIO八种模式"><a href="#GPIO八种模式" class="headerlink" title="GPIO八种模式"></a>GPIO八种模式</h2><p>模式		介绍<br>浮空输入	GPIO_Mode_IN_FLOATING	若引脚悬空，则电平不确定<br>上拉输入	GPIO_Mode_IPU	内部连接上拉电阻，悬空时默认高电平<br>下拉输入	GPIO_Mode_IPD	内部连接下拉电阻，悬空时默认低电平<br>模拟输入	GPIO_Mode_AIN	GPIO无效，引脚直接接入内部ADC<br>开漏输出	GPIO_Mode_Out_OD	高电平为高阻态，低电平接VSS（负极）<br>推挽输出	GPIO_Mode_Out_PP	高电平接VDD，低电平接VSS<br>复用开漏输出	GPIO_Mode_AF_OD	由片上外设控制，高电平为高阻态，低电平接VSS<br>复用推挽输出	GPIO_Mode_AF_PP	由片上外设控制，高电平接VDD，低电平接VSS<br>高阻态是一个数字电路里常见的术语，指的是电路的一种输出状态，既不是高电平也不是低电平，如果高阻态再输入下一级电路的话，对下级电路无任何影响，和没接一样，如果用万用表测的话有可能是高电平也有可能是低电平，随它后面接的东西定的。</p>
+<p>电路分析时高阻态可做开路理解。你可以把它看作输出（输入）电阻非常大。它的极限状态可以认为悬空（开路）。也就是说理论上高阻态不是悬空，它是对地或对电源电阻极大的状态。而实际应用上与引脚的悬空几乎是一样的。</p>
+<p>开漏输出和推挽输出的区别主要是开漏输出只可以输出强低电平，高电平得靠外部电阻拉高。输出端相当于三极管的集电极，适合于做电流型的驱动，其吸收电流的能力相对强(一般20ma以内)；推挽输出可以输出强高、低电平，连接数字器件。</p>
+<p>建议看：推挽 开漏 高阻 这都是谁想出来的词？？</p>
+<p>更加详细请看：GPIO口8种模式详解</p>
+<h2 id="Stm32寄存器映射"><a href="#Stm32寄存器映射" class="headerlink" title="Stm32寄存器映射"></a>Stm32寄存器映射</h2><p>以最简单的GPIO讲，将 GPIOA 相关的固件库代码拿出来变很容易明白。</p>
+<p>#define PERIPH_BASE           ((uint32_t)0x40000000)		&#x2F;&#x2F;外设基地址<br>#define APB2PERIPH_BASE       (PERIPH_BASE + 0x10000)		&#x2F;&#x2F;APB2总线基地址<br>#define GPIOA_BASE            (APB2PERIPH_BASE + 0x0800)	&#x2F;&#x2F;GPIOA 基地址</p>
+<p>typedef struct<br>{<br>  __IO uint32_t CRL;<br>  __IO uint32_t CRH;<br>  __IO uint32_t IDR;<br>  __IO uint32_t ODR;<br>  __IO uint32_t BSRR;<br>  __IO uint32_t BRR;<br>  __IO uint32_t LCKR;<br>} GPIO_TypeDef;</p>
+<p>#define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)	&#x2F;&#x2F;GPIOA结构</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>很明显可以看出来，固件库代码的条理非常清晰，而且非常巧妙。除了第一个外设基地址是固定值，其他的基地址都是通过 上一级基地址+偏移 计算出来的，最后GPIOA是一个 指定地址强制转换结构。</p>
+<p>这样我们如果想要操作寄存器，则可以用</p>
+<p>GPIOA-&gt;CRL&amp;&#x3D;0xFF0FFFFF; 	&#x2F;&#x2F;将寄存器 20<del>23位 置0<br>GPIOA-&gt;CRL|&#x3D;0x00300000; 	&#x2F;&#x2F;设置寄存器 20</del>23位，实际作用是设置PA5为推挽输出<br>GPIOA-&gt;ODR|&#x3D;1&lt;&lt;5;		    &#x2F;&#x2F;PA5 输出高电平<br>1<br>2<br>3<br>另外可以注意到，所有地址都是使用了#define定义常量值，这是因为编译器在进行项目编译的时候，对于常量间的计算，是能直接优化成常量值。如：</p>
+<p>GPIOA-&gt;CRL&amp;&#x3D;0xFF0FFFFF;<br>&#x2F;&#x2F;进行预编译处理之后为:<br>((GPIO_TypeDef *) ((((uint32_t)0x40000000) + 0x10000) + 0x0800))&amp;&#x3D;0xFF0FFFFF;<br>&#x2F;&#x2F;然后优化为:<br>((GPIO_TypeDef *) ((uint32_t)0x40010800) &amp;&#x3D;0xFF0FFFFF;<br>1<br>2<br>3<br>4<br>5</p>
+<h2 id="Stm32中的位段映射"><a href="#Stm32中的位段映射" class="headerlink" title="Stm32中的位段映射"></a>Stm32中的位段映射</h2><p>Cortex?-M3存储器映像包括两个位段 (bit-band) 区。这两个位段区将别名存储器区中的每个字映射到位段存储器区的一个位，在别名存储区写入一个字具有对位段区的目标位执行读-改-写操作的相同效果。<br>在Stm32F10xxx里，外设寄存器和SRAM都被映射到一个位段区里，这允许执行单一的位段的写和读操作。<br>下面的映射公式给出了别名区中的每个字是如何对应位带区的相应位的：</p>
+<p>bit_word_addr &#x3D; bit_band_base + (byte_offset×32) + (bit_number×4)</p>
+<p>其中：</p>
+<p>bit_word_addr 是别名存储器区中字的地址，它映射到某个目标位。<br>bit_band_base 是别名区的起始地址。<br>byte_offset 是包含目标位的字节在位段里的序号<br>bit_number 是目标位所在位置(0-31)<br>例子： 下面的例子说明如何映射别名区中SRAM地址为 0x20000300 的字节中的 位2：</p>
+<p>0x22006008 &#x3D; 0x22000000 + (0x300×32) + (2×4).</p>
+<p>对 0x22006008 地址的写操作与对SRAM中地址 0x20000300 字节的 位2 执行读-改-写操作有着相 同的效果。<br>读 0x22006008 地址返回SRAM中地址 0x20000300 字节的 位2 的值(0x01 或 0x00)</p>
+<p>本节内容摘抄至 Stm32F10xxx参考手册（中文）.pdf</p>
+<h2 id="Stm32中的时钟系统"><a href="#Stm32中的时钟系统" class="headerlink" title="Stm32中的时钟系统"></a>Stm32中的时钟系统</h2><p>Stm32 有5个时钟源：HSI、 HSE、LSI、LSE、PLL</p>
+<p>中文名称	解释<br>HSI	高速内部时钟	RC振荡器，频率为8MHZ，精度不高。<br>HSE	高速外部时钟	可接石英&#x2F;陶瓷谐振器，或者接外部时钟源，频率范围为4MHZ<del>16MHz。<br>LSI	低速内部时钟	RC振荡器，频率为40kHz，提供低功耗时钟。一般用于看门狗(WDG)<br>担当一个低功耗时钟源的角色，它可以在停机和待机模式下保持运行，为独立看门狗和 自动唤醒单元提供时钟。<br>LSE	低速外部时钟	接频率为32.768kHz的石英晶体。一般用于实时时钟(RTC)<br>PLL	锁相环倍频输出	本质上与其他四个时钟源不一样，这个时钟源是将 时钟输入源 进行 倍频 再输出<br>时钟输入源可选择为HSI &#x2F; 2 、HSE或 HSE &#x2F; 2 。<br>倍频可选择为2</del>16倍，但是其输出频率最大不得超过72MHZ。<br>倍频器的原理：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Mq4y1G77m">https://www.bilibili.com/video/BV1Mq4y1G77m</a></p>
+<p>时钟安全系统(CSS)</p>
+<p>Stm32中还有一个时钟安全系统(CSS)，在出现意外情况下还挺有用的。不过既然说是意外，就说明出现的概率并不大，因此这个功能没有什么存在感。</p>
+<p>时钟安全系统可以通过软件被激活。一旦其被激活，时钟监测器将在HSE振荡器启动延迟后被使能，并在HSE时钟关闭后关闭。</p>
+<p>如果HSE时钟发生故障，HSE振荡器将被自动关闭，时钟失效事件将被送到高级定时器(TIM1和 TIM8)的刹车输入端，并产生时钟安全中断CSSI，允许软件完成营救操作。此CSSI中断连接到 Cortex?-M3的NMI中断(不可屏蔽中断)。</p>
+<p>如果HSE振荡器被直接或间接地作为系统时钟，(间接的意思是：它被作为PLL输入时钟，并且 PLL时钟被作为系统时钟)，时钟故障将导致系统时钟自动切换到HSI振荡器，同时外部HSE振荡 器被关闭。在时钟失效时，如果HSE振荡器时钟(被分频或未被分频)是用作系统时钟的PLL的输 入时钟，PLL也将被关闭。</p>
+<p>——Stm32F10xxx参考手册（中文）.pdf</p>
+<h2 id="Stm32外设"><a href="#Stm32外设" class="headerlink" title="Stm32外设"></a>Stm32外设</h2><p>AHB，是Advanced High performance Bus的缩写，高级高性能总线；<br>APB，是Advanced Peripheral Bus的缩写，高级外设总线。</p>
+<p>从图中就可以看出，APB1、APB2都是AHB系统总线进行桥接出来的。另外APB1最高只有36MHz，APB2最高可以达到72MHz。</p>
+<p>Stm32的各种外设：</p>
+<p>IO口 (GPIO)<br>定时器 (TIM)<br>数模转换器 (DAC)<br>模数转换器 (ADC)<br>串口 (UART)<br>串行外设接口 (SPI)<br>集成电路总线 (I2C&#x2F;IIC)<br>集成电路内置音频总线 (IIS&#x2F;I2S)<br>外部中断&#x2F;事件控制器 (EXTI)<br>通用和复用功能IO (AFIO)<br>独立看门狗 (IWDG)<br>窗口看门狗 (WWDG)<br>备份寄存器 (BKP)<br>实时时钟 (RTC)<br>USB全速设备接口 (USB)<br>控制器局域网 (bxCAN)<br>内核外设：</p>
+<p>嵌套中断向量控制器 (NVIC)</p>
+<h2 id="Stm32的端口复用与重映射"><a href="#Stm32的端口复用与重映射" class="headerlink" title="Stm32的端口复用与重映射"></a>Stm32的端口复用与重映射</h2><p>Stm32有很多的IO口，同时有很多的外设。这些IO口默认是用来做普通的输出输入引脚，而配置为外设需要用到IO口，就叫IO口的复用。如：</p>
+<p>管脚名称	主功能 (复位后)	默认复用功能	重定义功能<br>PA9	PA9	USART1_TX	无<br>PA10	PA10	USART1_RX	无<br>&#x2F;*<br>    以下代码则是配置PA9、PA10为复用。<br>    其实PA10作为输入引脚，并不区分复用不复用的，因为输出只能有一个外设控制，但是输入可以多个外设读取，不冲突。<br>*&#x2F;</p>
+<p>&#x2F;&#x2F;需要使能GPIO和复用外设的时钟，使用默认复用功能时，AFIO时钟不需要使能<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</p>
+<p>&#x2F;&#x2F;初始化TX引脚 PA9 为复用推挽输出<br>GPIO_InitTypeDef GPIO_InitStructure;<br>GPIO_InitStructure.GPIO_Mode &#x3D; GPIO_Mode_AF_PP;		&#x2F;&#x2F;复用推挽输出<br>GPIO_InitStructure.GPIO_Pin &#x3D; GPIO_Pin_9;<br>GPIO_InitStructure.GPIO_Speed &#x3D; GPIO_Speed_50MHz;<br>GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</p>
+<p>&#x2F;&#x2F;初始化RX引脚 PA10 为上拉输入<br>GPIO_InitStructure.GPIO_Mode &#x3D; GPIO_Mode_IPU;<br>GPIO_InitStructure.GPIO_Pin &#x3D; GPIO_Pin_10;<br>GPIO_InitStructure.GPIO_Speed &#x3D; GPIO_Speed_50MHz;<br>GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>每个内置外设都有若干个输入输出引脚，一般这些引脚的输出端口都是固定不变的。但在实际使用中，为了让设计工程师可以更好地安排引脚的走向和功能，在Stm32中引入了外设引脚重映射的概念。即一个外设的引脚除了具有默认的端口外，还可以通过设置重映射寄存器的方式，把这个外设的引脚映射到其它的端口。</p>
+<p>管脚名称	主功能 (复位后)	默认复用功能	重定义功能<br>PB6	PB6	1I2C1_SCL &#x2F; TIM4_CH1	USART1_TX<br>PB7	PB7	I2C1_SDA &#x2F; FSMC_NADV &#x2F; TIM4_CH2	USART1_RX<br>如 外设的 USART1_TX 引脚除了PA9外，还可以使用PB6。</p>
+<p>&#x2F;&#x2F;使能重映射之后的GPIO时钟<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);<br>&#x2F;&#x2F;使能复用外设的时钟<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<br>&#x2F;&#x2F;重映射需要使能AFIO时钟，因为下一行代码是配置AFIO_MAPR寄存器<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);</p>
+<p>&#x2F;&#x2F;实际上是对AFIO进行操作：重映射引脚<br>GPIO_PinRemapConfig(GPIO_Remap_USART1, ENABLE);</p>
+<p>&#x2F;&#x2F;初始化PB6与PB7引脚，略<br>&#x2F;&#x2F;…<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>部分重映射&amp;完全重映射<br>部分重映射：功能外设的部分引脚重新映射，还有一部分引脚是原来的默认引脚<br>完全重映射：功能外设的所有引脚都重新映射</p>
+<p>何时需要使能AFIO时钟？<br>根据手册说明：对寄存器AFIO_EVCR(事件控制寄存器)、AFIO_MAPR(复用重映射和调试I&#x2F;O配置寄存器)和AFIO_EXTICRX(外部中断配置寄存器) 进行读写操作前，应当首先打开AFIO 的时钟。</p>
+<p>说人话就是在用到 外部中断 和 端口重映射 的时候要使能AFIO时钟</p>
+<h2 id="Stm32中断"><a href="#Stm32中断" class="headerlink" title="Stm32中断"></a>Stm32中断</h2><p>Stm32F103xx 中有60个可编程外设中断。配置中断的代码如下：</p>
+<p>抢占优先级：优先级高的能打断优先级低<br>响应优先级：当抢占优先级相同时，响应优先级高的先执行</p>
+<p>注意：优先级的值越小，优先级越高(越先执行)</p>
+<p>总结：抢占优先级高的可以中断嵌套，响应优先级高的可以优先排队，抢占优先级和响应优先级均相同的按中断号排队</p>
+<p>可能有些朋友没办法理解响应优先级的优先排队的作用，那我再解释一下优先排队的概念：</p>
+<p>假设一个[抢占优先级&#x3D;0]的中断①进行过程中，先触发了[抢占优先级&#x3D;1,响应优先级&#x3D;2]的中断②，再触发了[抢占优先级&#x3D;1,响应优先级&#x3D;1]的中断③</p>
+<p>则中断①结束后，理论上应该按照先来后到先执行中断②，然后再执行中断③的，但实际上因为中断③响应优先级更高，因此中断③拥有优先排队(插队)的权限，因此最终是先执行中断③，再执行中断②</p>
+<p>#define NVIC_PriorityGroup_0         ((uint32_t)0x700) 		&#x2F;&#x2F; 0位抢先优先级、4位响应优先级<br>#define NVIC_PriorityGroup_1         ((uint32_t)0x600) 		&#x2F;&#x2F; 1位抢先优先级、3位响应优先级<br>#define NVIC_PriorityGroup_2         ((uint32_t)0x500) 		&#x2F;&#x2F; 2位抢先优先级、2位响应优先级<br>#define NVIC_PriorityGroup_3         ((uint32_t)0x400) 		&#x2F;&#x2F; 3位抢先优先级、1位响应优先级<br>#define NVIC_PriorityGroup_4         ((uint32_t)0x300) 		&#x2F;&#x2F; 4位抢先优先级、0位响应优先级</p>
+<p>NVIC_PriorityGroupConfig (NVIC_PriorityGroup_2);		&#x2F;&#x2F;设置优先级分配配置</p>
+<p>NVIC_InitTypeDef NVIC_InitStructure;<br>NVIC_InitStructure.NVIC_IRQChannel &#x3D; USART1_IRQn;			&#x2F;&#x2F;设置中断通道类型<br>NVIC_InitStructure.NVIC_IRQChannelCmd &#x3D; ENABLE;				&#x2F;&#x2F;设置中断使能<br>&#x2F;<em>优先级的值越小，优先级越高(越先执行)</em>&#x2F;<br>NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority &#x3D; 1;	 &#x2F;&#x2F;设置抢占优先级	<br>NVIC_InitStructure.NVIC_IRQChannelSubPriority &#x3D; 1;			&#x2F;&#x2F;设置响应优先级</p>
+<p>NVIC_Init(&amp;NVIC_InitStructure);		&#x2F;&#x2F;初始化中断通道</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16</p>
+<h2 id="Stm32的USART使用"><a href="#Stm32的USART使用" class="headerlink" title="Stm32的USART使用"></a>Stm32的USART使用</h2><p>void Serial_Init(void)<br>{<br>    &#x2F;&#x2F;使用之前需要先启用外设 USART1,GPIOA<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</p>
+<pre><code>//初始化TX引脚 PA9 为复用推挽输出 
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOA, &amp;GPIO_InitStructure);
 
+//初始化RX引脚 PA10 为上拉输入
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOA, &amp;GPIO_InitStructure);
 
-<h2 id="AT24C02-x2F-EEPROM"><a href="#AT24C02-x2F-EEPROM" class="headerlink" title="AT24C02&#x2F;EEPROM"></a>AT24C02&#x2F;EEPROM</h2><h3 id="AT24C02-x2F-EEPROM概述"><a href="#AT24C02-x2F-EEPROM概述" class="headerlink" title="AT24C02&#x2F;EEPROM概述"></a>AT24C02&#x2F;EEPROM概述</h3><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/imgs/1.jpg" alt="示例图片" style="zoom:50%;" />
-1. I2C/IIC是通过硬件地址+可编程地址进行通信的
-2. SCL和SDA分别为时钟线和数据线
-3. 高四位是固定的即硬件地址，是厂家生产设定的。后三位是可编程地址。
-4. 5？
+//初始化 USART1 为波特率9600，无硬流控，需要收发，无校验，1位停止位
+USART_InitTypeDef USART_InitStructure;
+USART_InitStructure.USART_BaudRate = 9600;
+USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
+USART_InitStructure.USART_Parity = USART_Parity_No;
+USART_InitStructure.USART_StopBits = USART_StopBits_1;
+USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+USART_Init(USART1, &amp;USART_InitStructure);
 
-<h3 id="AT24C02写数据时序"><a href="#AT24C02写数据时序" class="headerlink" title="AT24C02写数据时序"></a>AT24C02写数据时序</h3><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/imgs/2.jpg" alt="示例图片" style="zoom:50%;" />
-1. ACK为等待应答
+//开启RXNE标志位到NVIC的输出
+USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
 
-<h3 id="AT24C02读数据时序"><a href="#AT24C02读数据时序" class="headerlink" title="AT24C02读数据时序"></a>AT24C02读数据时序</h3><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/imgs/3.jpg" alt="示例图片" style="zoom:50%;" />
-1. 多了一个发送设备地址的节点
-2. 读和写的时序开始都有发送设备的节点
+//设置优先级分配配置
+NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 
-<h2 id="外设控制代码编写"><a href="#外设控制代码编写" class="headerlink" title="外设控制代码编写"></a>外设控制代码编写</h2><ol>
-<li>&#x2F;**</li>
-</ol>
-<ul>
-<li>函数名：LoadOrNot</li>
-<li>描述：检测药品装载</li>
-<li>过程：等待药品装载-&gt;装药-&gt;取药</li>
-<li>输入：无</li>
-<li>输出：0-等待 1-装药 2-取药<br>uint16_t LoadOrNot(void)<br>{<br>static uint8_t load_flag;<br>if(DRUG_Testing&#x3D;&#x3D;1)<br>{<br>  load_flag&#x3D;1;<br>  return 1;<br>}else if(DRUG_Testing&#x3D;&#x3D;0)<br>{<br>  if(load_flag&#x3D;&#x3D;1)<br>  {<br>return 2;<br>  }<br>}<br>return 0;<br>}</li>
-</ul>
-<h2 id="小车逻辑代码编写"><a href="#小车逻辑代码编写" class="headerlink" title="小车逻辑代码编写"></a>小车逻辑代码编写</h2><h2 id="实现的功能"><a href="#实现的功能" class="headerlink" title="实现的功能"></a>实现的功能</h2><ol>
-<li>led控制 使用正点原子家的sys函数中的位带操作</li>
-<li>检测药品 使用正点原子家的sys函数中的位带操作</li>
-<li>dian’z</li>
-</ol>
-</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.jinyincaibao.online/2023/07/19/10/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=https://www.jinyincaibao.online/2023/07/19/10/&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%BC%96%E7%A8%8B/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>嵌入式编程<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/66dd47e6d9c307b7e9aae384.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div></div><div class="post-copyright"><i class="anzhiyufont anzhiyu-icon-copyright"></i><div class="post-copyright__author"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.jinyincaibao.online/2023/07/19/10/">原创</a><a class="post-copyright-title"><span>STM32</span></a></div><div class="post-copyright-info-box"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"></span><a class="link" href="https://www.jinyincaibao.online">金银财宝</a></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a class="link" href="https://www.jinyincaibao.online/2023/07/19/10/">https://www.jinyincaibao.online/2023/07/19/10/</a></span><span class="copy-button" onclick="rm.copyPageUrl('https://www.jinyincaibao.online/2023/07/19/10/)'"><i class="anzhiyufont anzhiyu-icon-copy"></i></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.jinyincaibao.online" target="_blank">金银财宝</a>！</span></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/16/5/"><img class="prev-cover" src="https://pic.imgdb.cn/item/66dd3100d9c307b7e9837df9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/15/3/"><img class="next-cover" src="https://pic.imgdb.cn/item/66dd301cd9c307b7e980d622.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Leetcode</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><a class="avatar-img" href="/about"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/66daa709d9c307b7e9042d3a.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></a><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">金银财宝</h1><div class="author-info__description">大好青年，事业有为。</div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/H-jfeng" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/frame_html?sid=dozdw2LJoUeyizdT&amp;r=0d94d63e78efbec9830f1bae3bd0223d&amp;lang=zh" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32-%E5%8D%95%E7%89%87%E6%9C%BA%E7%BC%96%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">STM32 单片机编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IIC%E9%80%9A%E4%BF%A1"><span class="toc-number">2.</span> <span class="toc-text">IIC通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IIC%E5%8D%8F%E8%AE%AE%E5%B1%82"><span class="toc-number">2.1.</span> <span class="toc-text">IIC协议层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AT24C02-x2F-EEPROM"><span class="toc-number">3.</span> <span class="toc-text">AT24C02&#x2F;EEPROM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AT24C02-x2F-EEPROM%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">AT24C02&#x2F;EEPROM概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AT24C02%E5%86%99%E6%95%B0%E6%8D%AE%E6%97%B6%E5%BA%8F"><span class="toc-number">3.2.</span> <span class="toc-text">AT24C02写数据时序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AT24C02%E8%AF%BB%E6%95%B0%E6%8D%AE%E6%97%B6%E5%BA%8F"><span class="toc-number">3.3.</span> <span class="toc-text">AT24C02读数据时序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E8%AE%BE%E6%8E%A7%E5%88%B6%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-number">4.</span> <span class="toc-text">外设控制代码编写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E8%BD%A6%E9%80%BB%E8%BE%91%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-number">5.</span> <span class="toc-text">小车逻辑代码编写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">6.</span> <span class="toc-text">实现的功能</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:anzhiyu-c@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6378063631" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100092208016287&amp;sk=about" title="facebook"><i class="anzhiyufont anzhiyu-icon-facebook1"></i></a><img class="footer_mini_logo" title="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src="https://pic.imgdb.cn/item/66dd9db5d9c307b7e93f321e.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/1463547681?spm_id_from=333.1007.0.0" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/self?from_tab_name=main&amp;showTab=like" title="抖音"><i class="anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" href="/docs/">文档</a><a class="footer-item" title="源码" target="_blank" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" target="_blank" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" target="_blank" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" target="_blank" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" target="_blank" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" target="_blank" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" target="_blank" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" target="_blank" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div class="copyright">&copy;2020 - 2024 By 金银财宝</div><div id="workboard"><img class="workSituationImg boardsign" src="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg" alt="距离月入25k也就还差一个大佬带我~" title="距离月入25k也就还差一个大佬带我~"/><div id="runtimeTextTip"></div></div></div></footer></div></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://pic.imgdb.cn/item/66daa709d9c307b7e9042d3a.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+//配置 USART1 的中断
+NVIC_InitTypeDef NVIC_InitStructure;
+NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+NVIC_Init(&amp;NVIC_InitStructure);
+
+//最后使能 USART1
+USART_Cmd(USART1, ENABLE);
+</code></pre>
+<p>}</p>
+<p>void Serial_SendByte(uint8_t Byte)<br>{<br>    USART_SendData(USART1, Byte);		&#x2F;&#x2F;填充数据至 USART1的DR寄存器</p>
+<pre><code>//USART_FLAG_TXE: 发送寄存器为空标志位。对USART_DR的写操作时，将该位清零。
+while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);	//等待发送完成
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F;USART1 中断函数<br>void USART1_IRQHandler(void)<br>{<br>    if (USART_GetITStatus(USART1, USART_IT_RXNE) &#x3D;&#x3D; SET)<br>    {<br>        uint8_t Serial_RxData &#x3D; USART_ReceiveData(USART1);		&#x2F;&#x2F;读取 USART1 收到的字节</p>
+<pre><code>    /*
+        USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+        这里可以省略手动清除标志位，因为对USART_DR的读操作可以将该位清零。
+    */
+&#125;
+</code></pre>
+<p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70</p>
+<h2 id="Stm32的外部中断-EXTI"><a href="#Stm32的外部中断-EXTI" class="headerlink" title="Stm32的外部中断 (EXTI)"></a>Stm32的外部中断 (EXTI)</h2><p>&#x2F;*<br>    配置外部中断的示例代码<br>*&#x2F;<br>void EXTI(void)<br>{<br>    &#x2F;&#x2F;使能GPIOA时钟<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<br>    &#x2F;&#x2F;因为使用到了AFIO的中断引脚选择功能，所以要使能AFIO的时钟<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);</p>
+<pre><code>GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOA, &amp;GPIO_InitStructure);
+
+//实际上是对AFIO进行操作：将PA14信号输出至EXTI的14号线
+GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource14);
+
+//初始化EXTI
+EXTI_InitTypeDef EXTI_InitStructure;
+EXTI_InitStructure.EXTI_Line = EXTI_Line14;
+EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;			//使用中断
+EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;		//下降沿触发
+EXTI_Init(&amp;EXTI_InitStructure);
+
+//设置优先级分配配置
+NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+
+//配置外部中断
+NVIC_InitTypeDef NVIC_InitStructure;
+NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
+NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+NVIC_Init(&amp;NVIC_InitStructure);
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F;中断函数<br>void EXTI15_10_IRQHandler(void)<br>{<br>    if (EXTI_GetITStatus(EXTI_Line14) &#x3D;&#x3D; SET)<br>    {</p>
+<pre><code>     //清除中断标志位
+    EXTI_ClearITPendingBit(EXTI_Line14);
+&#125;
+</code></pre>
+<p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>Stm32库函数 EXTI_GetFlagStatus 和 EXTI_GetITStatus 区别<br>FlagStatus EXTI_GetFlagStatus(uint32_t EXTI_Line)<br>{<br>  FlagStatus bitstatus &#x3D; RESET;<br>  &#x2F;* Check the parameters *&#x2F;<br>  assert_param(IS_GET_EXTI_LINE(EXTI_Line));</p>
+<p>  if ((EXTI-&gt;PR &amp; EXTI_Line) !&#x3D; (uint32_t)RESET)<br>  {<br>    bitstatus &#x3D; SET;<br>  }<br>  else<br>  {<br>    bitstatus &#x3D; RESET;<br>  }<br>  return bitstatus;<br>}</p>
+<p>ITStatus EXTI_GetITStatus(uint32_t EXTI_Line)<br>{<br>  ITStatus bitstatus &#x3D; RESET;<br>  uint32_t enablestatus &#x3D; 0;<br>  &#x2F;* Check the parameters *&#x2F;<br>  assert_param(IS_GET_EXTI_LINE(EXTI_Line));</p>
+<p>  enablestatus &#x3D;  EXTI-&gt;IMR &amp; EXTI_Line;<br>  if (((EXTI-&gt;PR &amp; EXTI_Line) !&#x3D; (uint32_t)RESET) &amp;&amp; (enablestatus !&#x3D; (uint32_t)RESET))<br>  {<br>    bitstatus &#x3D; SET;<br>  }<br>  else<br>  {<br>    bitstatus &#x3D; RESET;<br>  }<br>  return bitstatus;<br>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>可以很容易看出来，代码上的区别在：</p>
+<p>EXTI_GetFlagStatus 部分：<br>if ((EXTI-&gt;PR &amp; EXTI_Line) !&#x3D; (uint32_t)RESET)</p>
+<p>EXTI_GetITStatus 部分：<br>enablestatus &#x3D;  EXTI-&gt;IMR &amp; EXTI_Line;<br>if (((EXTI-&gt;PR &amp; EXTI_Line) !&#x3D; (uint32_t)RESET) &amp;&amp; (enablestatus !&#x3D; (uint32_t)RESET))<br>1<br>2<br>3<br>4<br>5<br>6<br>即 EXTI_GetITStatus 的判断多了一个条件。</p>
+<p>由手册可以知道：</p>
+<p>EXTI-&gt;PR 是 挂起寄存器，0：没有发生触发请求；1：发生了选择的触发请求<br>EXTI-&gt;IMR 是 中断屏蔽寄存器，0：屏蔽来自线x上的中断请求； 1：开放来自线x上的中断请求。</p>
+<p>因此，EXTI_GetFlagStatus 只是纯粹读取中断标志位的状态，但是实际上这并不准确，因为设置 EXTI_IMR 寄存器可以对该中断进行屏蔽；而 EXTI_GetITStatus 除了读取中断标志位，还查看 EXTI_IMR 寄存器是否对该中断进行屏蔽。</p>
+<p>另外，EXTI_ClearFlag 和 EXTI_ClearITPendingBit 则是什么区别都没有，内部代码完全一样。</p>
+<p>Stm32的电源控制 (PWR)<br>Stm32的工作电压(VDD)为2.0～3.6V。通过内置的电压调节器提供所需的1.8V电源。 当主电源VDD掉电后，通过VBAT脚为实时时钟(RTC)和备份寄存器提供电源。实际上，VBAT脚还可以为 LSE振荡器 和 PC13<del>PC15 端口供电，可以保证当主电源被切断时RTC能继续工作。但当使用VBAT供电时，PC13</del>PC15无法用作GPIO。</p>
+<p>管脚名称	主功能 (复位后默认)	复用功能	功能<br>PC13	PC13	TAMPER &#x2F; RTC	用于侵入检测，RTC校准时钟、RTC闹钟或秒输出<br>PC14	PC14	OSC32_IN	LSE引脚<br>PC15	PC15	OSC32_OUT	LSE引脚<br>一般来说，VBAT脚接一个纽扣电池供电，如正点原子的开发板。</p>
+<p>从图中可以看出来，除了上面说到的之外，RCC_BDCR 寄存器也在后备供电区域内。但实际上，RCC_BDCR 寄存器只有 LSEON (外部低速振荡器使能)、LSEBYP (外部低速时钟振荡器旁路)、RTCSEL (RTC时钟源选择) 和 RTCEN (RTC时钟使能)位处于备份域。另外的 LSERDY (外部低速LSE就绪) 与 BDRST (备份域软件复位) 不处于备份域，因为没有必要。</p>
+<p>Stm32中的备份寄存器 (BKP)<br>备份寄存器拥有以下特性</p>
+<p>当VDD电源被切断，他们仍然由VBAT维持供电。<br>20字节数据后备寄存器(中容量和小容量产品)，或84字节(42*16 Bit)数据后备寄存器(大容量和互联型 产品)<br>当系统在待机模式下被唤醒，或系统复位或 电源复位时，他们也不会被复位。<br>BKP寄存器是16位的可寻址寄存器，可以用半字(16位)或字(32位)的方式操作这些外设寄存器。<br>备份寄存器的复位</p>
+<p>软件复位，备份区域复位可由设置备份域控制寄存器 (RCC_BDCR)中的 BDRST位产生<br>在VDD和VBAT两者都掉电的情况下，VDD或VBAT上电将引发备份区域复位。<br>后备区域的保护</p>
+<p>在复位之后，对 后备区域(备份寄存器和RTC) 的访问将被禁止，后备区域被保护以防止可能存在的意外的写操作。<br>需要执行以下操作可以使能对后备区域的访问。</p>
+<p>通过设置寄存器 RCC_APB1ENR 的 PWREN 和 BKPEN 位来打开电源和后备接口的时钟<br>说人话就是使能 电源控制 (PWR) 与 备份寄存器 (BKP)的时钟<br>电源控制寄存器(PWR_CR)的DBP位来使能对后备寄存器和RTC的访问<br>&#x2F;*<br>    BKP寄存器基础操作示例<br>*&#x2F;</p>
+<p>RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE);	&#x2F;&#x2F;使能PWR和BKP外设时钟</p>
+<p>BKP_ReadBackupRegister(BKP_DR1)				&#x2F;&#x2F;读取 BKP_DR1 寄存器，启用时钟后就可以读取了<br>BKP_DeInit()	&#x2F;&#x2F;对备份寄存器进行软件复位</p>
+<p>PWR_BackupAccessCmd(ENABLE);	&#x2F;&#x2F;取消后备区域的写保护，但如果RTC的时钟是HSE&#x2F;128，无法进行写保护。<br>BKP_WriteBackupRegister(BKP_DR1, 0X5050);	 &#x2F;&#x2F;向 BKP_DR1 寄存器写 0x5050，写之前要取消写保护才可以</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>Stm32中的实时时钟 (RTC)</p>
+<p>RTC的本质与定时器类似，就是一个计数器，每秒加一让其可以实现更新时间。</p>
+<p>RTC的预分配系数最高为2的20次方<br>RTC的计数器是32位的<br>RTC的时钟源可以选择以下三种<br>RCC_RTCCLKSource_LSE：低速外部时钟<br>RCC_RTCCLKSource_LSI：低速内部时钟 (通常用这个作为时钟源，32.768 kHz 进行 32768 分配可以得到 1Hz 的时钟信号)<br>RCC_RTCCLKSource_HSE_Div128：高速外部时钟的128分频<br>RTC的3个可屏蔽中断<br>闹钟中断：用来产生一个软件可编程的闹钟中断<br>秒中断：用来产生一个可编程的周期性中断信号(最长可达1秒)<br>溢出中断：指示内部可编程计数器溢出并回转为0的状态<br>RTC的时钟源的配置是设置 备份域控制寄存器 (RCC_BDCR) 里的 RTCSEL[1:0] 位。因此，除非备份域复位，不然此选择不能被改变。</p>
+<p>读RTC寄存器</p>
+<p>RTC核完全独立于RTC APB1接口。软件通过APB1接口访问RTC的预分频值、计数器值和闹钟值。但是，相关的可读寄存器只在与 RTC APB1时钟进行重新同步的RTC时钟的上升沿被更新。(RTC标志也是如此的)</p>
+<p>这意味着，如果APB1接口曾经被关闭，而读操作又是在刚刚重新开启APB1之后，则在第一次的内部寄存器更新之前，从APB1上读出的RTC寄存器数值可能被破坏了(通常读到0)。</p>
+<p>下述几种情况下能够发生这种情形：</p>
+<p>发生系统复位或电源复位<br>系统刚从待机模式唤醒<br>系统刚从停机模式唤醒<br>所有以上情况中，APB1接口被禁止时(复位、无时钟或断电)，RTC核仍保持运行状态。</p>
+<p>因此，若在读取RTC寄存器时，RTC的APB1接口曾经处于禁止状态，则软件首先必须等待 RTC_CRL寄存器中的RSF位(寄存器同步标志)被硬件置’1’。</p>
+<p>写RTC寄存器</p>
+<p>必须设置RTC_CRL寄存器中的CNF位，使RTC进入配置模式后，才能写入 RTC_PRL(预分频装载寄存器) 、 RTC_CNT(计数器寄存器) 、 RTC_ALR(闹钟寄存器)。<br>另外，对RTC任何寄存器的写操作，都必须在前一次写操作结束后进行。可以通过查询 RTC_CR寄存器中的RTOFF状态位，判断RTC寄存器是否处于更新中。仅当RTOFF状态位是’1’ 时，才可以写入RTC寄存器。</p>
+<p>配置过程：</p>
+<p>查询RTOFF位，直到RTOFF的值变为’1’<br>置CNF值为1，进入配置模式<br>对一个或多个RTC寄存器进行写操作<br>清除CNF标志位，退出配置模式<br>查询RTOFF，直至RTOFF位变为’1’以确认写操作已经完成。<br>仅当CNF标志位被清除时，写操作才能进行，这个过程至少需要3个RTCCLK周期。</p>
+<p>&#x2F;*<br>    RTC初始化与中断<br>*&#x2F;</p>
+<p>u8 RTC_Init(void)<br>{<br>    u8 temp &#x3D; 0;<br>    RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE); &#x2F;&#x2F; 使能PWR和BKP外设时钟<br>    PWR_BackupAccessCmd(ENABLE);	&#x2F;&#x2F; 取消后备区域(RTC和后备寄存器)的写保护</p>
+<pre><code>// 判断
+if (BKP_ReadBackupRegister(BKP_DR1) != 0x5050)
+&#123;
+    BKP_DeInit();					//对备份寄存器进行软件复位
+    RCC_LSEConfig(RCC_LSE_ON);		 //使能 外设低速晶振
+    
+    //检查指定的RCC标志位设置与否,等待低速晶振就绪
+    while (RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET &amp;&amp; temp &lt; 250)
+    &#123;
+        temp++;
+        delay_ms(10);
+    &#125;
+    
+    if (temp &gt;= 250)
+        return 1;						     //超时说明初始化时钟失败,晶振有问题
+    
+    RCC_RTCCLKConfig(RCC_RTCCLKSource_LSE);	    //设置 LSE 作为 RTC时钟源
+    RCC_RTCCLKCmd(ENABLE);					  //使能RTC时钟，要先设置时钟源
+    
+     RTC_WaitForSynchro();					   // 等待RTC寄存器同步
+    
+    RTC_WaitForLastTask();					  // 等待最近一次对RTC寄存器的写操作完成
+    RTC_ITConfig(RTC_IT_SEC, ENABLE);		   // 使能RTCf的秒中断
+    
+    RTC_WaitForLastTask();					  // 等待最近一次对RTC寄存器的写操作完成
+    RTC_SetPrescaler(32767);				  // 设置RTC预分频的值
+    
+    RTC_WaitForLastTask();					  // 等待最近一次对RTC寄存器的写操作完成
+    RTC_SetCounter(123456);		   			  // 设置计数值(时间戳)
+    
+    /*
+        实际上用不上，因为库函数封装中已经包含，不需要自己手动额外写
+        RTC_EnterConfigMode();					  // 允许配置
+        RTC_ExitConfigMode();					  // 退出配置模式
+    */
+
+    BKP_WriteBackupRegister(BKP_DR1, 0X5050); 	// 向指定的后备寄存器中写入用户程序数据
+&#125;
+else // 系统继续计时
+&#123;
+
+    RTC_WaitForSynchro();			  // 等待RTC寄存器同步
+    RTC_ITConfig(RTC_IT_SEC, ENABLE);  // 使能RTC秒中断
+    RTC_WaitForLastTask();			  // 等待最近一次对RTC寄存器的写操作完成
+&#125;
+
+//初始化中断通道
+NVIC_InitTypeDef NVIC_InitStructure;
+NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;			  // RTC全局中断
+NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0; // 先占优先级1位,从优先级3位
+NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		  // 先占优先级0位,从优先级4位
+NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			  // 使能该通道中断
+NVIC_Init(&amp;NVIC_InitStructure);	
+
+return 0;
+</code></pre>
+<p>}</p>
+<p>void RTC_IRQHandler(void)<br>{<br>    if (RTC_GetITStatus(RTC_IT_SEC) !&#x3D; RESET) &#x2F;&#x2F; 秒钟中断<br>    {<br>        RTC_WaitForSynchro();		&#x2F;&#x2F; 等待RTC寄存器同步,读取RTC寄存器前必须做<br>        RTC_GetCounter();		    &#x2F;&#x2F; 获取当前计数值(时间戳)<br>    }<br>    if (RTC_GetITStatus(RTC_IT_ALR) !&#x3D; RESET) &#x2F;&#x2F; 闹钟中断<br>    {<br>        RTC_ClearITPendingBit(RTC_IT_ALR);		&#x2F;&#x2F; 清闹钟中断</p>
+<pre><code>&#125;
+
+RTC_ClearITPendingBit(RTC_IT_SEC | RTC_IT_OW); // 清秒中断与溢出中断
+RTC_WaitForLastTask();
+</code></pre>
+<p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82<br>83<br>84<br>Stm32的低功耗模式<br>Stm32F10xxx有三种低功耗模式：</p>
+<p>WFI：等待中断，如果执行WFI指令进入睡眠模式，任意一个被嵌套向量中断控制器响应的外设中断都能将系统从 睡眠模式唤醒<br>WFE：等待事件，如果执行WFE指令进入睡眠模式，则一旦发生唤醒事件时，微处理器都将从睡眠模式退出</p>
+<p>除了进行低功耗模式外，还可以在正常运行时使用下面方法降低功耗：</p>
+<p>降低系统时钟<br>关闭APB和AHB总线上未被使用的外设时钟<br>睡眠模式：</p>
+<p>在睡眠模式下，仅停止CPU运作，对于其他外设，将保持原本进入睡眠模式的状态。</p>
+<p>有两种选项可用于选择睡眠模式进入机制</p>
+<p>SLEEP-NOW：如果SLEEPONEXIT位被清除，当WRI或WFE被执行时，微控制器立即进入睡眠模式。<br>SLEEP-ON-EXIT：如果SLEEPONEXIT位被置位，系统从最低优先级的中断处理程序中退出时，微控制器就立即进入睡眠模式<br>区别就是在于是否处理完当前的中断再进入睡眠，因为一般来说，中断具有很高的实时性，不应该在中断中途进入睡眠。</p>
+<p>停止模式：</p>
+<p>在停止模式下，除了SRAM(内存)和寄存器内容被保留下来外，其他时钟将会被停止，所有的I&#x2F;O引脚都保持它们在运行模式时的状态。另外，</p>
+<p>进入停止模式需要等待闪存编程与APB访问完成，不然会等待完成再进入。</p>
+<p>当一个中断或唤醒事件导致退出停止模式时，HSI RC振荡器将被选为系统时钟。</p>
+<p>为了进入停止模式，所有的外部中断的请求位(挂起寄存器(EXTI_PR))和RTC的闹钟标志都必须被清除，否则停止模式的进入流程将会被跳过，程序继续运行。</p>
+<p>说人话就是要把中断标志清除，不然刚进入停止模式就会被唤醒，相对于没进</p>
+<p>进入停止模式可以配置以下外设正常运行：</p>
+<p>独立看门狗(IWDG)：可通过写入看门狗的键寄存器或硬件选择来启动IWDG。一旦启动了独立看门狗，除了系统复位，它不能再被停止</p>
+<p>实时时钟(RTC)：通过备份域控制寄存器 (RCC_BDCR)的RTCEN位来设置</p>
+<p>内部RC振荡器(LSI RC)：通过控制&#x2F;状态寄存器 (RCC_CSR)的LSION位来设置</p>
+<p>外部32.768kHz振荡器(LSE)：通过备份域控制寄存器 (RCC_BDCR)的LSEON位设置</p>
+<p>ADC与DAC：如果在进入该模式前ADC和DAC没有被关闭，那么这些外设仍然消耗电流。通过设置寄存器ADC_CR2 的 ADON 位和寄存器 DAC_CR 的 ENx 位为0可关闭这2个外设</p>
+<p>电压调节器：可以通过配置电源控制寄存器(PWR_CR)的LPDS位使其运行在正常或低功耗模式。</p>
+<p>若配置电压调节器为低功耗模式，当系统从停止模式退出时，将会有一段额外的启动延时(HSI RC唤醒时间 + 电压调节器从低功耗唤醒的时间)。</p>
+<p>如果在停止模式期间保持内部调节器开启，则退出启动时间会缩短，但相应的功耗会增加。</p>
+<p>待机模式：</p>
+<p>待机模式可实现系统的最低功耗，待机模式下只有备份寄存器和待机电路维持供电。从待机唤醒后，差不多和复位一次差不多，除了电源控制&#x2F;状 态寄存器(PWR_CSR)，所有寄存器被复位。SRAM和寄存器内容全部丢失。</p>
+<p>进入待机模式可以配置正常运行的外设只有停机模式的前四项。</p>
+<p>在待机模式下，所有的I&#x2F;O引脚处于高阻态，除了以下的引脚： 复位引脚(始终有效)、当被设置为防侵入或校准输出时的TAMPER引脚、被使能的唤醒引脚</p>
+<p>简单总结一下：</p>
+<p>睡眠模式：仅CPU停止运行，GPIO保存进入睡眠之前状态。<br>停止模式：仅保留SRAM(内存)和寄存器的数据，GPIO保存进入睡眠之前状态。<br>待机模式：仅保留备份寄存器，GPIO保持高阻态</p>
+<p>低功耗模式下的自动唤醒(AWU) ：</p>
+<p>利用RTC可以实现定时唤醒低功耗模式，实际上是使用了RTC的闹钟中断。</p>
+<p>若要实现低功耗模式下的自动唤醒，RTC的时钟源只能选择：低功耗32.768kHz外部晶振(LSE) 或者 低功耗内部RC振荡器(LSI RC)。</p>
+<p>为了用RTC闹钟事件将系统从停止模式下唤醒，必须进行如下操作：</p>
+<p>配置外部中断线17为上升沿触发 (若要从待机模式唤醒则不必配置)<br>配置RTC使其可产生RTC闹钟事件<br>&#x2F;*<br>    三种模式的进入代码示例<br>*&#x2F;</p>
+<p>&#x2F;<em>进入睡眠模式</em>&#x2F;<br>&#x2F;*<br>    WFI与WFE属于ARM核心指令，库函数中是汇编指令。<br>    SLEEPONEXIT与_SLEEPONEXIT位属于ARM架构的寄存器，在Stm32手册中没有讲到寄存器地址，但是固件库也定义了相关的内容。<br>    进入睡眠模式库函数没有封装，因此只能自己动手丰衣足食。<br>*&#x2F;</p>
+<p>&#x2F;&#x2F;理论上SLEEPDEEP位应该是不需要手动清除的，它默认为0，但是为了防止意外情况，就多写一行代码。<br>SCB-&gt;SCR &amp;&#x3D; (uint32_t)~((uint32_t)SCB_SCR_SLEEPDEEP);	&#x2F;&#x2F;清除深睡眠(SLEEPDEEP)位</p>
+<p>&#x2F;&#x2F;根据需要选择是否允许在中断过程中进入睡眠<br>SCB-&gt;SCR &amp;&#x3D; (uint32_t)~((uint32_t)SCB_SCR_SLEEPONEXIT);	&#x2F;&#x2F;清除SCB_SCR_SLEEPONEXIT位，SLEEP-NOW<br>&#x2F;&#x2F;SCB-&gt;SCR |&#x3D; SCB_SCR_SLEEPONEXIT;					   &#x2F;&#x2F;设置SCB_SCR_SLEEPONEXIT位，SLEEP-ON-EXIT</p>
+<p>__WFI();	&#x2F;&#x2F;进入等待中断的睡眠。与下面一行二选一即可</p>
+<p>__WFE();	&#x2F;&#x2F;进入等待事件的睡眠。</p>
+<p>&#x2F;<em>进入停机模式</em>&#x2F;<br>RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);	&#x2F;&#x2F;使能PWR外设时钟<br>PWR_EnterSTOPMode(PWR_Regulator_ON, PWR_STOPEntry_WFI);	&#x2F;&#x2F;电压调节器开，等待中断模式</p>
+<p>&#x2F;<em>进入待机模式</em>&#x2F;<br>RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);	&#x2F;&#x2F;使能PWR外设时钟<br>PWR_WakeUpPinCmd(ENABLE);  &#x2F;&#x2F;使能PA0引脚的唤醒管脚功能，如果不需要使用WKUP引脚上升沿唤醒待机可以注释<br>PWR_EnterSTANDBYMode();	   &#x2F;&#x2F;进入待命（STANDBY）模式</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31</p>
+<h2 id="Stm32的模数转换-ADC"><a href="#Stm32的模数转换-ADC" class="headerlink" title="Stm32的模数转换(ADC)"></a>Stm32的模数转换(ADC)</h2><p>规则组：用于常规使用<br>注入组：用于突发情况使用ADC功能</p>
+<p>规则组和注入组的关系有点类似主线程和中断的关系，若触发开始转换注入组可以 对 正在转换的规则组进行插队。</p>
+<p>输入通道：</p>
+<p>因为Stm32有双ADC模式(两个ADC配合工作)，因此ADC1和ADC2的通道对应的IO基本一样，除了ADC1多出来的温度传感器与内部参考电压通道。</p>
+<p>通道	ADC1	ADC2	ADC3<br>通道0	PA0	PA0	PA0<br>通道1	PA1	PA1	PA1<br>通道2	PA2	PA2	PA2<br>通道3	PA3	PA3	PA3<br>通道4	PA4	PA4	PF6<br>通道5	PA5	PA5	PF7<br>通道6	PA6	PA6	PF8<br>通道7	PA7	PA7	PF9<br>通道8	PB0	PB0	PF10<br>通道9	PB1	PB1	<br>通道10	PC0	PC0	PC0<br>通道11	PC1	PC1	PC1<br>通道12	PC2	PC2	PC2<br>通道13	PC3	PC3	PC3<br>通道14	PC4	PC4	<br>通道15	PC5	PC5	<br>通道16	温度传感器		<br>通道17	内部参考电压		<br>ADC配置：</p>
+<p>扫描模式：当开始转换后，会根据ADC通道数量(ADC_InitTypeDef.ADC_NbrOfChannel) 按顺序进行N次转换，全部转换完成后设置 EOC(规则组转换结束) 标志位<br>非扫描模式：当开始转换后，仅会对规则组位置一的通道进行1次转换，转换完成设置 EOC 标志位</p>
+<p>单次转换：在开始转换后，仅仅对规则组整组进行一次转换<br>连续转换：在开始转换后，会循环对规则组整组进行转换</p>
+<p>间断模式：在开始转换后，进行 N 次转换后停下，并记录当前位置，当下次开始转换时按顺序下去。</p>
+<p>需要使用 ADC_DiscModeChannelCountConfig 设置 N 的值，并使用 ADC_DiscModeCmd 使能模式。<br>举例： N&#x3D;3，被转换的通道有 0、1、2、3、6、7、9、10<br>第一次触发：转换的序列为 0、1、2<br>第二次触发：转换的序列为 3、6、7<br>第三次触发：转换的序列为 9、10，并产生EOC事件 (注意这里因为到尾了，所以只转换了两个通道)<br>第四次触发：转换的序列 0、1、2</p>
+<p>总结一下：</p>
+<p>如果将ADC转换比喻为使用音乐软件听歌的话</p>
+<p>ADC_RegularChannelConfig 就是为歌单增加歌曲并设置歌曲的序列<br>ADC_InitTypeDef.ADC_NbrOfChannel 就是歌单中歌曲的数量</p>
+<p>扫描模式 就是 播放整个歌单的全部歌曲<br>非扫描模式 就是只播放歌单的第一首歌曲</p>
+<p>单次转换 就是只播放一次 歌单中全部歌曲(扫描模式) &#x2F; 歌单的第一首歌曲(非扫描模式)<br>连续转换 就是循环播放 歌单中全部歌曲(扫描模式) &#x2F; 歌单的第一首歌曲(非扫描模式)</p>
+<p>扫描模式&amp;单次转换 &#x3D; 歌曲中全部歌曲按顺序全部播放一次<br>非扫描模式&amp;单次转换 &#x3D; 只播放一次歌单的第一首歌曲<br>扫描模式&amp;连续转换 &#x3D; 列表循环<br>非扫描模式&amp;连续转换 &#x3D; 单曲循环</p>
+<p>间断模式 就是一次听 N 首歌曲，并记下听到第几首了，下次接着听下去，当歌单全部歌曲听完后再回到第一首</p>
+<p>校准：</p>
+<p>ADC有一个内置的校准模式，能大幅减少因内部电容器组的变化而造成的准精度误差。因此建议每次上电后都执行一次校准。</p>
+<p>在 Stm32F10xxx参考手册(2009中文版本) 中ADC章节有这样一句话：</p>
+<p>启动校准前，ADC必须处于关电状态(ADON&#x3D;’0’)超过至少两个ADC时钟周期</p>
+<p>事实上，是ST公司的描写错误，而在官网中找到的 2021 版本中已经被更正为</p>
+<p>原文：Before starting a calibration, the ADC must have been in power-on state (ADON bit &#x3D; ‘1’) for at least two ADC clock cycles.<br>翻译：在开始校准之前，ADC必须处于通电状态(ADON位&#x3D;“1”) 至少两个ADC时钟周期。</p>
+<p>void AD_Init(void)<br>{<br>    &#x2F;&#x2F;使能时钟<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</p>
+<pre><code>//配置ADC的时钟周期，RCC_PCLK2_Div6 为高速APB2时钟(PCLK2)的6分频
+RCC_ADCCLKConfig(RCC_PCLK2_Div6);
+
+//配置PA0为输入口，模式为模拟输入(GPIO_Mode_AIN)，该模式是ADC专用
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOA, &amp;GPIO_InitStructure);
+
+//配置规则组，将通道0放在第一个位置，采样时间为55.5个周期(ADC_SampleTime_55Cycles5)
+ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
+
+//初始化ADC1
+ADC_InitTypeDef ADC_InitStructure;
+ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;				    //工作在独立模式
+ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;				//数据右对齐
+ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;	 //外部触发源选择不使用外部触发
+ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;					//是否启用连续模式
+ADC_InitStructure.ADC_ScanConvMode = DISABLE;					    //是否启用扫描模式
+ADC_InitStructure.ADC_NbrOfChannel = 1;							   //进行ADC的通道数量
+ADC_Init(ADC1, &amp;ADC_InitStructure);
+
+//使能ADC1
+ADC_Cmd(ADC1, ENABLE);
+
+//进行校准
+ADC_ResetCalibration(ADC1);								//将校准复位
+while (ADC_GetResetCalibrationStatus(ADC1) == SET);		  //等待校准复位完成
+ADC_StartCalibration(ADC1);								//开始校准
+while (ADC_GetCalibrationStatus(ADC1) == SET);			  //等待校准完成
+</code></pre>
+<p>}</p>
+<p>uint16_t AD_GetValue(void)<br>{<br>    ADC_SoftwareStartConvCmd(ADC1, ENABLE);					&#x2F;&#x2F;软件触发开始转换<br>    while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) &#x3D;&#x3D; RESET);   &#x2F;&#x2F;等待转换完成<br>    return ADC_GetConversionValue(ADC1);					&#x2F;&#x2F;返回转换得到的数值(0~4095)<br>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45</p>
+<h2 id="Stm32中的直接存储器存取-DMA"><a href="#Stm32中的直接存储器存取-DMA" class="headerlink" title="Stm32中的直接存储器存取 (DMA)"></a>Stm32中的直接存储器存取 (DMA)</h2><p>DMA 全程 Direct Memory Access (直接存储器存取)，功能就是数据复制，优点就是能代替CPU负责数据复制，让CPU空出来处理其他任务。<br>另外，根据查资料得到，DMA的搬运速度没有CPU搬运的速度快的。详细可以看这里</p>
+<p>数据复制方向支持：存储器到存储器、存储器到外设、外设到存储器。其中因为Flash一般为只读，所以存储器到存储器为 Flash到SRAM 、SRAM到SRAM。</p>
+<p>数据宽度：<br>支持 字节(Byte，8位)、半字(HalfWord，16位)、字(Word，32位)，支持不同宽度的数据复制，复制对齐为低位对齐。例如：半字(0x1122)复制到字节，则会把低八位复制过去，结果为0x22；半字(0x1122)复制字，则会把半字复制到字的低位，结果为0x00001122。</p>
+<p>地址自增：</p>
+<p>模式：正常模式(复制完就停下)、循环模式(复制完重新开始，循环模式不可用于存储器到存储器)</p>
+<p>DMA1的请求对应通道：</p>
+<p>外设	通道1	通道2	通道3	通道4	通道5	通道6	通道7<br>ADC1	ADC1						<br>SPI&#x2F;I2S		SPI1_RX	SPI1_TX	SPI&#x2F;I2S2_RX	SPI&#x2F;I2S2_TX		<br>USART		USART3_TX	USART3_RX	USART1_TX	USART1_RX	USART2_RX	USART2_TX<br>I2C				I2C2_TX	I2C2_RX	I2C1_TX	I2C1_RX<br>TIM1		TIM1_CH1	TIM1_CH2	TIM1_TX4<br>TIM1_TRIG<br>TIM1_COM	TIM1_UP	TIM1_CH3	<br>TIM2	TIM2_CH3	TIM2_UP			TIM2_CH1		TIM2_CH2<br>TIM2_CH4<br>TIM3		TIM3_CH3	TIM3_CH4<br>TIM3_UP			TIM3_CH1<br>TIM3_TRIG	<br>TIM4	TIM4_CH1			TIM4_CH2	TIM4_CH3		TIM4_UP<br>DMA2的请求对应通道：</p>
+<p>外设	通道1	通道2	通道3	通道4	通道5<br>ADC3					ADC3<br>SPI &#x2F; I2S3	SPI<br>I2S3_RX	SPI<br>I2S3_TX			<br>UART4			UART4_RX		UART4_TX<br>SDIO				SDIO	<br>TIM5	TIM5_CH4	TIM5_CH3<br>TIM5_UP		TIM5_CH2	TIM5_CH1<br>TIM6 &#x2F; DAC通道1			TIM6_UP<br>DAC通道1		<br>TIM7 &#x2F; DAC通道2				TIM7_UP<br>DAC通道2	<br>TIM8	TIM8_CH3<br>TIM8_UP	TIM8_CH4<br>TIM8_TRIG<br>TIM8_COM	TIM8_CH1		TIM8_CH2<br>中断与标志位：</p>
+<p>中断事件	事件标志位	使能控制位	y&#x3D;DMA，x&#x3D;通道<br>传输过半	HTIF	HTIE	DMAy_FLAG_HTx<br>传输完成	TCIF	TCIE	DMAy_FLAG_TCx<br>传输错误	TEIF	TEIE	DMAy_FLAG_TEx<br>DMAy_FLAG_GLx：全局标志，一次性控制三个标志位。</p>
+<p>&#x2F;*<br>    DMA 内存到内存 例子<br>*&#x2F;<br>uint16_t MyDMA_Size;	&#x2F;&#x2F;用于二次开始的时候重置复制次数</p>
+<p>void MyDMA_Init(uint32_t AddrA, uint32_t AddrB, uint16_t Size)<br>{<br>    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);	&#x2F;&#x2F;使能DMA1的时钟</p>
+<pre><code>MyDMA_Size = Size;	//记录一下，开始复制的时候要设置
+
+DMA_InitTypeDef DMA_InitStructure;
+DMA_InitStructure.DMA_PeripheralBaseAddr = AddrA;	//外设基地址，当用存储器到存储器时，可写存储器地址
+DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;	//外设数据宽度
+DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Enable;		    //外设地址自增
+DMA_InitStructure.DMA_MemoryBaseAddr = AddrB;						  //存储器基地址
+DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;		    //存储器数据宽度
+DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;				   //存储器地址自增
+DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;	//数据传输方向：SRC外设为源地址，DST外设为目标地址
+DMA_InitStructure.DMA_BufferSize = Size;	//需要复制次数，总复制长度=数据宽度*复制次数
+DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;	//模式：Normal正常模式，Circular循环模式
+DMA_InitStructure.DMA_M2M = DMA_M2M_Enable;		//是否为存储器到存储器(如果是则只能软件触发开始)
+DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;	//优先级:z&#39;ji
+DMA_Init(DMA1_Channel1, &amp;DMA_InitStructure);		//配置DMA1的通道1，这里因为是存储器到存储器，所以通道可以随便选
+
+//因为还没有给DMA使能，因此没有开始转换
+</code></pre>
+<p>}</p>
+<p>void MyDMA_Transfer(void)<br>{<br>    DMA_Cmd(DMA1_Channel1, DISABLE);	&#x2F;&#x2F;赋值复制次数之前要失能DMA<br>    DMA_SetCurrDataCounter(DMA1_Channel1, MyDMA_Size);	&#x2F;&#x2F;赋值复制次数<br>    DMA_Cmd(DMA1_Channel1, ENABLE);		&#x2F;&#x2F;使能DMA，开始转换</p>
+<pre><code>while (DMA_GetFlagStatus(DMA1_FLAG_TC1) == RESET);	//等待复制完成
+DMA_ClearFlag(DMA1_FLAG_TC1);	//清除标志位
+</code></pre>
+<p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>&#x2F;*<br>    DMA 外设到存储器 例子<br>    ADC多通道<br>*&#x2F;</p>
+<p>uint16_t AD_Value[4];		&#x2F;&#x2F;用于保存ADC转换完成的结果</p>
+<p>void AD_Init(void)<br>{<br>    &#x2F;&#x2F;使能时钟<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<br>    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);</p>
+<pre><code>//配置ADC时钟频率为APB2时钟的6分频
+RCC_ADCCLKConfig(RCC_PCLK2_Div6);
+
+//配置4个IO口
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOA, &amp;GPIO_InitStructure);
+
+//配置规则组
+ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
+ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 2, ADC_SampleTime_55Cycles5);
+ADC_RegularChannelConfig(ADC1, ADC_Channel_2, 3, ADC_SampleTime_55Cycles5);
+ADC_RegularChannelConfig(ADC1, ADC_Channel_3, 4, ADC_SampleTime_55Cycles5);
+
+//初始化ADC为连续扫描模式
+ADC_InitTypeDef ADC_InitStructure;
+ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
+ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
+ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
+ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
+ADC_InitStructure.ADC_ScanConvMode = ENABLE;
+ADC_InitStructure.ADC_NbrOfChannel = 4;
+ADC_Init(ADC1, &amp;ADC_InitStructure);
+
+//具体看上面存储器到存储器例子
+DMA_InitTypeDef DMA_InitStructure;
+DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&amp;ADC1-&gt;DR;	//外设基地址为ADC1的DR寄存器
+DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)AD_Value;
+DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
+DMA_InitStructure.DMA_BufferSize = 4;
+DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;		//循环模式
+DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;
+DMA_Init(DMA1_Channel1, &amp;DMA_InitStructure);
+
+DMA_Cmd(DMA1_Channel1, ENABLE);	//使能时钟，因为非存储器到存储器，所以要硬件请求才能触发开始复制
+ADC_DMACmd(ADC1, ENABLE);	    //允许ADC1可以提交请求触发DMA的数据复制
+ADC_Cmd(ADC1, ENABLE);		    //使能ADC
+
+//ADC校准
+ADC_ResetCalibration(ADC1);
+while (ADC_GetResetCalibrationStatus(ADC1) == SET);
+ADC_StartCalibration(ADC1);
+while (ADC_GetCalibrationStatus(ADC1) == SET);
+
+ADC_SoftwareStartConvCmd(ADC1, ENABLE);	//软件触发开始转换
+//因为ADC为连续扫描模式、DMA为循环模式，所以只需要触发开始转换后，硬件就会不断得转换并把数据复制到AD_Value 数组
+</code></pre>
+<p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>Stm32中的集成电路总线 (I2C&#x2F;IIC)<br>在Stm32中使用I2C有两种方案，一是软件模拟I2C，二是硬件I2C。两种方案各有各的优缺点，因此了解清楚才能选择适合的。</p>
+<p>软件模拟I2C<br>优点：可以用在任何GPIO口；不会发生卡死(最多出错)<br>硬件I2C<br>优点：速度比软件模拟快；容易出现卡死的问题<br>关于硬件I2C卡死问题具体可以看</p>
+<p>卡死原因分析：浅谈STM32硬件I2C<br>具体测试结论：STM32 硬件I2C 到底是不是个坑？<br>总结一下Stm32的硬件I2C问题：<br>1.当时钟频率太高时容易出问题，出问题的概率和时钟频率成正比。<br>2.当存在中断会打断硬件IIC工作时(中断会导致)，容易出现问题。</p>
+<p>硬件I2C的发送流程图：</p>
+<p>硬件I2C的接收流程图：</p>
+<p>&#x2F;*<br>    Stm32 使用 硬件I2C 作为主机发送&#x2F;接收 示例代码<br>*&#x2F;</p>
+<p>#define OLED_ADDRESS	0x78	&#x2F;&#x2F;定义一个OLED模块的从机地址</p>
+<p>void I2C_Config(void)<br>{<br>    &#x2F;&#x2F;使能I2C与GPIO时钟<br>    RCC_APB1PeriphClockCmd (RCC_APB1ENR_I2C1EN, ENABLE);<br>      RCC_APB2PeriphClockCmd (RCC_APB2Periph_GPIOB, ENABLE);</p>
+<pre><code>//初始化GPIO，配置PB6与PB7为复用开漏输出
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
+GPIO_Init (GPIOB, &amp;GPIO_InitStructure);
+
+//开始初始化I2C
+I2C_InitTypeDef I2C_InitStructure;
+
+//使用I2C模式，因为Stm32的I2C硬件外设支持扩展SMBus协议，因此要指定I2C模式
+I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
+
+I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;	//七位从机地址
+I2C_InitStructure.I2C_OwnAddress1 = 0x11;		//自己作为从机时的地址
+I2C_InitStructure.I2C_Ack = I2C_Ack_Enable;		//默认发送应答
+
+//配置时钟线(SCL)占空比为低高电平之比为2，仅在I2C的高速模式(100~400 kHz)下有效，标准模式下为1:1
+//原因是SCL低电平时需要变化SDA电平，因此需要更多时间 
+I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
+
+//时钟频率，单位Hz，400000 =&gt; 400kHz
+I2C_InitStructure.I2C_ClockSpeed = 400000;
+
+I2C_Init (I2C1, &amp;I2C_InitStructure);
+I2C_Cmd (I2C1, ENABLE);
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F;封装一个函数用于等待标准事件，包含超时返回，避免卡死<br>void I2C_WaitEvent(I2C_TypeDef* I2Cx, uint32_t I2C_EVENT)<br>{<br>    uint16_t t &#x3D; 10000;<br>    while(!I2C_CheckEvent(I2Cx, I2C_EVENT) &amp;&amp; t–&gt;0);<br>}</p>
+<p>&#x2F;&#x2F;指定地址写<br>void I2C_WriteReg(uint8_t RegAddr, uint8_t Data)<br>{<br>    &#x2F;&#x2F;等待总线不繁忙<br>    while(I2C_GetFlagStatus(I2C1, I2C_FLAG_BUSY));</p>
+<pre><code>//生成一个起始信号
+I2C_GenerateSTART (I2C1,ENABLE);
+I2C_WaitEvent (I2C1, I2C_EVENT_MASTER_MODE_SELECT);	//等待EV5
+
+//发送七位从机地址(OLED_ADDRESS)进行寻找从机。I2C_Direction_Transmitter表示写，会自动设置最低位为1
+I2C_Send7bitAddress (I2C1, OLED_ADDRESS, I2C_Direction_Transmitter);
+I2C_WaitEvent (I2C1, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED);		//等待EV6
+
+//发送一个字节(寄存器地址)
+I2C_SendData (I2C1, RegAddr);
+I2C_WaitEvent (I2C1, I2C_EVENT_MASTER_BYTE_TRANSMITTING);	//等待EV8
+
+//发送一个字节(数据)
+I2C_SendData(I2C1, Data);
+I2C_WaitEvent (I2C1, I2C_EVENT_MASTER_BYTE_TRANSMITTED);	//等待EV8_2
+
+//生成停止信号
+I2C_GenerateSTOP(I2C1, ENABLE);
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F;指定地址读<br>uint8_t I2C_ReadReg(uint8_t RegAddress)<br>{<br>    uint8_t Data;</p>
+<pre><code>//等待总线不繁忙
+while(I2C_GetFlagStatus(I2C1, I2C_FLAG_BUSY));
+
+//生成一个起始信号
+I2C_GenerateSTART(I2C2, ENABLE);
+MPU6050_WaitEvent(I2C2, I2C_EVENT_MASTER_MODE_SELECT);		//等待EV5
+
+//发送七位从机地址(OLED_ADDRESS)进行寻找从机。I2C_Direction_Transmitter表示写，会自动设置最低位为1
+I2C_Send7bitAddress(I2C2, OLED_ADDRESS, I2C_Direction_Transmitter);
+I2C_WaitEvent(I2C2, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED);
+
+//发送一个字节(寄存器地址)
+I2C_SendData(I2C2, RegAddress);
+I2C_WaitEvent(I2C2, I2C_EVENT_MASTER_BYTE_TRANSMITTED);		//等待EV8_2
+
+//再次生成起始信号
+I2C_GenerateSTART(I2C2, ENABLE);
+I2C_WaitEvent(I2C2, I2C_EVENT_MASTER_MODE_SELECT);		//等待EV5
+
+//发送七位从机地址(OLED_ADDRESS)进行寻找从机。I2C_Direction_Receiver表示读，会自动设置最低位为0
+I2C_Send7bitAddress(I2C2, OLED_ADDRESS, I2C_Direction_Receiver);
+I2C_WaitEvent(I2C2, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED);	//等待EV6
+
+//需要在接收之前设置为非应答，因为硬件会在接收完后直接发送 应答/非应答，没有等待时间。
+I2C_AcknowledgeConfig(I2C2, DISABLE);
+//生成停止信号（但是会在当前字节传输或在当前起始条件发出后产生停止条件，因此可以提前给）
+I2C_GenerateSTOP(I2C2, ENABLE);
+
+I2C_WaitEvent(I2C2, I2C_EVENT_MASTER_BYTE_RECEIVED);	//等待EV7
+Data = I2C_ReceiveData(I2C2);		//读取接收到的数据
+
+I2C_AcknowledgeConfig(I2C2, ENABLE);	//恢复为默认发送应答
+
+return Data;
+</code></pre>
+<p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82<br>83<br>84<br>85<br>86<br>87<br>88<br>89<br>90<br>91<br>92<br>93<br>94<br>95<br>96<br>97<br>98<br>99<br>100<br>101<br>102<br>103<br>104<br>105<br>106<br>107<br>108<br>109<br>110<br>111<br>112<br>113<br>114<br>Stm32中的串行外设接口 (SPI)使用<br>&#x2F;*<br>    SPI使用的示例例子<br>*&#x2F;<br>void SPI2_Init(void)<br>{<br>    &#x2F;&#x2F;使能时钟<br>    RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOB, ENABLE );<br>    RCC_APB1PeriphClockCmd(	RCC_APB1Periph_SPI2,  ENABLE );</p>
+<pre><code>//初始化GPIO，配置PB13、PB14、PB15为复用推挽输出
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOB, &amp;GPIO_InitStructure);
+
+GPIO_SetBits(GPIOB,GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15);  //配置PB13、PB14、PB15为上拉
+
+//开始 初始化SPI
+SPI_InitTypeDef SPI_InitStructure;
+
+//设置SPI单向或者双向的数据模式:SPI设置为双线双向全双工
+SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
+
+//设置SPI工作模式:设置为主SPI
+SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
+
+//设置SPI的数据大小:SPI发送接收8位帧结构
+SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
+
+//串行同步时钟的空闲状态为高电平
+SPI_InitStructure.SPI_CPOL = SPI_CPOL_High;
+
+//串行同步时钟的第二个跳变沿数据被采样
+SPI_InitStructure.SPI_CPHA = SPI_CPHA_2Edge;
+
+//NSS信号由硬件（NSS管脚）还是软件（使用SSI位）管理:内部NSS信号有SSI位控制
+SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
+
+//设置波特率预分频的值:波特率预分频值为256
+SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_256;
+
+//指定数据传输从MSB位还是LSB位开始:数据传输从MSB位开始
+SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
+
+//CRC值计算的多项式
+SPI_InitStructure.SPI_CRCPolynomial = 7;
+
+SPI_Init(SPI2, &amp;SPI_InitStructure);  
+SPI_Cmd(SPI2, ENABLE);	//使能SPI外设
+
+SPI2_ReadWriteByte(0xFF);	
+</code></pre>
+<p>}   </p>
+<p>&#x2F;&#x2F;设置 SPI 的波特率预分频值<br>void SPI2_SetSpeed(u8 BaudRatePrescaler)<br>{<br>    assert_param(IS_SPI_BAUDRATE_PRESCALER(BaudRatePrescaler));<br>    SPI2-&gt;CR1 &amp;&#x3D; 0XFFC7;			&#x2F;&#x2F;清零位5:3<br>    SPI2-&gt;CR1 |&#x3D; BaudRatePrescaler;	&#x2F;&#x2F;设置SPI2速度<br>    SPI_Cmd(SPI2, ENABLE);<br>} </p>
+<p>&#x2F;&#x2F;发送一个数据并收回一个数据<br>u8 SPI2_ReadWriteByte(u8 TxData)<br>{		<br>    u8 retry &#x3D; 0;<br>    &#x2F;&#x2F;检查指定的SPI标志位设置与否:发送缓存空标志位<br>    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) &#x3D;&#x3D; RESET) {<br>        retry++;<br>        if(retry&gt;200)return 0;<br>    }<br>    SPI_I2S_SendData(SPI2, TxData); &#x2F;&#x2F;通过外设SPIx发送一个数据</p>
+<pre><code>retry = 0;
+//检查指定的SPI标志位设置与否:接受缓存非空标志位
+while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET)&#123;
+    retry++;
+    if(retry&gt;200)return 0;
+&#125;
+return SPI_I2S_ReceiveData(SPI2); //返回通过SPIx最近接收的数据					    
+</code></pre>
+<p>}</p>
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79<br>80<br>81<br>82</p>
+<h2 id="Stm32中的控制器局域网-bxCAN-使用"><a href="#Stm32中的控制器局域网-bxCAN-使用" class="headerlink" title="Stm32中的控制器局域网 (bxCAN)使用"></a>Stm32中的控制器局域网 (bxCAN)使用</h2><p>Stm32中的CAN架构：</p>
+<p>设置</p>
+<p>速率：CAN总线的速率常用的都是125k到500k（一般使用500k），尽管它的最大速率是1Mbps。但明显的是，最大值往往要求环境更加高，导致容易出现问题。<br>工作模式：初始化模式、正常模式、睡眠模式<br>测试模式：静默模式、回环模式、回环静默模式<br>调试模式：当MCU处于调试模式时，Cortex-M3核心处于暂停状态，提供配置，可以使bxCAN继续正常工作或停止工作（CAN是异步通讯，因此需要这个）<br>发送：</p>
+<p>3个发送邮箱：可以配置发送优先级(按写入先后 &#x2F; 按标识符数值)<br>自动重传：发送失败则自动重新发送，直至成功<br>接收：</p>
+<p>2个三级深度接收邮箱(FIFO)：共可以接收6个报文</p>
+<p>注：FIFO是英文First In First Out 的缩写，是一种先进先出的数据缓存器</p>
+<p>锁定模式：锁定状态下，接收溢出则丢弃；非锁定状态下，接收溢出则覆盖</p>
+<p>过滤器：</p>
+<p>14个位宽可配置的标识符过滤器组<br>一个位宽可配置为1个32位掩码模式&#x2F;2个32位标识符列表模式&#x2F;2个16位掩码模式&#x2F;4个16位标识符列表模式<br>过滤模式<br>标识符列表模式：丢弃掉非指定标识符的报文<br>掩码模式：可以指定标识符某些位是非必要的后进行比对<br>测试模式图解：</p>
+<p>过滤器：</p>
+<p>CAN_Mode_Init()<br>{<br>    &#x2F;&#x2F;使能时钟<br>    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<br>    RCC_APB1PeriphClockCmd(RCC_APB1Periph_CAN1, ENABLE);</p>
+<pre><code>//初始化CAN_RX为上拉输入
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_Init(GPIOA, &amp;GPIO_InitStructure);
+
+//初始化CAN_TX为复用推挽输出
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; 
+GPIO_Init(GPIOA, &amp;GPIO_InitStructure);
+
+// CAN单元设置
+CAN_InitTypeDef CAN_InitStructure;
+CAN_InitStructure.CAN_TTCM = DISABLE;	//非时间触发通信模式
+CAN_InitStructure.CAN_ABOM = DISABLE;	//软件自动离线管理
+CAN_InitStructure.CAN_AWUM = DISABLE;	//睡眠模式通过软件唤醒(清除CAN-&gt;MCR的SLEEP位)
+CAN_InitStructure.CAN_NART = ENABLE; 	//禁止报文自动传送
+CAN_InitStructure.CAN_RFLM = DISABLE;	//报文不锁定,新的覆盖旧的
+CAN_InitStructure.CAN_TXFP = DISABLE;	//优先级由报文标识符决定
+CAN_InitStructure.CAN_Mode = CAN_Mode_LoopBack;	//模式设置： mode:0,普通模式;1,回环模式;
+// 设置波特率 500kMps
+CAN_InitStructure.CAN_Prescaler = 4;		//预分频系数
+CAN_InitStructure.CAN_SJW = CAN_SJW_1tq;	//重新同步跳跃宽度 CAN_SJW_1tq ~ CAN_SJW_4tq
+CAN_InitStructure.CAN_BS1 = CAN_BS1_9tq;	//CAN_BS1_1tq ~CAN_BS1_16tq
+CAN_InitStructure.CAN_BS2 = CAN_BS2_8tq;	//CAN_BS2_1tq ~	CAN_BS2_8tq
+CAN_Init(CAN1, &amp;CAN_InitStructure);
+
+CAN_FilterInitTypeDef CAN_FilterInitStructure;
+CAN_FilterInitStructure.CAN_FilterNumber = 0; 	//过滤器0，可以为0~13
+CAN_FilterInitStructure.CAN_FilterMode = CAN_FilterMode_IdMask;		//掩码模式
+CAN_FilterInitStructure.CAN_FilterScale = CAN_FilterScale_32bit;	//32位
+CAN_FilterInitStructure.CAN_FilterIdHigh = 0x0000;	//32位标识符
+CAN_FilterInitStructure.CAN_FilterIdLow = 0x0000;	
+CAN_FilterInitStructure.CAN_FilterMaskIdHigh = 0x0000; //32位掩码，1:要求一致，0:不限制
+CAN_FilterInitStructure.CAN_FilterMaskIdLow = 0x0000;
+CAN_FilterInitStructure.CAN_FilterFIFOAssignment = CAN_Filter_FIFO0; // 关联到FIFO0
+CAN_FilterInitStructure.CAN_FilterActivation = ENABLE;	// 使能过滤器0
+CAN_FilterInit(&amp;CAN_FilterInitStructure); // 滤波器初始化
+</code></pre>
+<p>&#x2F;* 	<br>    用于开启中断</p>
+<pre><code>CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE); // FIFO0消息挂号中断允许
+
+NVIC_InitTypeDef NVIC_InitStructure;
+NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1; // 主优先级为1
+NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		  // 次优先级为0
+NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+NVIC_Init(&amp;NVIC_InitStructure);
+</code></pre>
+<p>*&#x2F;<br>}</p>
+<p>&#x2F;&#x2F;中断函数模板<br>void USB_LP_CAN1_RX0_IRQHandler(void)<br>{<br>    CanRxMsg RxMessage;<br>    int i &#x3D; 0;<br>    CAN_Receive(CAN1, 0, &amp;RxMessage);<br>    for (i &#x3D; 0; i &lt; 8; i++)<br>        printf(“rxbuf[%d]:%d\r\n”, i, RxMessage.Data[i]);<br>}</p>
+<p>&#x2F;&#x2F;发送报文，返回0为成功，否则失败<br>u8 Can_Send_Msg(u8 *msg, u8 len)<br>{<br>    u8 mbox;<br>    u16 i &#x3D; 0;<br>    CanTxMsg TxMessage;<br>    TxMessage.StdId &#x3D; 0x12;			&#x2F;&#x2F;标准标识符<br>    TxMessage.ExtId &#x3D; 0x12;			&#x2F;&#x2F;设置扩展标示符<br>    TxMessage.IDE &#x3D; CAN_Id_Standard; &#x2F;&#x2F;表明为标准帧<br>    TxMessage.RTR &#x3D; CAN_RTR_Data;	 &#x2F;&#x2F;表明为数据帧<br>    TxMessage.DLC &#x3D; len;			&#x2F;&#x2F;要发送的数据长度<br>    for (i &#x3D; 0; i &lt; len; i++)		 &#x2F;&#x2F;复制数据到结构体<br>        TxMessage.Data[i] &#x3D; msg[i];<br>    mbox &#x3D; CAN_Transmit(CAN1, &amp;TxMessage);	&#x2F;&#x2F;填入发送邮箱，mbox为被填入的邮箱号<br>    i &#x3D; 0;<br>    while ((CAN_TransmitStatus(CAN1, mbox) &#x3D;&#x3D; CAN_TxStatus_Failed) &amp;&amp; (i &lt; 0XFFF))<br>        i++; &#x2F;&#x2F;等待发送结束<br>    if (i &#x3D;&#x3D; 0XFFF)<br>        return 1;	&#x2F;&#x2F;超时<br>    return 0;<br>}</p>
+<p>&#x2F;&#x2F;接收数据查询，成功返回数据长度，没有返回0<br>u8 Can_Receive_Msg(u8 *buf)<br>{<br>    u32 i;<br>    CanRxMsg RxMessage;<br>    if (CAN_MessagePending(CAN1, CAN_FIFO0) &#x3D;&#x3D; 0)	&#x2F;&#x2F;查询邮箱有多少条数据<br>        return 0;<br>    CAN_Receive(CAN1, CAN_FIFO0, &amp;RxMessage); &#x2F;&#x2F;读取数据<br>    for (i &#x3D; 0; i &lt; 8; i++)<br>        buf[i] &#x3D; RxMessage.Data[i];<br>    return RxMessage.DLC;<br>}</p>
+</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.jinyincaibao.online/2023/07/19/10/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=undefined&amp;url=https://www.jinyincaibao.online/2023/07/19/10/&amp;pic=undefined" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%BC%96%E7%A8%8B/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>嵌入式编程<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/66dd47e6d9c307b7e9aae384.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div></div><div class="post-copyright"><i class="anzhiyufont anzhiyu-icon-copyright"></i><div class="post-copyright__author"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.jinyincaibao.online/2023/07/19/10/">原创</a><a class="post-copyright-title"><span>STM32</span></a></div><div class="post-copyright-info-box"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"></span><a class="link" href="https://www.jinyincaibao.online">金银财宝</a></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a class="link" href="https://www.jinyincaibao.online/2023/07/19/10/">https://www.jinyincaibao.online/2023/07/19/10/</a></span><span class="copy-button" onclick="rm.copyPageUrl('https://www.jinyincaibao.online/2023/07/19/10/)'"><i class="anzhiyufont anzhiyu-icon-copy"></i></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.jinyincaibao.online" target="_blank">金银财宝</a>！</span></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/16/5/"><img class="prev-cover" src="https://pic.imgdb.cn/item/66dd3100d9c307b7e9837df9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/15/3/"><img class="next-cover" src="https://pic.imgdb.cn/item/66dd301cd9c307b7e980d622.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Leetcode</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><a class="avatar-img" href="/about"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/66daa709d9c307b7e9042d3a.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></a><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">金银财宝</h1><div class="author-info__description">大好青年，事业有为。</div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/H-jfeng" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/frame_html?sid=dozdw2LJoUeyizdT&amp;r=0d94d63e78efbec9830f1bae3bd0223d&amp;lang=zh" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%E7%9A%84%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言的前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%94%E8%AE%B0"><span class="toc-number">3.</span> <span class="toc-text">笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32-%E4%B8%89%E7%A7%8D%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.1.</span> <span class="toc-text">Stm32 三种开发方式的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Stm32%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%96%E8%AE%BE%E9%83%BD%E9%9C%80%E8%A6%81%E5%85%88%E6%89%93%E5%BC%80%E6%97%B6%E9%92%9F"><span class="toc-number">3.2.</span> <span class="toc-text">为什么Stm32初始化外设都需要先打开时钟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPIO%E5%85%AB%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.3.</span> <span class="toc-text">GPIO八种模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E5%AF%84%E5%AD%98%E5%99%A8%E6%98%A0%E5%B0%84"><span class="toc-number">3.4.</span> <span class="toc-text">Stm32寄存器映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E4%B8%AD%E7%9A%84%E4%BD%8D%E6%AE%B5%E6%98%A0%E5%B0%84"><span class="toc-number">3.5.</span> <span class="toc-text">Stm32中的位段映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E4%B8%AD%E7%9A%84%E6%97%B6%E9%92%9F%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.6.</span> <span class="toc-text">Stm32中的时钟系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E5%A4%96%E8%AE%BE"><span class="toc-number">3.7.</span> <span class="toc-text">Stm32外设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8%E4%B8%8E%E9%87%8D%E6%98%A0%E5%B0%84"><span class="toc-number">3.8.</span> <span class="toc-text">Stm32的端口复用与重映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E4%B8%AD%E6%96%AD"><span class="toc-number">3.9.</span> <span class="toc-text">Stm32中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E7%9A%84USART%E4%BD%BF%E7%94%A8"><span class="toc-number">3.10.</span> <span class="toc-text">Stm32的USART使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD-EXTI"><span class="toc-number">3.11.</span> <span class="toc-text">Stm32的外部中断 (EXTI)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E7%9A%84%E6%A8%A1%E6%95%B0%E8%BD%AC%E6%8D%A2-ADC"><span class="toc-number">3.12.</span> <span class="toc-text">Stm32的模数转换(ADC)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E4%B8%AD%E7%9A%84%E7%9B%B4%E6%8E%A5%E5%AD%98%E5%82%A8%E5%99%A8%E5%AD%98%E5%8F%96-DMA"><span class="toc-number">3.13.</span> <span class="toc-text">Stm32中的直接存储器存取 (DMA)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stm32%E4%B8%AD%E7%9A%84%E6%8E%A7%E5%88%B6%E5%99%A8%E5%B1%80%E5%9F%9F%E7%BD%91-bxCAN-%E4%BD%BF%E7%94%A8"><span class="toc-number">3.14.</span> <span class="toc-text">Stm32中的控制器局域网 (bxCAN)使用</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://mail.qq.com/cgi-bin/frame_html?sid=-QfjIIHgxSPDpRl-&amp;r=eb57706bd15faba6d3aab058ea4e8d41&amp;lang=zh" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6378063631" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100092208016287&amp;sk=about" title="facebook"><i class="anzhiyufont anzhiyu-icon-facebook1"></i></a><img class="footer_mini_logo" title="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src="https://pic.imgdb.cn/item/66dd9db5d9c307b7e93f321e.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/H-jfeng" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/1463547681?spm_id_from=333.1007.0.0" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/self?from_tab_name=main&amp;showTab=like" title="抖音"><i class="anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" href="/docs/">文档</a><a class="footer-item" title="源码" target="_blank" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" target="_blank" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" target="_blank" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" target="_blank" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" target="_blank" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" target="_blank" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" target="_blank" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" target="_blank" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div class="copyright">&copy;2020 - 2024 By 金银财宝</div><div id="workboard"><img class="workSituationImg boardsign" src="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg" alt="距离月入25k也就还差一个大佬带我~" title="距离月入25k也就还差一个大佬带我~"/><div id="runtimeTextTip"></div></div></div></footer></div></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://pic.imgdb.cn/item/66daa709d9c307b7e9042d3a.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
 let loadingPercentageTimer = setInterval(function() {
   var progressBar = document.querySelector(".pace-progress");
   if (!progressBar) return
@@ -569,7 +1176,7 @@ window.addEventListener('load',()=> { preloader.endLoading() })
 if (true) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><link rel="stylesheet" href="https://pic.imgdb.cn/item/66dd949dd9c307b7e9308f6b.jpg"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/66daa709d9c307b7e9042d3a.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=8836623898&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/charts/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 统计图</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="center-console" type="button" title="中控台"><i class="anzhiyufont anzhiyu-icon-fish"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><div id="console-music-bg"></div><meting-js id="8921687509" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="console"><div class="close-btn" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-xmark" style="font-size: 35px;"></i></div><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://img1.imgtp.com/2023/08/15/BePdzusW.jpg" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img1.imgtp.com/2023/08/15/BePdzusW.jpg"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://img1.imgtp.com/2023/08/15/jqcGMBFZ.jpg" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img1.imgtp.com/2023/08/15/jqcGMBFZ.jpg"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/html/" style="font-size: 1.05rem; color: rgb(87, 21, 29);">html<sup>1</sup></a><a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 1.05rem; color: rgb(19, 40, 30);">嵌入式编程<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem; color: rgb(169, 159, 182);">算法<sup>1</sup></a><a href="/tags/%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD/" style="font-size: 1.05rem; color: rgb(54, 87, 191);">考研英语<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 1.05rem; color: rgb(137, 173, 136);">计算机<sup>3</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem; color: rgb(189, 146, 123);">计算机语言<sup>3</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.05rem; color: rgb(89, 107, 61);">项目<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history" onclick="anzhiyu.hideConsole()"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+}</script><link rel="stylesheet" href="https://pic.imgdb.cn/item/66dd949dd9c307b7e9308f6b.jpg"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/66daa709d9c307b7e9042d3a.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-79px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/charts/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 统计图</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/music/?id=9320926809&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button type="button" title="切换背景" onclick="toggleWinbox()"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="center-console" type="button" title="中控台"><i class="anzhiyufont anzhiyu-icon-fish"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><div id="console-music-bg"></div><meting-js id="9320926809" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="console"><div class="close-btn" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-xmark" style="font-size: 35px;"></i></div><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://img1.imgtp.com/2023/08/15/BePdzusW.jpg" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img1.imgtp.com/2023/08/15/BePdzusW.jpg"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://img1.imgtp.com/2023/08/15/jqcGMBFZ.jpg" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img1.imgtp.com/2023/08/15/jqcGMBFZ.jpg"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Hexo/" style="font-size: 1.05rem; color: rgb(138, 20, 69);">Hexo<sup>1</sup></a><a href="/tags/html/" style="font-size: 1.05rem; color: rgb(2, 177, 182);">html<sup>1</sup></a><a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 1.05rem; color: rgb(50, 38, 49);">嵌入式编程<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem; color: rgb(142, 65, 105);">算法<sup>1</sup></a><a href="/tags/%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD/" style="font-size: 1.05rem; color: rgb(85, 163, 34);">考研英语<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 1.05rem; color: rgb(112, 111, 174);">计算机<sup>3</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/" style="font-size: 1.05rem; color: rgb(127, 138, 78);">计算机语言<sup>3</sup></a><a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.05rem; color: rgb(149, 94, 80);">项目<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history" onclick="anzhiyu.hideConsole()"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
     <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8921687509&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
   "CONFIG": {
     "modules": "0124",
